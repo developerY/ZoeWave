@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"error-container":"#ffdad6","secondary-fixed":"#dce1ff","on-primary-fixed-variant":"#00497e","inverse-on-surface":"#eef0ff","tertiary":"#494bd6","primary":"#0061a5","surface-variant":"#dae2fd","on-tertiary-container":"#0f00a2","on-primary":"#ffffff","surface-container-high":"#e2e7ff","on-tertiary-fixed-variant":"#2f2ebe","tertiary-fixed-dim":"#c0c1ff","error":"#ba1a1a","primary-container":"#0099ff","on-primary-fixed":"#001d36","background":"#faf8ff","surface-bright":"#faf8ff","on-background":"#131b2e","on-surface":"#131b2e","tertiary-fixed":"#e1e0ff","surface-container-low":"#f2f3ff","on-primary-container":"#002f54","on-secondary-fixed":"#00164e","surface-container-highest":"#dae2fd","on-tertiary-fixed":"#07006c","surface-dim":"#d2d9f4","on-surface-variant":"#3f4753","on-error-container":"#93000a","surface-tint":"#0061a5","inverse-primary":"#9fcaff","surface-container":"#eaedff","primary-fixed":"#d2e4ff","inverse-surface":"#283044","on-secondary":"#ffffff","secondary-container":"#8fa7fe","primary-fixed-dim":"#9fcaff","secondary-fixed-dim":"#b6c4ff","surface":"#faf8ff","secondary":"#4059aa","on-secondary-container":"#1d3989","on-secondary-fixed-variant":"#264191","on-tertiary":"#ffffff","outline":"#707884","on-error":"#ffffff","surface-container-lowest":"#ffffff","tertiary-container":"#8589ff","outline-variant":"#bfc7d5"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2.5rem","space-xs":"0.25rem",margin:"2rem","margin-desktop":"3rem","space-md":"1rem","gutter-sm":"1rem",gutter:"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","gutter-lg":"2rem","space-sm":"0.5rem"},fontFamily:{"headline-lg-mobile":["Space Grotesk"],"label-sm":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"body-sm":["Inter"],"label-md":["Space Grotesk"],"headline-sm":["Space Grotesk"],"headline-lg":["Space Grotesk"],"body-md":["Inter"],"display-hero":["Space Grotesk"],"body-lg":["Inter"],"title-md":["Inter"]},fontSize:{"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-sm":["22px",{lineHeight:"30px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.025em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"400"}],"title-md":["18px",{lineHeight:"26px",letterSpacing:"-0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,153,255,0.06)]"><div class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm group" data-path="home" href="#"><div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-[0_2px_12px_rgba(0,153,255,0.12)] transition-transform group-hover:scale-105"><span class="font-headline-sm text-headline-sm text-primary">Z</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">ZoeWave</span><span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Enterprises</span></div></a></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="text-primary font-bold bg-surface-container-low rounded-lg"><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="companies" href="#">Companies</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="projects" href="#">Projects</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="believe" href="#">Believe</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" data-path="people-ash" href="#">People / Ash</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-xs font-label-md text-label-md text-on-primary bg-primary-container hover:bg-primary transition-all rounded-lg shadow-[0_0_20px_rgba(0,153,255,0.25)] hover:shadow-[0_0_24px_rgba(0,153,255,0.4)]" data-path="contact" href="#">Contact</a><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UVA44nzFF1RWIGRm-7Vc9ZrDHFXD8qvH5Am4dgv9aj3A5XkP26PW7IPbUfIYgvPV36nxCr9oDB7NQC4TLP8BemBhroanYcwiqaGQuuZv_tpd1dJ9jHHK4lndMrpsdUY3cmwQb9txFouUvyF2P8V2z0NPg6f3ZLoO4qm4QPtS00rwIbMuupaOzxT9d2bFvY8rvR1u8e_C2apqGoBqnH5u1GwMUVsblgZ2EfO-d8ZjsnTw"/></div></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient glow backdrops contained cleanly -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 right-10 w-96 h-96 rounded-full bg-primary-fixed/40 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-96 -left-32 w-[32rem] h-[32rem] rounded-full bg-secondary-fixed/50 blur-3xl pointer-events-none -z-10"></div>
+<!-- Main Container -->
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop py-space-xl">
+<!-- Top Breadcrumb & Status Telemetry Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-lg">
+<div class="flex items-center gap-space-xs font-label-md text-label-md">
+<span class="text-on-surface-variant">People</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-bold">Executive Office</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface">Siamak (Ash) Ashrafi</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-high shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Platform Architect &amp; Lead Researcher</span>
+</div>
+<span class="hidden sm:inline-flex px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-secondary uppercase font-bold">52 Talks • 12 Yrs</span>
+</div>
+</div>
+<!-- Executive Profile Bento Header Block -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- Left Hero Portrait & Accolades Card (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<div class="relative bg-surface-container-lowest rounded-xl p-space-lg shadow-xl overflow-hidden">
+<!-- Iridescent Top Aura -->
+<div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container"></div>
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-space-md shadow-md">
+<img class="w-full h-full object-cover" data-alt="Editorial portrait of tech architect Siamak Ash Ashrafi in a luminous high-tech laboratory pavilion, calm confident presence, subtle iridescent deep-blue and azure ambient reflections, pristine white minimalist architectural background, sharp focus 8k studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEzPkGuofgCvfPywglALVWf3ceTiIqS5kp-N1NcQE2zDv-gEcJri3PYfITjKw9duz5Qy6Fk4b6kr-N8IkoMjNtPfohJTniFYKsK1n6W-lt93xwXIRqLBjUN3xQIrsK02iBdKniyeAIMou06pY1w9B2m9n1VwW5moDpmCJ3KdWT5GCS9L6BTVUwRsS-h9a4QyYTn93reI-87HQmROD1BgakQQI91hf9pkfs9FF46h44"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-transparent to-transparent flex flex-col justify-end p-space-md text-on-primary">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-widest font-bold">Siamak Ashrafi</span>
+<span class="font-headline-sm text-headline-sm text-on-primary">"Ash"</span>
+<p class="font-body-sm text-body-sm text-surface-variant">Architect • Researcher • Public Speaker • Adventurer</p>
+</div>
+</div>
+<!-- Credentials & Distinctions Badges -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Distinctions &amp; Honors</span>
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">JavaOne</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-none">Rock Star Speaker</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Amazon</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-none">3x Code Ninja</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Patents</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-none">Multiple Grants</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">science</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Research</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-none">Scientific Papers</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Certified Operator Licenses Panel -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low/70 rounded-lg p-space-sm">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider font-bold block mb-space-xs">Field Licenses &amp; Operative Certifications</span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">directions_car</span> Car: C Class
+                </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">two_wheeler</span> Moto: M1 Class
+                </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">scuba_diving</span> Dive: NAUI / PADI
+                </span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">flight</span> Drone: FAA Part 107
+                </span>
+</div>
+</div>
+<!-- External Portals & Links -->
+<div class="mt-space-md flex flex-col gap-space-xs">
+<a class="w-full py-space-xs px-space-md rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-between hover:bg-primary transition-all shadow-md group" href="https://sessionize.com/Ash/" target="_blank">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-lg">mic</span> Sessionize Speaker Profile
+                </span>
+<span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="grid grid-cols-2 gap-space-xs">
+<a class="py-space-xs px-space-sm rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md text-center transition-colors" href="https://zoewave.medium.com/" target="_blank">
+                  Medium Essays
+                </a>
+<a class="py-space-xs px-space-sm rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-md text-label-md text-center transition-colors" href="https://play.google.com/store/apps/developer?id=YLabZ" target="_blank">
+                  Google Play Hub
+                </a>
+</div>
+</div>
+</div>
+<!-- The Infamous 3 Phases of Water Quote Card -->
+<div class="bg-gradient-to-br from-surface-container-low via-surface-container-lowest to-surface-container p-space-lg rounded-xl shadow-md relative overflow-hidden">
+<div class="flex items-start gap-space-sm mb-space-xs">
+<span class="material-symbols-outlined text-tertiary text-2xl">format_quote</span>
+<span class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">The Elemental Survival Paradox</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug">
+              "From all accounts should have been killed ☠️ by all three phases of water 🌊."
+            </p>
+<div class="mt-space-md grid grid-cols-3 gap-space-xs text-center">
+<div class="p-space-xs rounded bg-surface-container-lowest/80 shadow-sm">
+<span class="text-xl block">🏂</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase block">Solid</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Blizzard Snow</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-lowest/80 shadow-sm">
+<span class="text-xl block">🏄</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase block">Liquid</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Storm Waves</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-lowest/80 shadow-sm">
+<span class="text-xl block">⛵️</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase block">Vapor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hurricane Winds</span>
+</div>
+</div>
+<div class="mt-space-sm text-right">
+<span class="font-label-md text-label-md text-on-surface font-bold">— Lucky &amp; Glad to be alive!</span>
+</div>
+</div>
+</div>
+<!-- Right Content & Deep Narratives (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-gutter">
+<!-- Executive Role Triad -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Executive Appointments &amp; Leadership</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Role 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-primary mb-space-xs">
+<span class="material-symbols-outlined text-lg">domain</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">ZoeWave</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Architect</div>
+<div class="font-label-md text-label-md text-on-surface-variant">of Platforms</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+                  Strategic holding development uniting R&amp;D breakthroughs across venture entities.
+                </p>
+</div>
+<!-- Role 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-lg">science</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">YLabZ</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Developer</div>
+<div class="font-label-md text-label-md text-on-surface-variant">of Innovation</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+                  Experimental technology lab pushing boundaries across AI, robotics, and biosensors.
+                </p>
+</div>
+<!-- Role 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-space-xs text-tertiary mb-space-xs">
+<span class="material-symbols-outlined text-lg">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase font-bold tracking-wider">G.N.Seven</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Designer</div>
+<div class="font-label-md text-label-md text-on-surface-variant">of Technology</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-sm">
+                  Rapid prototyping and consumer incubation transforming deep science into markets.
+                </p>
+</div>
+</div>
+</div>
+<!-- Letter of Intro & Philosophy Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-lg relative">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-2xl">mark_email_read</span>
+<span class="font-headline-md text-headline-md text-on-surface">Letter of Introduction</span>
+</div>
+<span class="px-space-sm py-1 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm uppercase font-bold">
+                Directorate Dispatch
+              </span>
+</div>
+<div class="flex flex-col gap-space-md font-body-md text-body-md text-on-surface-variant">
+<p class="text-on-surface font-title-md text-title-md">
+                "Driven by a passion for creating impactful technology solutions, my core focus has been exploring new frontiers in mobile development, spatial computing, augmented reality, and mathematical machine learning."
+              </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs text-primary mb-1">
+<span class="material-symbols-outlined text-base">palette</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Creativity &amp; Extreme Tech</span>
+</div>
+<p class="font-body-sm text-body-sm">
+                    Fusing expressive aesthetics with AI/ML, AR/VR, blockchain, and quantum mechanical simulation to craft memorable software that resolves genuine human bottlenecks.
+                  </p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-base">group</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Customer-Centric Ethnography</span>
+</div>
+<p class="font-body-sm text-body-sm">
+                    Every project maps direct behavioral empathy to iterative prototyping. Grounding high-order algorithms in real customer journeys guarantees durable resonance.
+                  </p>
+</div>
+</div>
+<!-- Persona Spotlight: AI/ML Data Janitor -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex flex-col sm:flex-row items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl">cleaning_services</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase font-bold text-primary tracking-wider">Specialty Archetype</span>
+<div class="font-title-md text-title-md text-on-surface">The "AI/ML Data Janitor &amp; Data Detective"</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                    Recognized for rigorous cleaning, balancing, and interpreting complex datasets. Optimizing predictive modeling with SHAP &amp; LIME interpretability for 99.8% precision deployment in bio-informatics and physical sensing.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Vision on GenAI Statement Banner -->
+<div class="p-space-lg rounded-xl bg-surface-container text-on-surface shadow-md relative overflow-hidden">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">The Strategic Thesis on GenAI</span>
+</div>
+<p class="font-title-md text-title-md text-on-surface italic leading-relaxed">
+              "The future of software engineering lies in the synergy of multi-skilled developers collaborating with Generative AI, acting as architects directing AI to build, optimize, and innovate."
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+              Guiding ZoeWave's multi-tier operating system into an era where synthetic intelligence amplifies human engineering leverage.
+            </p>
+</div>
+<!-- 52 Conferences / 12 Years Vector Showcase -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-secondary font-bold tracking-widest">Thought Leadership Footprint</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">52 Conferences over 12 Years</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-base">podium</span> Global Stages
+              </div>
+</div>
+<!-- Conference Stage Tag Mosaic -->
+<div class="flex flex-wrap gap-space-xs mb-space-md">
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">DroidCon Boston &amp; SF</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">Google DevFest</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">360iDev</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">360AndDev</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">AIDevWorld</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">IDTechEx</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">Developer Week</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">JavaOne</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">DesignWest</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">Silicon Valley Forum</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">SVCC</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">ComicCon</span>
+<span class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md">And Robot</span>
+</div>
+<!-- Inline SVG Conference Trajectory Chart -->
+<div class="p-space-md rounded-lg bg-surface-container-low/60 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Annual Keynote &amp; Workshop Density (2012 — 2024)</span>
+<span class="text-primary font-bold">52 Sessions Delivered</span>
+</div>
+<svg class="w-full h-12 text-primary" fill="none" stroke="currentColor" viewbox="0 0 500 60">
+<path d="M0,45 Q50,42 90,38 T180,25 T270,30 T360,15 T450,10 L500,8" stroke-linecap="round" stroke-width="2.5"></path>
+<circle class="fill-surface-container-lowest stroke-primary" cx="90" cy="38" r="3.5" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest stroke-primary" cx="180" cy="25" r="3.5" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest stroke-primary" cx="270" cy="30" r="3.5" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest stroke-primary" cx="360" cy="15" r="3.5" stroke-width="2"></circle>
+<circle class="fill-primary stroke-surface-container-lowest" cx="450" cy="10" r="4.5" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Deep Tech Stacks Matrix Section -->
+<div class="mt-space-xl pt-space-lg flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Comprehensive Engineering Arsenal</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Deep Tech Stacks</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+            Multi-platform architectural mastery spanning modern mobile pipelines, spatial computing, explainable ML models, and bare-metal high concurrency in Rust.
+          </p>
+</div>
+<!-- 4-Card Technology Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Stack 1: Android / WearOS / XR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">android</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Android / WearOS / XR</h3>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Modern Android Development (MAD)</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Active R&amp;D</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Core Architecture</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Kotlin</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Coroutines (Flow / Channels)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Jetpack Compose (M3)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Hilt DI</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Room DB</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Coil</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">WorkManager</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">GitHub Actions CI/CD</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Specialized Subsystems &amp; XR</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Google Maps SDK</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Health Connect</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">CameraX</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">BLE (Bluetooth LE)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">ML Kit</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-body-sm text-body-sm font-bold">ARCore • ZoeWare.com</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<a class="font-label-md text-label-md text-primary flex items-center gap-1 hover:underline" href="https://zoewave.medium.com/list/android-dev-1c5b527d5a4d" target="_blank">
+                Read Android Dev Articles <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" href="https://www.ylabz.com/platforms/mobile/android" target="_blank">
+                YLabZ Platform Guide →
+              </a>
+</div>
+</div>
+<!-- Stack 2: iOS / watchOS / visionOS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">devices</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">iOS / watchOS / visionOS</h3>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Modern iOS Development (MiD)</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Spatial Ready</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Apple Foundation Stack</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Swift</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">SwiftUI</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">SF Symbols</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">SwiftData (w/ history)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Structured Concurrency</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Combine</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Swift Testing</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Spatial &amp; Sensor Ecosystem</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Swift Charts</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Core Motion</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">CoreML</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Apple Health</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-body-sm text-body-sm font-bold">RealityKit • RealityView</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-body-sm text-body-sm font-bold">MaterialX • USDZ</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<a class="font-label-md text-label-md text-secondary flex items-center gap-1 hover:underline" href="https://zoewave.medium.com/apple-platforms-97be2d63f6bd" target="_blank">
+                Read Apple Platform Essays <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">
+                App Store: Coming Soon
+              </span>
+</div>
+</div>
+<!-- Stack 3: AI / ML Precision Stack -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">neurology</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">AI / Machine Learning</h3>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Explainability • 99.8% Accuracy</span>
+</div>
+</div>
+<div class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">
+                  BioData Proven
+                </div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Modeling &amp; High-Performance Runtimes</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface font-bold">Mojo (Python)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">TensorFlow</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Scikit-learn (RF, KNN, SVM)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">RFE(CV)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Strat-K-Folds</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Explainability &amp; Datastores</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-body-sm text-body-sm font-bold">SHAP • LIME • ELI5</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Plotly • Altair • Seaborn</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">MongoDB w/ PyTables HDF5</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Docker on AWS</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Solidity (Brownie)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<a class="font-label-md text-label-md text-primary flex items-center gap-1 hover:underline" href="https://zoewave.medium.com/list/aiml-dev-on-mobile-6f5751e000ae" target="_blank">
+                Mobile AI/ML Architecture <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" href="https://zoewave.medium.com/list/aiml-projects-c0dc5ddccb6b" target="_blank">
+                Production Case Studies →
+              </a>
+</div>
+</div>
+<!-- Stack 4: Rust Systems & Quantum Frontiers -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl">memory</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Rust &amp; Deep Physics</h3>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold">Quantum • Robotics • Web</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+                  Next-Gen Core
+                </span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Concurrency &amp; High-Throughput Web</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface font-bold">Axum Web Server</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Tokio Runtime</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Hedera Hashgraph</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low font-body-sm text-body-sm text-on-surface">Solana Program Architecture</span>
+</div>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold block mb-1">Physical Systems &amp; Quantum Physics</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Rust PyO3 FFI Bridges</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Google Cirq Simulation</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-body-sm text-body-sm font-bold">Robotics.rs [ZoeRobo.com]</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high font-body-sm text-body-sm text-on-surface">Embedded Firmware</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-lg pt-space-sm flex items-center justify-between">
+<a class="font-label-md text-label-md text-tertiary flex items-center gap-1 hover:underline" href="http://www.zoerobo.com" target="_blank">
+                Explore ZoeRobo Robotics <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+                Quantum Circ Engineering
+              </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Venture Formation & Ecosystem Bridge -->
+<div class="mt-space-xl p-space-lg rounded-xl bg-surface-container-low shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-center">
+<div class="lg:col-span-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Venture Incubator Track</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Ideation to Well-Funded Enterprise</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Transforming raw technical insights from exploratory whiteboard sessions into venture-backed operational startups with sustained product-market fit.
+            </p>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-primary">01</span>
+<div class="font-label-md text-label-md text-on-surface font-bold mt-1">Talent Assemblage</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Recruiting elite cross-disciplinary builders across ML, low-level firmware, and design ethnography.
+                </p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary">02</span>
+<div class="font-label-md text-label-md text-on-surface font-bold mt-1">Rapid Prototyping</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Short-cycle iteration leveraging modern declarative UI toolkits and real-time hardware telemetry.
+                </p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm text-tertiary">03</span>
+<div class="font-label-md text-label-md text-on-surface font-bold mt-1">Market Scaling</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  Deploying high-reliability AWS &amp; mobile infrastructures serving global customer cohorts.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Directory & Direct Navigation Footer Block -->
+<div class="mt-space-xl mb-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md rounded-xl bg-surface-container-lowest shadow-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-xl">contact_page</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Executive Office Direct Reach</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Direct discussions, advisory roles, keynotes, or deep-tech initiatives.</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<a class="flex-1 sm:flex-initial px-space-lg py-space-xs rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md text-center transition-all shadow-md" data-path="contact" href="#">
+            Transmit Inquiry
+          </a>
+<a class="px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" href="https://zoewave.medium.com/" target="_blank">
+            Essays <span class="material-symbols-outlined text-sm">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low mt-auto"><div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin lg:px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter-lg mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-[0_2px_8px_rgba(0,153,255,0.12)]"><span class="font-headline-sm text-headline-sm text-primary">Z</span></div><span class="font-headline-sm text-headline-sm text-on-surface">ZoeWave Holding Group</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-md">Pioneering advanced physical systems, autonomous synthesis, and venture acceleration across next-generation deep-tech frontiers.</p><div class="flex items-center gap-space-xs pt-space-xs"><span class="inline-flex items-center px-space-sm py-space-xs rounded-lg font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant uppercase tracking-wider">Deep Tech Capital</span><span class="inline-flex items-center px-space-sm py-space-xs rounded-lg font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed-variant uppercase tracking-wider">Global Scale</span></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-bold">Portfolio</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="companies" href="#">Operating Ventures</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#">Active R&amp;D Initiatives</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="companies" href="#">Capital Deployment</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="projects" href="#">Quantum Systems Lab</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-bold">Organization</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="believe" href="#">Core Philosophy &amp; Thesis</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="people-ash" href="#">Leadership &amp; Partners</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="people-ash" href="#">Executive Office: Ash</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Inquiries &amp; Press</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-bold">Governance</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal" href="#">Institutional Mandate</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal" href="#">Ethics &amp; Deep Physics</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal" href="#">Privacy Policy</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="legal" href="#">Terms of Operation</a></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 ZoeWave Group Inc. All enterprise rights reserved.</p><div class="flex items-center gap-space-lg"><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">New York • Zurich • Tokyo</span><span class="font-label-sm text-label-sm text-primary tracking-wider uppercase font-bold">Enterprise Status: Operational</span></div></div></div></footer></body></html>

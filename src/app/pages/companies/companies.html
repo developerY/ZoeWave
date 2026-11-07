@@ -1,0 +1,580 @@
+<div class="flex flex-col w-full">
+  <!-- Interactive Ambient Header Banner / Metric Bar -->
+  <section class="relative w-full overflow-hidden bg-white border-b border-[#bfc7d5]/30">
+    <!-- Subtle Prismatic Ambient Mesh -->
+    <div class="absolute -top-32 right-10 w-96 h-96 rounded-full bg-[#0099ff]/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/4 w-80 h-80 rounded-full bg-[#8589ff]/15 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-12 relative z-10">
+      <!-- Breadcrumb & Enterprise Classification Tag -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg font-label-sm bg-[#d2e4ff] text-[#00497e] uppercase tracking-wider font-bold">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Operational Portfolio Directory
+        </span>
+        <span class="text-[#bfc7d5] font-label-sm">/</span>
+        <span class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">12 Active Ventures &amp; Labs</span>
+        <span class="text-[#bfc7d5] font-label-sm">/</span>
+        <span class="inline-flex items-center px-3 py-1 rounded-lg font-label-sm bg-[#e1e0ff] text-[#07006c] uppercase tracking-wider font-bold">
+          Thesis: Life • Water • Fire • Synth
+        </span>
+      </div>
+
+      <!-- Core Display Heading & Framing -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div class="lg:col-span-8 flex flex-col gap-2">
+          <h1 class="font-display-hero text-3xl sm:text-5xl text-on-surface tracking-tight font-bold">
+            Companies <span class="text-[#0099ff]">&amp; Frontier</span> Ventures
+          </h1>
+          <p class="font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Overseeing the multi-tier incubation, technological architecture, and strategic velocity of next-generation physical-digital ventures—from raw silicon and biosensors to autonomous agent swarms.
+          </p>
+        </div>
+
+        <!-- Telemetry Summary Pod -->
+        <div class="lg:col-span-4 flex flex-col gap-2 p-5 bg-[#f2f3ff] rounded-2xl border border-[#bfc7d5]/30 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="font-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Venture Matrix</span>
+            <span class="font-label-sm text-primary font-bold">5 Tiers Active</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2 pt-1">
+            <div class="bg-white p-3 rounded-xl flex flex-col border border-[#bfc7d5]/20 shadow-xs">
+              <span class="font-headline-sm text-primary font-bold">02</span>
+              <span class="font-label-sm text-on-surface-variant uppercase text-[10px]">Core R&amp;D</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl flex flex-col border border-[#bfc7d5]/20 shadow-xs">
+              <span class="font-headline-sm text-tertiary font-bold">06</span>
+              <span class="font-label-sm text-on-surface-variant uppercase text-[10px]">Prod / Dev</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl flex flex-col border border-[#bfc7d5]/20 shadow-xs">
+              <span class="font-headline-sm text-secondary font-bold">05</span>
+              <span class="font-label-sm text-on-surface-variant uppercase text-[10px]">Frontier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter / Quick-Jump Interactive Anchor Pill Bar & Search -->
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 pt-8">
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0" role="tablist" aria-label="Tier filters">
+          <button type="button" 
+                  (click)="setTier('all')" 
+                  [class.bg-primary]="selectedTier() === 'all'"
+                  [class.text-white]="selectedTier() === 'all'"
+                  [class.bg-[#eaedff]]="selectedTier() !== 'all'"
+                  [class.text-on-surface]="selectedTier() !== 'all'"
+                  class="whitespace-nowrap px-4 py-2 rounded-full font-label-md transition-all shadow-sm cursor-pointer">
+            All Tiers (12)
+          </button>
+          <button type="button" 
+                  (click)="setTier('core')" 
+                  [class.bg-primary]="selectedTier() === 'core'"
+                  [class.text-white]="selectedTier() === 'core'"
+                  [class.bg-[#eaedff]]="selectedTier() !== 'core'"
+                  [class.text-on-surface]="selectedTier() !== 'core'"
+                  class="whitespace-nowrap px-4 py-2 rounded-full font-label-md transition-all shadow-sm cursor-pointer">
+            01. Core R&amp;D
+          </button>
+          <button type="button" 
+                  (click)="setTier('production')" 
+                  [class.bg-primary]="selectedTier() === 'production'"
+                  [class.text-white]="selectedTier() === 'production'"
+                  [class.bg-[#eaedff]]="selectedTier() !== 'production'"
+                  [class.text-on-surface]="selectedTier() !== 'production'"
+                  class="whitespace-nowrap px-4 py-2 rounded-full font-label-md transition-all shadow-sm cursor-pointer">
+            02. Production
+          </button>
+          <button type="button" 
+                  (click)="setTier('development')" 
+                  [class.bg-primary]="selectedTier() === 'development'"
+                  [class.text-white]="selectedTier() === 'development'"
+                  [class.bg-[#eaedff]]="selectedTier() !== 'development'"
+                  [class.text-on-surface]="selectedTier() !== 'development'"
+                  class="whitespace-nowrap px-4 py-2 rounded-full font-label-md transition-all shadow-sm cursor-pointer">
+            03. Development
+          </button>
+          <button type="button" 
+                  (click)="setTier('frontier')" 
+                  [class.bg-primary]="selectedTier() === 'frontier'"
+                  [class.text-white]="selectedTier() === 'frontier'"
+                  [class.bg-[#eaedff]]="selectedTier() !== 'frontier'"
+                  [class.text-on-surface]="selectedTier() !== 'frontier'"
+                  class="whitespace-nowrap px-4 py-2 rounded-full font-label-md transition-all shadow-sm cursor-pointer">
+            04. Frontier
+          </button>
+          <button type="button" 
+                  (click)="setTier('concepts')" 
+                  [class.bg-primary]="selectedTier() === 'concepts'"
+                  [class.text-white]="selectedTier() === 'concepts'"
+                  [class.bg-[#eaedff]]="selectedTier() !== 'concepts'"
+                  [class.text-on-surface]="selectedTier() !== 'concepts'"
+                  class="whitespace-nowrap px-4 py-2 rounded-full font-label-md transition-all shadow-sm cursor-pointer">
+            05. Concepts
+          </button>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full md:w-72">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#707884] text-[20px]">search</span>
+          <input type="text" 
+                 placeholder="Search ventures, AI, robotics..." 
+                 (input)="onSearch($event)"
+                 class="w-full pl-10 pr-4 py-2 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/50 text-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHICAL MANIFESTO CALLOUT (Core ZoeWave Doctrine) -->
+  <section class="w-full bg-[#f2f3ff] py-12 border-b border-[#bfc7d5]/30">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      <div class="relative bg-white rounded-2xl p-6 sm:p-10 shadow-md border border-[#0099ff]/15 overflow-hidden">
+        <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-[#d2e4ff]/30 blur-2xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-8 flex flex-col gap-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+              <span class="font-label-sm uppercase tracking-widest text-primary font-bold">Pushing the Limits of GenAI</span>
+            </div>
+            <blockquote class="font-headline-md sm:font-headline-lg text-on-surface tracking-tight leading-snug font-bold">
+              “Alone, you can go fast. Together, we can go far. <br class="hidden sm:inline"/>
+              <span class="text-primary">With GenAI, you can go as fast—and as far—as you can imagine.</span>”
+            </blockquote>
+          </div>
+          <div class="lg:col-span-4 flex flex-col gap-2 p-5 bg-[#faf8ff] rounded-xl border border-[#bfc7d5]/30">
+            <span class="font-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Operational Thesis</span>
+            <p class="font-body-sm text-on-surface">
+              Synthesizing hyper-dense venture velocity with deep physical science, biometrics, and autonomous systems architecture.
+            </p>
+            <div class="pt-2 flex items-center gap-2 text-primary font-label-md font-bold">
+              <span>ZoeWave Capital • Enterprise Protocol</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtered Ventures View or Categorized Tiers -->
+  @if (selectedTier() !== 'all' || searchQuery().trim() !== '') {
+    <!-- Search / Filter Results Grid -->
+    <section class="w-full py-16 bg-[#faf8ff]">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Filtered Results</span>
+            <h2 class="font-headline-lg text-on-surface font-bold">Matching Ventures ({{ filteredCompanies().length }})</h2>
+          </div>
+          <button type="button" (click)="setTier('all'); searchQuery.set('')" class="text-sm text-primary font-bold hover:underline cursor-pointer">
+            Clear Filters
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          @for (comp of filteredCompanies(); track comp.id) {
+            <article class="bg-white rounded-2xl p-6 shadow-md border border-[#bfc7d5]/30 flex flex-col justify-between hover:shadow-xl transition-all group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-[#d2e4ff] text-[#00497e] flex items-center justify-center font-bold text-xl shadow-xs group-hover:scale-105 transition-transform">
+                      <span class="material-symbols-outlined text-[26px]">{{ comp.icon }}</span>
+                    </div>
+                    <div>
+                      <h3 class="font-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">{{ comp.name }}</h3>
+                      <span class="font-label-sm text-primary font-bold">{{ comp.domain }}</span>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full font-label-sm bg-[#eaedff] text-primary uppercase font-bold text-xs">
+                    {{ comp.tier }}
+                  </span>
+                </div>
+
+                @if (comp.imageUrl) {
+                  <div class="w-full h-44 rounded-xl overflow-hidden relative shadow-inner">
+                    <img [src]="comp.imageUrl" [alt]="comp.name" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" referrerpolicy="no-referrer" />
+                  </div>
+                }
+
+                <blockquote class="font-label-md text-primary font-semibold italic">
+                  “{{ comp.tagline }}”
+                </blockquote>
+
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ comp.description }}
+                </p>
+
+                @if (comp.metrics && comp.metrics.length > 0) {
+                  <div class="grid grid-cols-3 gap-2 pt-2">
+                    @for (m of comp.metrics; track m.label) {
+                      <div class="p-2.5 rounded-lg bg-[#f2f3ff] flex flex-col">
+                        <span class="font-label-sm text-on-surface-variant text-[10px] uppercase">{{ m.label }}</span>
+                        <span class="font-headline-sm text-on-surface font-bold text-base">{{ m.value }}</span>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between">
+                <button type="button" 
+                        (click)="inspectCompany(comp)" 
+                        class="px-4 py-2 rounded-lg bg-[#eaedff] hover:bg-[#dae2fd] text-primary font-label-sm font-bold flex items-center gap-1 cursor-pointer">
+                  <span>Inspect Specs</span>
+                  <span class="material-symbols-outlined text-[16px]">visibility</span>
+                </button>
+                @if (comp.url && comp.url !== '#') {
+                  <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-sm font-bold flex items-center gap-1 cursor-pointer">
+                    <span>Visit Site</span>
+                    <span class="material-symbols-outlined text-[14px]">north_east</span>
+                  </a>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+  } @else {
+    <!-- Full 5-Tier Categorized Directory -->
+
+    <!-- TIER 1: CORE R&D & TECH DESIGN ENGINE -->
+    <section class="w-full py-16 bg-[#faf8ff] border-b border-[#bfc7d5]/20" id="tier-core">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded font-label-sm bg-primary text-white font-bold">TIER 01</span>
+              <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Foundational Architecture</span>
+            </div>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight mt-1">
+              Core R&amp;D &amp; Tech Design Engine
+            </h2>
+          </div>
+          <p class="font-body-md text-on-surface-variant max-w-md">
+            The bi-directional flywheel: Deep experimental research at YLabZ directly accelerated into consumer-grade interfaces by G.N.Seven.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          @for (comp of tierCore(); track comp.id) {
+            <article class="bg-white rounded-2xl p-6 sm:p-8 shadow-md flex flex-col justify-between hover:shadow-xl transition-all duration-300 border border-[#bfc7d5]/30 group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-[#d2e4ff] flex items-center justify-center text-primary shadow-sm group-hover:scale-105 transition-transform">
+                      <span class="material-symbols-outlined text-[32px]">{{ comp.icon }}</span>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h3 class="font-headline-md text-on-surface font-bold">{{ comp.name }}</h3>
+                        <span class="px-2 py-0.5 rounded font-label-sm bg-[#d2e4ff] text-[#00497e] uppercase font-bold text-xs">{{ comp.tierLabel }}</span>
+                      </div>
+                      <span class="font-label-sm text-primary font-bold">{{ comp.tagline }}</span>
+                    </div>
+                  </div>
+                  <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-[#eaedff] hover:bg-[#0099ff] hover:text-white transition-colors text-on-surface-variant" [title]="'Visit ' + comp.name">
+                    <span class="material-symbols-outlined text-[20px]">north_east</span>
+                  </a>
+                </div>
+
+                @if (comp.imageUrl) {
+                  <div class="w-full h-56 rounded-xl overflow-hidden relative shadow-sm">
+                    <img [src]="comp.imageUrl" [alt]="comp.name" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" referrerpolicy="no-referrer" />
+                    <div class="absolute bottom-2 left-2 px-3 py-1 rounded-lg bg-white/90 backdrop-blur-md font-label-sm text-on-surface uppercase font-bold text-xs">
+                      Domain: {{ comp.domain }}
+                    </div>
+                  </div>
+                }
+
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ comp.description }}
+                </p>
+
+                @if (comp.metrics && comp.metrics.length > 0) {
+                  <div class="grid grid-cols-3 gap-3 pt-2">
+                    @for (m of comp.metrics; track m.label) {
+                      <div class="p-3 rounded-xl bg-[#f2f3ff] flex flex-col">
+                        <span class="font-label-sm text-on-surface-variant uppercase text-[10px]">{{ m.label }}</span>
+                        <span class="font-headline-sm text-on-surface font-bold">{{ m.value }}</span>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between">
+                <button type="button" (click)="inspectCompany(comp)" class="text-sm font-bold text-primary hover:underline flex items-center gap-1 cursor-pointer">
+                  <span>Inspect Architecture Ledger</span>
+                  <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+                <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-on-surface-variant hover:text-primary">
+                  {{ comp.url }}
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER 2: PRODUCTION TIER -->
+    <section class="w-full py-16 bg-white border-b border-[#bfc7d5]/20" id="tier-production">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded font-label-sm bg-emerald-600 text-white font-bold">TIER 02</span>
+              <span class="font-label-sm text-emerald-700 uppercase tracking-widest font-bold">Active Market Deployments</span>
+            </div>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight mt-1">
+              Production Tier
+            </h2>
+          </div>
+          <p class="font-body-md text-on-surface-variant max-w-md">
+            Commercial services and deployed consumer applications delivering real-world value across personalized medicine, automated media, and spatial immersion.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          @for (comp of tierProduction(); track comp.id) {
+            <article class="bg-[#faf8ff] rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-[#bfc7d5]/30 flex flex-col justify-between group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                      <span class="material-symbols-outlined text-[26px]">{{ comp.icon }}</span>
+                    </div>
+                    <div>
+                      <h3 class="font-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">{{ comp.name }}</h3>
+                      <span class="font-label-sm text-emerald-700 font-bold">{{ comp.domain }}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <blockquote class="font-label-md text-primary font-semibold italic">
+                  “{{ comp.tagline }}”
+                </blockquote>
+
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ comp.description }}
+                </p>
+
+                @if (comp.metrics && comp.metrics.length > 0) {
+                  <div class="grid grid-cols-2 gap-2 pt-2">
+                    @for (m of comp.metrics; track m.label) {
+                      <div class="p-2.5 rounded-lg bg-white border border-[#bfc7d5]/20 flex flex-col">
+                        <span class="font-label-sm text-on-surface-variant text-[10px] uppercase">{{ m.label }}</span>
+                        <span class="font-headline-sm text-on-surface font-bold text-sm">{{ m.value }}</span>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between">
+                <button type="button" (click)="inspectCompany(comp)" class="text-sm font-bold text-primary hover:underline cursor-pointer">
+                  Details
+                </button>
+                <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-sm font-bold flex items-center gap-1 cursor-pointer">
+                  <span>Open Portal</span>
+                  <span class="material-symbols-outlined text-[14px]">north_east</span>
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER 3: DEVELOPMENT TIER -->
+    <section class="w-full py-16 bg-[#faf8ff] border-b border-[#bfc7d5]/20" id="tier-development">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded font-label-sm bg-[#4059aa] text-white font-bold">TIER 03</span>
+              <span class="font-label-sm text-[#4059aa] uppercase tracking-widest font-bold">Scaling Architectures</span>
+            </div>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight mt-1">
+              Development Tier
+            </h2>
+          </div>
+          <p class="font-body-md text-on-surface-variant max-w-md">
+            Ventures advancing through clinical validation, smart urban hardware piloting, and biometric apparel integration.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          @for (comp of tierDevelopment(); track comp.id) {
+            <article class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-[#bfc7d5]/30 flex flex-col justify-between group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-xl bg-[#dce1ff] text-[#00164e] flex items-center justify-center font-bold">
+                      <span class="material-symbols-outlined text-[26px]">{{ comp.icon }}</span>
+                    </div>
+                    <div>
+                      <h3 class="font-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">{{ comp.name }}</h3>
+                      <span class="font-label-sm text-[#4059aa] font-bold">{{ comp.domain }}</span>
+                    </div>
+                  </div>
+                </div>
+
+                @if (comp.imageUrl) {
+                  <div class="w-full h-40 rounded-xl overflow-hidden relative shadow-inner">
+                    <img [src]="comp.imageUrl" [alt]="comp.name" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" referrerpolicy="no-referrer" />
+                  </div>
+                }
+
+                <blockquote class="font-label-md text-primary font-semibold italic">
+                  “{{ comp.tagline }}”
+                </blockquote>
+
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ comp.description }}
+                </p>
+
+                @if (comp.metrics && comp.metrics.length > 0) {
+                  <div class="grid grid-cols-2 gap-2 pt-2">
+                    @for (m of comp.metrics; track m.label) {
+                      <div class="p-2.5 rounded-lg bg-[#f2f3ff] flex flex-col">
+                        <span class="font-label-sm text-on-surface-variant text-[10px] uppercase">{{ m.label }}</span>
+                        <span class="font-headline-sm text-on-surface font-bold text-sm">{{ m.value }}</span>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between">
+                <button type="button" (click)="inspectCompany(comp)" class="text-sm font-bold text-primary hover:underline cursor-pointer">
+                  Specs
+                </button>
+                <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-[#4059aa] hover:bg-[#1d3989] text-white font-label-sm font-bold flex items-center gap-1 cursor-pointer">
+                  <span>{{ comp.url }}</span>
+                  <span class="material-symbols-outlined text-[14px]">north_east</span>
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER 4: EXPERIMENTATION & FRONTIER -->
+    <section class="w-full py-16 bg-white border-b border-[#bfc7d5]/20" id="tier-frontier">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded font-label-sm bg-[#494bd6] text-white font-bold">TIER 04</span>
+              <span class="font-label-sm text-[#494bd6] uppercase tracking-widest font-bold">Experimental Frontiers</span>
+            </div>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight mt-1">
+              Experimentation &amp; Frontier
+            </h2>
+          </div>
+          <p class="font-body-md text-on-surface-variant max-w-md">
+            Pioneering autonomous edge robotics, decentralized algorithmic finance, and chromatic fashion neural networks.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          @for (comp of tierFrontier(); track comp.id) {
+            <article class="bg-[#faf8ff] rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-[#bfc7d5]/30 flex flex-col justify-between group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl bg-[#e1e0ff] text-[#07006c] flex items-center justify-center font-bold">
+                    <span class="material-symbols-outlined text-[26px]">{{ comp.icon }}</span>
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">{{ comp.name }}</h3>
+                    <span class="font-label-sm text-[#494bd6] font-bold">{{ comp.domain }}</span>
+                  </div>
+                </div>
+
+                <blockquote class="font-label-md text-primary font-semibold italic">
+                  “{{ comp.tagline }}”
+                </blockquote>
+
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ comp.description }}
+                </p>
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between">
+                <button type="button" (click)="inspectCompany(comp)" class="text-sm font-bold text-primary hover:underline cursor-pointer">
+                  Details
+                </button>
+                <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-primary hover:underline flex items-center gap-0.5">
+                  <span>Visit</span>
+                  <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER 5: CONCEPTS IN DEVELOPMENT & STEALTH -->
+    <section class="w-full py-16 bg-[#faf8ff]" id="tier-concepts">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded font-label-sm bg-[#131b2e] text-white font-bold">TIER 05</span>
+              <span class="font-label-sm text-on-surface uppercase tracking-widest font-bold">Future Horizon</span>
+            </div>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight mt-1">
+              Concepts in Development &amp; Stealth
+            </h2>
+          </div>
+          <p class="font-body-md text-on-surface-variant max-w-md">
+            Speculative agentic swarms, archetypal LLM frameworks, and proprietary quantum-physical computing research.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          @for (comp of tierConcepts(); track comp.id) {
+            <article class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-[#bfc7d5]/30 flex flex-col justify-between group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl bg-[#dae2fd] text-[#131b2e] flex items-center justify-center font-bold">
+                    <span class="material-symbols-outlined text-[26px]">{{ comp.icon }}</span>
+                  </div>
+                  <div>
+                    <h3 class="font-headline-sm text-on-surface font-bold">{{ comp.name }}</h3>
+                    <span class="font-label-sm text-on-surface-variant font-bold">{{ comp.domain }}</span>
+                  </div>
+                </div>
+
+                <blockquote class="font-label-md text-primary font-semibold italic">
+                  “{{ comp.tagline }}”
+                </blockquote>
+
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ comp.description }}
+                </p>
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between">
+                <button type="button" (click)="inspectCompany(comp)" class="text-sm font-bold text-primary hover:underline cursor-pointer">
+                  Inspect Concept
+                </button>
+                @if (comp.url && comp.url !== '#') {
+                  <a [href]="comp.url" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-primary hover:underline flex items-center gap-0.5">
+                    <span>Portal</span>
+                    <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                  </a>
+                } @else {
+                  <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs font-semibold">Classified</span>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+  }
+</div>

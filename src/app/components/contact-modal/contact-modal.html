@@ -1,0 +1,146 @@
+@if (modalService.isContactModalOpen()) {
+  <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn" 
+       role="dialog" 
+       aria-modal="true" 
+       aria-labelledby="contact-modal-title">
+    <div class="relative w-full max-w-lg bg-[#faf8ff] rounded-2xl shadow-2xl border border-[#0099ff]/20 overflow-hidden">
+      <!-- Header bar with gradient border -->
+      <div class="h-2 w-full bg-gradient-to-r from-[#0061a5] via-[#0099ff] to-[#494bd6]"></div>
+      
+      <div class="p-6 sm:p-8">
+        <div class="flex items-center justify-between pb-4 border-b border-[#bfc7d5]/30 mb-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#d2e4ff] text-[#00497e] flex items-center justify-center font-bold">
+              <span class="material-symbols-outlined text-[20px]">send</span>
+            </div>
+            <div>
+              <h2 id="contact-modal-title" class="font-headline-sm text-on-surface">Initiate Collaboration</h2>
+              <span class="font-label-sm text-primary uppercase tracking-wider font-bold">ZoeWave Executive Office</span>
+            </div>
+          </div>
+          <button type="button" 
+                  (click)="close()"
+                  class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#eaedff] transition-colors cursor-pointer"
+                  aria-label="Close dialog">
+            <span class="material-symbols-outlined text-[22px]">close</span>
+          </button>
+        </div>
+
+        @if (isSubmitted()) {
+          <div class="py-8 flex flex-col items-center text-center gap-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shadow-inner">
+              <span class="material-symbols-outlined text-[36px]">check_circle</span>
+            </div>
+            <h3 class="font-headline-md text-on-surface">Transmission Dispatched</h3>
+            <p class="font-body-md text-on-surface-variant max-w-sm">
+              Thank you for reaching out to ZoeWave Enterprises. Our strategic partnerships team and R&amp;D desk will review your inquiry promptly.
+            </p>
+            <div class="flex items-center gap-3 pt-4">
+              <button type="button" 
+                      (click)="resetForm()"
+                      class="px-5 py-2.5 rounded-xl bg-[#f2f3ff] hover:bg-[#eaedff] text-on-surface font-label-md transition-colors cursor-pointer">
+                Send Another Note
+              </button>
+              <button type="button" 
+                      (click)="close()"
+                      class="px-6 py-2.5 rounded-xl bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-md shadow-md transition-all cursor-pointer">
+                Return to Site
+              </button>
+            </div>
+          </div>
+        } @else {
+          <form [formGroup]="contactForm" (ngSubmit)="submit()" class="flex flex-col gap-4">
+            @if (errorMessage()) {
+              <div class="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">error</span>
+                <span>{{ errorMessage() }}</span>
+              </div>
+            }
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-name" class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
+                  Your Full Name <span class="text-red-500">*</span>
+                </label>
+                <input id="contact-name" 
+                       type="text" 
+                       formControlName="name"
+                       placeholder="e.g. Elena Rostova" 
+                       class="px-3.5 py-2.5 rounded-lg border border-[#bfc7d5]/60 bg-white text-on-surface text-sm focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all" />
+              </div>
+
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-email" class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
+                  Email Address <span class="text-red-500">*</span>
+                </label>
+                <input id="contact-email" 
+                       type="email" 
+                       formControlName="email"
+                       placeholder="e.g. elena@partner.com" 
+                       class="px-3.5 py-2.5 rounded-lg border border-[#bfc7d5]/60 bg-white text-on-surface text-sm focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-org" class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
+                  Organization / Entity
+                </label>
+                <input id="contact-org" 
+                       type="text" 
+                       formControlName="organization"
+                       placeholder="e.g. Deep Tech Capital / Lab" 
+                       class="px-3.5 py-2.5 rounded-lg border border-[#bfc7d5]/60 bg-white text-on-surface text-sm focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all" />
+              </div>
+
+              <div class="flex flex-col gap-1.5">
+                <label for="contact-topic" class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
+                  Area of Interest
+                </label>
+                <select id="contact-topic" 
+                        formControlName="topic"
+                        class="px-3.5 py-2.5 rounded-lg border border-[#bfc7d5]/60 bg-white text-on-surface text-sm focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all">
+                  <option value="R&D Collaboration">R&amp;D Collaboration @ YLabZ</option>
+                  <option value="Product Design">Design &amp; Prototyping @ G.N.Seven</option>
+                  <option value="Venture Partnership">Venture / Strategic Investment</option>
+                  <option value="Media & Speaking">Speaking &amp; Thought Leadership</option>
+                  <option value="General Inquiry">General Executive Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1.5">
+              <label for="contact-msg" class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">
+                Project Scope / Message <span class="text-red-500">*</span>
+              </label>
+              <textarea id="contact-msg" 
+                        rows="4" 
+                        formControlName="message"
+                        placeholder="Detail your inquiry, proposed deep-tech synergy, or engineering challenge..." 
+                        class="px-3.5 py-2.5 rounded-lg border border-[#bfc7d5]/60 bg-white text-on-surface text-sm focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all"></textarea>
+            </div>
+
+            <div class="pt-2 flex items-center justify-end gap-3">
+              <button type="button" 
+                      (click)="close()"
+                      class="px-5 py-2.5 rounded-xl text-on-surface-variant hover:bg-[#eaedff] font-label-md transition-colors cursor-pointer">
+                Cancel
+              </button>
+              <button type="submit" 
+                      [disabled]="isSubmitting()"
+                      class="px-6 py-2.5 rounded-xl bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-md shadow-md transition-all flex items-center gap-2 disabled:opacity-50 cursor-pointer">
+                @if (isSubmitting()) {
+                  <span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                  <span>Transmitting...</span>
+                } @else {
+                  <span class="material-symbols-outlined text-[18px]">send</span>
+                  <span>Submit Message</span>
+                }
+              </button>
+            </div>
+          </form>
+        }
+      </div>
+    </div>
+  </div>
+}

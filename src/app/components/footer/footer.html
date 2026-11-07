@@ -1,0 +1,81 @@
+<footer class="w-full bg-[#131b2e] text-[#faf8ff] border-t border-[#3f4753]/30 pt-16 pb-12 mt-auto">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-12 border-b border-[#3f4753]/40">
+      <!-- Brand & Mission Column (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary shadow-md">
+            <span class="font-headline-sm font-bold text-[#0061a5]">Z</span>
+          </div>
+          <div>
+            <div class="font-headline-sm tracking-tight text-white font-bold">ZoeWave Enterprises</div>
+            <div class="font-label-sm text-[#0099ff] uppercase tracking-widest font-bold">Life • Water • Fire • Synth</div>
+          </div>
+        </div>
+        <p class="font-body-md text-[#d2d9f4] max-w-md leading-relaxed">
+          Overseeing the strategic development and technological architecture of breakthrough companies in artificial intelligence, robotics, biosensors, spatial computing, and clean e-mobility.
+        </p>
+        <div class="flex items-center gap-3 pt-2">
+          <button type="button" 
+                  (click)="openContact()"
+                  class="px-5 py-2 rounded-lg bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-md transition-all shadow-md flex items-center gap-2 cursor-pointer">
+            <span class="material-symbols-outlined text-sm">mail</span>
+            Contact Executive Office
+          </button>
+          <a routerLink="/believe" class="px-4 py-2 rounded-lg bg-[#283044] hover:bg-[#3f4753] text-[#faf8ff] font-label-md transition-colors">
+            Manifesto
+          </a>
+        </div>
+      </div>
+
+      <!-- Core R&D Links (3 cols) -->
+      <div class="lg:col-span-3 flex flex-col gap-3">
+        <span class="font-label-sm text-[#9fcaff] uppercase tracking-wider font-bold">R&amp;D Engines</span>
+        <ul class="flex flex-col gap-2 font-body-sm text-[#d2d9f4]">
+          <li><a href="https://www.ylabz.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5"><span class="text-[#0099ff]">■</span> YLabZ — Deep Experimental Lab</a></li>
+          <li><a href="https://www.gnseven.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5"><span class="text-[#0099ff]">■</span> G.N.Seven — Technology Design Studio</a></li>
+          <li><a routerLink="/projects" class="hover:text-white transition-colors flex items-center gap-1.5"><span class="text-[#8589ff]">■</span> Health ML &amp; Pharmacometrics</a></li>
+          <li><a routerLink="/projects" class="hover:text-white transition-colors flex items-center gap-1.5"><span class="text-[#8589ff]">■</span> Autonomous Robotics &amp; Firefly</a></li>
+          <li><a routerLink="/projects" class="hover:text-white transition-colors flex items-center gap-1.5"><span class="text-[#8589ff]">■</span> Computer Vision &amp; FAPA</a></li>
+        </ul>
+      </div>
+
+      <!-- Portfolio Ventures (2 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-3">
+        <span class="font-label-sm text-[#9fcaff] uppercase tracking-wider font-bold">Frontier Ventures</span>
+        <ul class="flex flex-col gap-2 font-body-sm text-[#d2d9f4]">
+          <li><a href="https://www.hummingbirdfuel.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Hummingbird Fuel</a></li>
+          <li><a href="http://www.ashbike.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">AshBike</a></li>
+          <li><a href="http://www.rxdigita.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">RxDigita</a></li>
+          <li><a href="http://www.zoeware.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">ZoeWare</a></li>
+          <li><a href="http://www.zoerobo.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">ZoeRobo</a></li>
+          <li><a href="http://www.swiftaiad.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Swift AI Ad</a></li>
+        </ul>
+      </div>
+
+      <!-- Leadership & External Dossier (2 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-3">
+        <span class="font-label-sm text-[#9fcaff] uppercase tracking-wider font-bold">Leadership</span>
+        <ul class="flex flex-col gap-2 font-body-sm text-[#d2d9f4]">
+          <li><a routerLink="/people/ash" class="hover:text-white transition-colors font-semibold text-white">Siamak "Ash" Ashrafi</a></li>
+          <li><a href="https://sessionize.com/Ash/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Sessionize Talks</a></li>
+          <li><a href="https://zoewave.medium.com/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Medium Essays</a></li>
+          <li><a href="https://play.google.com/store/apps/developer?id=YLabZ" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Google Play Apps</a></li>
+          <li><a href="https://shorturl.at/ejyAJ" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Resume Ledger</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#bfc7d5]">
+      <div>
+        © 2026 ZoeWave Enterprises. All rights reserved. Redesign of <a href="http://www.zoewave.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">www.zoewave.com</a>.
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#0099ff] animate-pulse"></span> Systems Active</span>
+        <span>Space Grotesk &amp; Inter Typography</span>
+        <span>Luminous Quantum System</span>
+      </div>
+    </div>
+  </div>
+</footer>

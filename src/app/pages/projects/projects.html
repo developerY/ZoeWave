@@ -1,0 +1,298 @@
+<div class="flex flex-col w-full">
+  <!-- Top Hero Header: Precision Typography & Editorial Thesis -->
+  <section class="relative w-full overflow-hidden pb-12 pt-8 bg-white border-b border-[#bfc7d5]/30">
+    <!-- Subtle Prismatic Glow Accent -->
+    <div class="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-[#0099ff]/20 via-[#8589ff]/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-gradient-to-tr from-[#dae2fd]/40 to-transparent blur-2xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#bfc7d5]/30 pb-12">
+        <div class="max-w-4xl flex flex-col gap-2">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg font-label-sm bg-[#d2e4ff] text-[#00497e] uppercase tracking-widest font-bold">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#0099ff] animate-pulse"></span>
+              R&amp;D Repository • ZoeWave Systems
+            </span>
+            <span class="font-label-sm text-on-surface-variant uppercase tracking-widest hidden sm:inline-block">/ 2018—2025 Ledger</span>
+          </div>
+          <h1 class="font-display-hero text-3xl sm:text-5xl text-on-surface tracking-tight font-bold">
+            Physical Intelligence, <br class="hidden sm:inline"/>
+            <span class="bg-gradient-to-r from-primary via-[#0099ff] to-tertiary bg-clip-text text-transparent">ML Telemetry</span> &amp; Rapid Iterations.
+          </h1>
+          <p class="font-body-lg text-on-surface-variant leading-relaxed max-w-3xl mt-1">
+            With a strong background in health ML on mobile / wearable platforms, and expertise in design, prototyping, building, and deploying with lightning-fast iterations.
+          </p>
+        </div>
+
+        <!-- Telemetry Spec Metrics Pod -->
+        <div class="flex flex-wrap lg:flex-nowrap items-center gap-6 bg-[#faf8ff] p-5 rounded-2xl border border-[#0099ff]/15 shadow-sm self-start lg:self-auto">
+          <div class="flex flex-col pr-6 border-r border-[#bfc7d5]/30">
+            <span class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Active Platforms</span>
+            <span class="font-headline-md text-primary font-bold">14+</span>
+          </div>
+          <div class="flex flex-col pr-6 border-r border-[#bfc7d5]/30">
+            <span class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Domain Stack</span>
+            <span class="font-headline-md text-tertiary font-bold">WearOS • CV</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Engineering Cycles</span>
+            <span class="font-headline-md text-on-surface font-bold">&lt; 48 Hrs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Domain Navigation Filter Pods & Search -->
+      <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 pt-8">
+        <div class="flex flex-wrap items-center gap-2" role="tablist" aria-label="Project categories">
+          <button type="button" 
+                  (click)="setCategory('all')" 
+                  [class.bg-primary]="selectedCategory() === 'all'"
+                  [class.text-white]="selectedCategory() === 'all'"
+                  [class.bg-[#eaedff]]="selectedCategory() !== 'all'"
+                  [class.text-on-surface-variant]="selectedCategory() !== 'all'"
+                  class="px-4 py-2 rounded-lg font-label-md transition-all shadow-xs cursor-pointer">
+            All Projects (14)
+          </button>
+          <button type="button" 
+                  (click)="setCategory('health')" 
+                  [class.bg-primary]="selectedCategory() === 'health'"
+                  [class.text-white]="selectedCategory() === 'health'"
+                  [class.bg-[#eaedff]]="selectedCategory() !== 'health'"
+                  [class.text-on-surface-variant]="selectedCategory() !== 'health'"
+                  class="px-4 py-2 rounded-lg font-label-md transition-all shadow-xs cursor-pointer">
+            Health &amp; Wearable ML
+          </button>
+          <button type="button" 
+                  (click)="setCategory('robotics')" 
+                  [class.bg-primary]="selectedCategory() === 'robotics'"
+                  [class.text-white]="selectedCategory() === 'robotics'"
+                  [class.bg-[#eaedff]]="selectedCategory() !== 'robotics'"
+                  [class.text-on-surface-variant]="selectedCategory() !== 'robotics'"
+                  class="px-4 py-2 rounded-lg font-label-md transition-all shadow-xs cursor-pointer">
+            Robotics &amp; Autonomous
+          </button>
+          <button type="button" 
+                  (click)="setCategory('vision')" 
+                  [class.bg-primary]="selectedCategory() === 'vision'"
+                  [class.text-white]="selectedCategory() === 'vision'"
+                  [class.bg-[#eaedff]]="selectedCategory() !== 'vision'"
+                  [class.text-on-surface-variant]="selectedCategory() !== 'vision'"
+                  class="px-4 py-2 rounded-lg font-label-md transition-all shadow-xs cursor-pointer">
+            Computer Vision &amp; Smart Home
+          </button>
+          <button type="button" 
+                  (click)="setCategory('gnseven')" 
+                  [class.bg-primary]="selectedCategory() === 'gnseven'"
+                  [class.text-white]="selectedCategory() === 'gnseven'"
+                  [class.bg-[#eaedff]]="selectedCategory() !== 'gnseven'"
+                  [class.text-on-surface-variant]="selectedCategory() !== 'gnseven'"
+                  class="px-4 py-2 rounded-lg font-label-md transition-all shadow-xs cursor-pointer">
+            G.N.Seven Mobile Suite
+          </button>
+        </div>
+
+        <div class="relative w-full md:w-64">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#707884] text-[20px]">search</span>
+          <input type="text" 
+                 placeholder="Search projects &amp; algorithms..." 
+                 (input)="onSearch($event)"
+                 class="w-full pl-10 pr-4 py-2 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/50 text-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-[#0099ff] focus:ring-2 focus:ring-[#0099ff]/20 transition-all" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Flagship Deep-Tech Ventures & Hardware Autonomous Initiatives -->
+  @if (flagshipProjects().length > 0) {
+    <section class="w-full py-16 bg-[#faf8ff] border-b border-[#bfc7d5]/20">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Deep Tech Portfolio</span>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight">Pioneering Hardware, Autonomous &amp; Health ML</h2>
+          </div>
+          <span class="hidden md:inline-flex items-center gap-1 font-label-sm text-on-surface-variant font-bold">
+            INDEX: 01 — 07
+          </span>
+        </div>
+
+        <!-- Bento Grid for Core Flagship Projects -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+          @for (proj of flagshipProjects(); track proj.id) {
+            <!-- Col-span assignment for interesting bento hierarchy -->
+            <article [class.lg:col-span-7]="proj.id === 'hummingbird-fuel' || proj.id === 'fapa'"
+                     [class.lg:col-span-5]="proj.id !== 'hummingbird-fuel' && proj.id !== 'fapa'"
+                     class="flex flex-col justify-between bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-[#bfc7d5]/30 group">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-lg font-label-sm bg-[#d2e4ff] text-[#00497e] uppercase tracking-wider font-bold">
+                      {{ proj.categoryLabel }}
+                    </span>
+                    @if (proj.statusBadge) {
+                      <span class="px-2.5 py-1 rounded-lg font-label-sm bg-[#f2f3ff] text-on-surface-variant font-medium">
+                        {{ proj.statusBadge }}
+                      </span>
+                    }
+                  </div>
+                  <span class="w-3 h-3 rounded-full bg-[#0099ff] shadow-[0_0_12px_rgba(0,153,255,0.5)]"></span>
+                </div>
+
+                <div>
+                  <h3 class="font-headline-md text-on-surface font-bold group-hover:text-primary transition-colors">
+                    {{ proj.title }}
+                  </h3>
+                  <span class="font-label-sm text-primary font-bold block mt-0.5">{{ proj.tagline }}</span>
+                  <p class="font-body-md text-on-surface-variant mt-2 leading-relaxed">
+                    {{ proj.description }}
+                  </p>
+                </div>
+
+                <!-- Interactive PK Simulation Visual for Hummingbird Fuel -->
+                @if (proj.id === 'hummingbird-fuel') {
+                  <div class="p-4 bg-[#f2f3ff] rounded-xl border border-[#bfc7d5]/30 flex flex-col gap-3">
+                    <div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+                      <span class="font-label-sm uppercase tracking-wider font-bold text-primary">Active Absorption Curve Simulation</span>
+                      <div class="flex items-center gap-2">
+                        <button type="button" (click)="setDose(50)" [class.font-bold]="selectedDoseMg() === 50" class="text-xs px-2 py-0.5 rounded bg-white cursor-pointer">50mg</button>
+                        <button type="button" (click)="setDose(100)" [class.font-bold]="selectedDoseMg() === 100" class="text-xs px-2 py-0.5 rounded bg-white cursor-pointer">100mg</button>
+                        <button type="button" (click)="setDose(200)" [class.font-bold]="selectedDoseMg() === 200" class="text-xs px-2 py-0.5 rounded bg-white cursor-pointer">200mg</button>
+                      </div>
+                    </div>
+                    <div class="w-full h-20 flex items-end gap-1.5 pt-2">
+                      @for (val of pkCurve(); track $index) {
+                        <div class="flex-1 bg-gradient-to-t from-primary to-[#0099ff] rounded-t transition-all duration-300" 
+                             [style.height.%]="(val / (selectedDoseMg() * 0.9)) * 100" 
+                             [title]="'Time point ' + $index + ': ' + val + ' mg/L'"></div>
+                      }
+                    </div>
+                    <div class="flex items-center justify-between text-[11px] text-on-surface-variant font-mono">
+                      <span>0h (Ingestion)</span>
+                      <span>2h (Peak Cmax)</span>
+                      <span>4.2h (Half-Life)</span>
+                      <span>12h (Clearance)</span>
+                    </div>
+                  </div>
+                }
+
+                @if (proj.highlightMetric) {
+                  <div class="px-3 py-1.5 rounded-lg bg-[#faf8ff] border border-[#bfc7d5]/20 flex items-center justify-between text-xs">
+                    <span class="text-on-surface-variant font-medium">Algorithmic Benchmark:</span>
+                    <span class="text-primary font-bold">{{ proj.highlightMetric }}</span>
+                  </div>
+                }
+              </div>
+
+              <div class="pt-4 flex flex-wrap items-center justify-between gap-3 mt-6 border-t border-[#bfc7d5]/20">
+                <span class="font-label-sm text-on-surface-variant uppercase tracking-wider">{{ proj.platform }}</span>
+                <div class="flex items-center gap-3">
+                  @if (proj.url) {
+                    <a [href]="proj.url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-label-md bg-[#0099ff] text-white hover:bg-[#0061a5] transition-all shadow-sm">
+                      <span>Website</span>
+                      <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                    </a>
+                  }
+                  @if (proj.articleUrl && proj.articleUrl !== proj.url) {
+                    <a [href]="proj.articleUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg font-label-md bg-[#eaedff] text-primary hover:bg-[#dae2fd] transition-colors">
+                      <span>Medium Article</span>
+                      <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                    </a>
+                  }
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- Section 2: G.N.Seven Mobile Application Suite -->
+  @if (gnsevenProjects().length > 0) {
+    <section class="w-full py-16 bg-white border-b border-[#bfc7d5]/20">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded font-label-sm bg-tertiary text-white font-bold">G.N.SEVEN SUITE</span>
+              <span class="font-label-sm text-tertiary uppercase tracking-widest font-bold">Consumer AI &amp; Wearables</span>
+            </div>
+            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight mt-1">
+              Mobile &amp; WearOS Ecosystem
+            </h2>
+          </div>
+          <p class="font-body-md text-on-surface-variant max-w-md">
+            Engineered by G.N.Seven: intelligent mobile applications leveraging contextual computer vision, Bluetooth Low Energy (BLE), and WearOS glanceable surfaces.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          @for (proj of gnsevenProjects(); track proj.id) {
+            <article class="bg-[#faf8ff] rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all border border-[#bfc7d5]/30 flex flex-col justify-between group">
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <div class="w-10 h-10 rounded-xl bg-[#e1e0ff] text-[#07006c] flex items-center justify-center font-bold">
+                    <span class="material-symbols-outlined text-[22px]">{{ proj.icon }}</span>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full font-label-sm bg-white border border-[#bfc7d5]/30 text-on-surface-variant uppercase text-xs font-bold">
+                    {{ proj.statusBadge }}
+                  </span>
+                </div>
+                <div>
+                  <h3 class="font-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                    {{ proj.title }}
+                  </h3>
+                  <span class="font-label-sm text-tertiary font-bold block mt-0.5">{{ proj.tagline }}</span>
+                </div>
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                  {{ proj.description }}
+                </p>
+              </div>
+
+              <div class="pt-4 mt-6 border-t border-[#bfc7d5]/20 flex items-center justify-between text-xs">
+                <span class="font-label-sm text-on-surface-variant font-bold">{{ proj.platform }}</span>
+                <span class="text-tertiary font-bold">{{ proj.highlightMetric }}</span>
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- App Store Distribution Hub -->
+  <section class="w-full py-16 bg-[#faf8ff]">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      <div class="bg-gradient-to-r from-[#131b2e] to-[#283044] rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex flex-col gap-3 max-w-xl">
+          <span class="font-label-sm text-[#9fcaff] uppercase tracking-widest font-bold">Store Distribution</span>
+          <h2 class="font-headline-lg font-bold text-white leading-tight">
+            Android &amp; iOS App Stores
+          </h2>
+          <p class="font-body-md text-[#d2d9f4] leading-relaxed">
+            Access our published suite of Android, WearOS, and companion fitness applications directly from the official Google Play Store, with iOS &amp; watchOS versions advancing through Apple App Store review.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0">
+          <a href="https://play.google.com/store/apps/developer?id=YLabZ" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="px-6 py-3.5 rounded-xl bg-white hover:bg-[#f2f3ff] text-[#131b2e] font-label-md font-bold transition-all shadow-md flex items-center gap-3">
+            <span class="material-symbols-outlined text-[24px] text-emerald-600">shop</span>
+            <div class="flex flex-col text-left">
+              <span class="text-[10px] text-gray-500 uppercase leading-none">Get it on</span>
+              <span class="text-sm font-bold">Google Play Store</span>
+            </div>
+          </a>
+          <div class="px-6 py-3.5 rounded-xl bg-[#3f4753]/60 border border-white/10 text-white font-label-md flex items-center gap-3">
+            <span class="material-symbols-outlined text-[24px] text-gray-300">devices</span>
+            <div class="flex flex-col text-left">
+              <span class="text-[10px] text-gray-300 uppercase leading-none">Apple Platforms</span>
+              <span class="text-sm font-bold text-gray-200">iOS / watchOS Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

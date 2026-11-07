@@ -1,0 +1,131 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#faf8ff]/85 backdrop-blur-xl border-b border-[#bfc7d5]/30 shadow-[0_1px_8px_rgba(0,153,255,0.06)]">
+  <div class="h-20 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
+    <!-- Brand Logo -->
+    <div class="flex items-center gap-4">
+      <a routerLink="/home" (click)="closeMobileMenu()" class="flex items-center gap-3 group" aria-label="ZoeWave Enterprises Home">
+        <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center border border-[#0099ff]/20 shadow-[0_2px_12px_rgba(0,153,255,0.12)] transition-transform group-hover:scale-105">
+          <span class="font-headline-sm text-primary font-bold">Z</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-sm tracking-tight text-on-surface">ZoeWave</span>
+          <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Enterprises</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center gap-1.5" aria-label="Main Navigation">
+      <a routerLink="/home" 
+         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
+         [routerLinkActiveOptions]="{exact: true}"
+         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+        Home
+      </a>
+      <a routerLink="/companies" 
+         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
+         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+        Companies
+      </a>
+      <a routerLink="/projects" 
+         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
+         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+        Projects
+      </a>
+      <a routerLink="/believe" 
+         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
+         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+        Believe
+      </a>
+      <a routerLink="/people/ash" 
+         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
+         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+        People / Ash
+      </a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3">
+      <!-- Contact Button -->
+      <button type="button" 
+              (click)="openContact()"
+              class="hidden sm:inline-flex items-center justify-center px-5 py-2 font-label-md text-white bg-[#0099ff] hover:bg-[#0061a5] transition-all rounded-lg shadow-[0_0_20px_rgba(0,153,255,0.25)] hover:shadow-[0_0_24px_rgba(0,153,255,0.4)] cursor-pointer">
+        <span class="material-symbols-outlined text-[18px] mr-1.5">mail</span>
+        Contact
+      </button>
+
+      <!-- Ash Profile Avatar link -->
+      <a routerLink="/people/ash" 
+         title="Siamak (Ash) Ashrafi - Executive Dossier"
+         class="hidden md:flex items-center gap-1.5 pl-2 border-l border-[#bfc7d5]/40 hover:opacity-85 transition-opacity">
+        <img alt="Siamak Ashrafi" 
+             class="w-8 h-8 rounded-full object-cover border border-[#0099ff]/30 shadow-sm" 
+             src="https://lh3.googleusercontent.com/aida/AEtjO1UVA44nzFF1RWIGRm-7Vc9ZrDHFXD8qvH5Am4dgv9aj3A5XkP26PW7IPbUfIYgvPV36nxCr9oDB7NQC4TLP8BemBhroanYcwiqaGQuuZv_tpd1dJ9jHHK4lndMrpsdUY3cmwQb9txFouUvyF2P8V2z0NPg6f3ZLoO4qm4QPtS00rwIbMuupaOzxT9d2bFvY8rvR1u8e_C2apqGoBqnH5u1GwMUVsblgZ2EfO-d8ZjsnTw"
+             referrerpolicy="no-referrer" />
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button"
+              (click)="toggleMobileMenu()"
+              class="lg:hidden p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#eaedff] transition-colors cursor-pointer"
+              aria-label="Toggle Navigation Menu">
+        <span class="material-symbols-outlined text-[26px]">
+          @if (mobileMenuOpen()) {
+            close
+          } @else {
+            menu
+          }
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  @if (mobileMenuOpen()) {
+    <div class="lg:hidden bg-[#faf8ff] border-b border-[#bfc7d5]/40 px-6 py-6 flex flex-col gap-3 shadow-xl animate-fadeIn">
+      <a routerLink="/home" 
+         (click)="closeMobileMenu()"
+         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
+         [routerLinkActiveOptions]="{exact: true}"
+         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+        <span>Home</span>
+        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+      </a>
+      <a routerLink="/companies" 
+         (click)="closeMobileMenu()"
+         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
+         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+        <span>Companies</span>
+        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+      </a>
+      <a routerLink="/projects" 
+         (click)="closeMobileMenu()"
+         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
+         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+        <span>Projects</span>
+        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+      </a>
+      <a routerLink="/believe" 
+         (click)="closeMobileMenu()"
+         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
+         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+        <span>Believe (Manifesto)</span>
+        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+      </a>
+      <a routerLink="/people/ash" 
+         (click)="closeMobileMenu()"
+         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
+         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+        <span>People / Ash</span>
+        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+      </a>
+      <div class="pt-2 border-t border-[#bfc7d5]/30">
+        <button type="button" 
+                (click)="openContact()"
+                class="w-full py-3 rounded-xl bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-md flex items-center justify-center gap-2 shadow-md">
+          <span class="material-symbols-outlined text-[20px]">mail</span>
+          Initiate Contact / Joint Ventures
+        </button>
+      </div>
+    </div>
+  }
+</header>
