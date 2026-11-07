@@ -1,0 +1,265 @@
+2026-11-07T21:00:27.896Z	Initializing build environment...
+2026-11-07T21:00:29.112Z	Success: Finished initializing build environment
+2026-11-07T21:00:29.892Z	Cloning repository...
+2026-11-07T21:00:31.355Z	No build output detected to cache. Skipping.
+2026-11-07T21:00:31.355Z	No dependencies detected to cache. Skipping.
+2026-11-07T21:00:31.358Z	Detected the following tools from environment: bun@1.4.4, nodejs@24.22.1
+2026-11-07T21:00:31.360Z	Installing project dependencies: bun install
+2026-11-07T21:00:31.532Z	bun install v1.4.4 (38afee6c8)
+2026-11-07T21:00:31.534Z	Resolving dependencies
+2026-11-07T21:00:34.245Z	Resolved, downloaded and extracted [2703]
+2026-11-07T21:00:34.246Z	warn: deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2026-11-07T21:00:53.224Z	Saved lockfile
+2026-11-07T21:00:53.224Z	
+2026-11-07T21:00:53.225Z	+ @angular/build@21.2.29 (v22.2.6 available)
+2026-11-07T21:00:53.225Z	+ @angular/cli@21.2.29 (v22.2.6 available)
+2026-11-07T21:00:53.225Z	+ @angular/compiler-cli@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.225Z	+ @tailwindcss/postcss@4.3.5
+2026-11-07T21:00:53.225Z	+ @types/express@5.0.6
+2026-11-07T21:00:53.225Z	+ @types/node@20.19.43 (v26.6.6 available)
+2026-11-07T21:00:53.225Z	+ angular-eslint@21.1.0 (v22.6.0 available)
+2026-11-07T21:00:53.226Z	+ cross-env@10.1.0
+2026-11-07T21:00:53.226Z	+ eslint@9.39.5 (v10.14.0 available)
+2026-11-07T21:00:53.226Z	+ jsdom@27.4.0 (v31.0.0 available)
+2026-11-07T21:00:53.226Z	+ postcss@8.5.32
+2026-11-07T21:00:53.226Z	+ tailwindcss@4.3.5
+2026-11-07T21:00:53.226Z	+ typescript@5.9.3 (v7.0.2 available)
+2026-11-07T21:00:53.226Z	+ typescript-eslint@8.47.0 (v8.72.1 available)
+2026-11-07T21:00:53.226Z	+ vitest@4.1.12 (v5.1.0 available)
+2026-11-07T21:00:53.226Z	+ @angular/cdk@21.2.14 (v22.2.6 available)
+2026-11-07T21:00:53.226Z	+ @angular/common@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.226Z	+ @angular/compiler@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.226Z	+ @angular/core@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.227Z	+ @angular/forms@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.227Z	+ @angular/material@21.2.14 (v22.2.6 available)
+2026-11-07T21:00:53.227Z	+ @angular/platform-browser@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.227Z	+ @angular/platform-server@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.227Z	+ @angular/router@21.2.26 (v22.2.5 available)
+2026-11-07T21:00:53.227Z	+ @angular/ssr@21.2.29 (v22.2.6 available)
+2026-11-07T21:00:53.227Z	+ @google/genai@2.32.0 (v3.0.0 available)
+2026-11-07T21:00:53.227Z	+ express@5.3.0
+2026-11-07T21:00:53.227Z	+ motion@12.43.0 (v14.10.1 available)
+2026-11-07T21:00:53.227Z	+ rxjs@7.8.2
+2026-11-07T21:00:53.227Z	+ tslib@2.9.1
+2026-11-07T21:00:53.227Z	
+2026-11-07T21:00:53.228Z	630 packages installed [21.72s]
+2026-11-07T21:00:53.228Z	
+2026-11-07T21:00:53.228Z	Blocked 3 postinstalls. Run `bun pm untrusted` for details.
+2026-11-07T21:00:53.376Z	Executing user build command: npm run build
+2026-11-07T21:00:56.776Z	
+2026-11-07T21:00:56.776Z	> ai-studio-angular-app@0.0.0 build
+2026-11-07T21:00:56.776Z	> ng build
+2026-11-07T21:00:56.776Z	
+2026-11-07T21:00:57.644Z	❯ Building...
+2026-11-07T21:01:17.027Z	✔ Building...
+2026-11-07T21:01:17.036Z	Browser bundles     
+2026-11-07T21:01:17.036Z	Initial chunk files  | Names            |  Raw size | Estimated transfer size
+2026-11-07T21:01:17.036Z	chunk-HIKKGIUH.js    | -                | 140.41 kB |                41.62 kB
+2026-11-07T21:01:17.036Z	chunk-HUBBGXCU.js    | -                |  93.86 kB |                23.53 kB
+2026-11-07T21:01:17.036Z	styles-F6MDRIXQ.css  | styles           |  77.00 kB |                 9.36 kB
+2026-11-07T21:01:17.036Z	main-Y26RXLPS.js     | main             |  62.80 kB |                13.39 kB
+2026-11-07T21:01:17.036Z	chunk-72VZKYUR.js    | -                |   1.13 kB |               398 bytes
+2026-11-07T21:01:17.036Z	chunk-HLLHP6QK.js    | -                | 446 bytes |               446 bytes
+2026-11-07T21:01:17.036Z	
+2026-11-07T21:01:17.036Z	                     | Initial total    | 375.64 kB |                88.75 kB
+2026-11-07T21:01:17.036Z	
+2026-11-07T21:01:17.036Z	Lazy chunk files     | Names            |  Raw size | Estimated transfer size
+2026-11-07T21:01:17.036Z	chunk-QBUEB7SC.js    | -                |  28.72 kB |                 8.61 kB
+2026-11-07T21:01:17.037Z	chunk-PCKQRDQL.js    | companies        |  27.81 kB |                 5.77 kB
+2026-11-07T21:01:17.037Z	chunk-JAYRV5OY.js    | projects         |  17.34 kB |                 4.33 kB
+2026-11-07T21:01:17.037Z	chunk-ZECRYTLC.js    | home             |  17.27 kB |                 4.43 kB
+2026-11-07T21:01:17.037Z	chunk-N55YDDJF.js    | people-ash       |  16.15 kB |                 3.94 kB
+2026-11-07T21:01:17.037Z	chunk-Q7HGAXRE.js    | believe          |  14.40 kB |                 3.84 kB
+2026-11-07T21:01:17.037Z	
+2026-11-07T21:01:17.037Z	
+2026-11-07T21:01:17.037Z	Server bundles      
+2026-11-07T21:01:17.037Z	Initial chunk files  | Names            |  Raw size
+2026-11-07T21:01:17.037Z	server.mjs           | server           | 818.93 kB |                        
+2026-11-07T21:01:17.037Z	main.server.mjs      | main.server      | 508.00 kB |                        
+2026-11-07T21:01:17.037Z	polyfills.server.mjs | polyfills.server | 235.00 kB |                        
+2026-11-07T21:01:17.038Z	chunk-IKO2H5SW.mjs   | -                | 161.23 kB |                        
+2026-11-07T21:01:17.038Z	chunk-XJSMPWA6.mjs   | -                |  94.56 kB |                        
+2026-11-07T21:01:17.038Z	chunk-ITOR7NUX.mjs   | -                |   1.38 kB |                        
+2026-11-07T21:01:17.038Z	chunk-GWBOJKDB.mjs   | -                |   1.16 kB |                        
+2026-11-07T21:01:17.039Z	chunk-KYQQYI4M.mjs   | -                |   1.01 kB |                        
+2026-11-07T21:01:17.039Z	chunk-CJGVXZG5.mjs   | -                | 479 bytes |                        
+2026-11-07T21:01:17.039Z	
+2026-11-07T21:01:17.039Z	Lazy chunk files     | Names            |  Raw size
+2026-11-07T21:01:17.041Z	chunk-NU5AMGAG.mjs   | -                |  28.75 kB |                        
+2026-11-07T21:01:17.042Z	chunk-LVLIQNRC.mjs   | companies        |  27.88 kB |                        
+2026-11-07T21:01:17.042Z	chunk-DMZHN62I.mjs   | projects         |  17.41 kB |                        
+2026-11-07T21:01:17.042Z	chunk-HWUZPZOL.mjs   | home             |  17.34 kB |                        
+2026-11-07T21:01:17.043Z	chunk-WHKADIOZ.mjs   | people-ash       |  16.21 kB |                        
+2026-11-07T21:01:17.043Z	chunk-TOCIJCF6.mjs   | believe          |  14.46 kB |                        
+2026-11-07T21:01:17.043Z	chunk-KUERU4XA.mjs   | xhr2             |  12.17 kB |                        
+2026-11-07T21:01:17.043Z	chunk-LYHAGGDF.mjs   | xhr2             |  12.07 kB |                        
+2026-11-07T21:01:17.043Z	
+2026-11-07T21:01:17.043Z	Prerendered 7 static routes.
+2026-11-07T21:01:17.043Z	Application bundle generation complete. [19.382 seconds] - 2026-11-07T21:01:17.026Z
+2026-11-07T21:01:17.043Z	
+2026-11-07T21:01:17.045Z	Output location: /opt/buildhome/repo/dist/app
+2026-11-07T21:01:17.045Z	
+2026-11-07T21:01:17.630Z	Success: Build command completed
+2026-11-07T21:01:17.829Z	Executing user deploy command: npx wrangler deploy
+2026-11-07T21:01:19.442Z	npm warn exec The following package was not found and will be installed: wrangler@4.158.0
+2026-11-07T21:01:30.746Z	
+2026-11-07T21:01:30.747Z	 ⛅️ wrangler 4.158.0
+2026-11-07T21:01:30.747Z	────────────────────
+2026-11-07T21:01:30.841Z	
+2026-11-07T21:01:30.841Z	Detected Project Settings:
+2026-11-07T21:01:30.841Z	 - Worker Name: zoewave
+2026-11-07T21:01:30.841Z	 - Framework: Angular
+2026-11-07T21:01:30.841Z	 - Build Command: bun run build
+2026-11-07T21:01:30.841Z	 - Output Directory: dist/
+2026-11-07T21:01:30.841Z	
+2026-11-07T21:01:30.841Z	? Do you want to modify these settings?
+2026-11-07T21:01:30.842Z	🤖 Using fallback value in non-interactive context: no
+2026-11-07T21:01:30.855Z	
+2026-11-07T21:01:30.864Z	📦 Install packages:
+2026-11-07T21:01:30.864Z	 - wrangler (devDependency)
+2026-11-07T21:01:30.866Z	
+2026-11-07T21:01:30.867Z	📝 Update package.json scripts:
+2026-11-07T21:01:30.867Z	 - "deploy": "bun run build && wrangler deploy"
+2026-11-07T21:01:30.867Z	 - "preview": "bun run build && wrangler dev"
+2026-11-07T21:01:30.867Z	
+2026-11-07T21:01:30.868Z	📄 Create wrangler.jsonc:
+2026-11-07T21:01:30.868Z	  {
+2026-11-07T21:01:30.868Z	    "$schema": "node_modules/wrangler/config-schema.json",
+2026-11-07T21:01:30.868Z	    "name": "zoewave",
+2026-11-07T21:01:30.868Z	    "compatibility_date": "2026-11-04",
+2026-11-07T21:01:30.868Z	    "observability": {
+2026-11-07T21:01:30.868Z	      "enabled": true
+2026-11-07T21:01:30.868Z	    },
+2026-11-07T21:01:30.868Z	    "assets": {
+2026-11-07T21:01:30.868Z	      "directory": "dist/"
+2026-11-07T21:01:30.868Z	    }
+2026-11-07T21:01:30.868Z	  }
+2026-11-07T21:01:30.868Z	
+2026-11-07T21:01:30.868Z	🛠️  Configuring Angular SPA project (assets only)
+2026-11-07T21:01:30.868Z	
+2026-11-07T21:01:30.868Z	? Proceed with setup?
+2026-11-07T21:01:30.868Z	🤖 Using fallback value in non-interactive context: yes
+2026-11-07T21:01:32.548Z	├ Adding Wrangler files to the .gitignore file
+2026-11-07T21:01:32.549Z	│ updated .gitignore file
+2026-11-07T21:01:32.549Z	│
+2026-11-07T21:01:32.549Z	[build] Running: bun run build
+2026-11-07T21:01:32.648Z	[build] $ ng build
+2026-11-07T21:01:32.648Z	[build] 
+2026-11-07T21:01:33.366Z	[build] ❯ Building...
+2026-11-07T21:01:33.367Z	[build] 
+2026-11-07T21:01:51.937Z	[build] ✔ Building...
+2026-11-07T21:01:51.937Z	[build] 
+2026-11-07T21:01:51.944Z	[build] Browser bundles     
+2026-11-07T21:01:51.944Z	[build] Initial chunk files  | Names            |  Raw size | Estimated transfer size
+2026-11-07T21:01:51.944Z	[build] chunk-HIKKGIUH.js    | -                | 140.41 kB |                41.62 kB
+2026-11-07T21:01:51.944Z	[build] chunk-HUBBGXCU.js    | -                |  93.86 kB |                23.53 kB
+2026-11-07T21:01:51.945Z	[build] styles-F6MDRIXQ.css  | styles           |  77.00 kB |                 9.36 kB
+2026-11-07T21:01:51.945Z	[build] main-Y26RXLPS.js     | main             |  62.80 kB |                13.39 kB
+2026-11-07T21:01:51.946Z	[build] chunk-72VZKYUR.js    | -                |   1.13 kB |               398 bytes
+2026-11-07T21:01:51.946Z	[build] chunk-HLLHP6QK.js    | -                | 446 bytes |               446 bytes
+2026-11-07T21:01:51.946Z	[build] 
+2026-11-07T21:01:51.946Z	[build]                      | Initial total    | 375.64 kB |                88.75 kB
+2026-11-07T21:01:51.946Z	[build] 
+2026-11-07T21:01:51.946Z	[build] Lazy chunk files     | Names            |  Raw size | Estimated transfer size
+2026-11-07T21:01:51.946Z	[build] chunk-QBUEB7SC.js    | -                |  28.72 kB |                 8.61 kB
+2026-11-07T21:01:51.946Z	[build] chunk-PCKQRDQL.js    | companies        |  27.81 kB |                 5.77 kB
+2026-11-07T21:01:51.946Z	[build] chunk-JAYRV5OY.js    | projects         |  17.34 kB |                 4.33 kB
+2026-11-07T21:01:51.946Z	[build] chunk-ZECRYTLC.js    | home             |  17.27 kB |                 4.43 kB
+2026-11-07T21:01:51.946Z	[build] chunk-N55YDDJF.js    | people-ash       |  16.15 kB |                 3.94 kB
+2026-11-07T21:01:51.946Z	[build] chunk-Q7HGAXRE.js    | believe          |  14.40 kB |                 3.84 kB
+2026-11-07T21:01:51.946Z	[build] 
+2026-11-07T21:01:51.946Z	[build] 
+2026-11-07T21:01:51.946Z	[build] Server bundles      
+2026-11-07T21:01:51.946Z	[build] Initial chunk files  | Names            |  Raw size
+2026-11-07T21:01:51.946Z	[build] server.mjs           | server           | 818.93 kB |                        
+2026-11-07T21:01:51.946Z	[build] main.server.mjs      | main.server      | 508.00 kB |                        
+2026-11-07T21:01:51.946Z	[build] polyfills.server.mjs | polyfills.server | 235.00 kB |                        
+2026-11-07T21:01:51.946Z	[build] chunk-IKO2H5SW.mjs   | -                | 161.23 kB |                        
+2026-11-07T21:01:51.946Z	[build] chunk-XJSMPWA6.mjs   | -                |  94.56 kB |                        
+2026-11-07T21:01:51.946Z	[build] chunk-ITOR7NUX.mjs   | -                |   1.38 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-GWBOJKDB.mjs   | -                |   1.16 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-KYQQYI4M.mjs   | -                |   1.01 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-CJGVXZG5.mjs   | -                | 479 bytes |                        
+2026-11-07T21:01:51.948Z	[build] 
+2026-11-07T21:01:51.948Z	[build] Lazy chunk files     | Names            |  Raw size
+2026-11-07T21:01:51.948Z	[build] chunk-NU5AMGAG.mjs   | -                |  28.75 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-LVLIQNRC.mjs   | companies        |  27.88 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-DMZHN62I.mjs   | projects         |  17.41 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-HWUZPZOL.mjs   | home             |  17.34 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-WHKADIOZ.mjs   | people-ash       |  16.21 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-TOCIJCF6.mjs   | believe          |  14.46 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-KUERU4XA.mjs   | xhr2             |  12.17 kB |                        
+2026-11-07T21:01:51.948Z	[build] chunk-LYHAGGDF.mjs   | xhr2             |  12.07 kB |                        
+2026-11-07T21:01:51.948Z	[build] 
+2026-11-07T21:01:51.948Z	[build] Prerendered 7 static routes.
+2026-11-07T21:01:51.950Z	[build] Application bundle generation complete. [18.570 seconds] - 2026-11-07T21:01:51.935Z
+2026-11-07T21:01:51.950Z	[build] 
+2026-11-07T21:01:51.950Z	[build] 
+2026-11-07T21:01:51.969Z	[build] Output location: /opt/buildhome/repo/dist/app
+2026-11-07T21:01:51.969Z	[build] 
+2026-11-07T21:01:51.969Z	[build] 
+2026-11-07T21:01:52.950Z	🌀 Building list of assets...
+2026-11-07T21:01:52.953Z	✨ Read 78 files from the assets directory /opt/buildhome/repo/dist
+2026-11-07T21:01:53.038Z	🌀 Starting asset upload...
+2026-11-07T21:01:53.934Z	🌀 Found 43 new or modified static assets to upload. Proceeding with upload...
+2026-11-07T21:01:53.934Z	+ /app/server/angular-app-manifest.mjs
+2026-11-07T21:01:53.935Z	+ /app/browser/chunk-N55YDDJF.js
+2026-11-07T21:01:53.935Z	+ /app/server/assets-chunks/index_server_html.mjs
+2026-11-07T21:01:53.935Z	+ /app/browser/chunk-JAYRV5OY.js
+2026-11-07T21:01:53.935Z	+ /app/browser/index.csr.html
+2026-11-07T21:01:53.935Z	+ /app/server/chunk-LVLIQNRC.mjs
+2026-11-07T21:01:53.935Z	+ /app/server/chunk-NU5AMGAG.mjs
+2026-11-07T21:01:53.935Z	+ /app/browser/assets/images/ylabz-core.jpg
+2026-11-07T21:01:53.935Z	+ /app/browser/people/ash/index.html
+2026-11-07T21:01:53.935Z	+ /app/server/assets-chunks/styles-F6MDRIXQ_css.mjs
+2026-11-07T21:01:53.935Z	+ /app/browser/home/index.html
+2026-11-07T21:01:53.935Z	+ /app/server/assets-chunks/projects_index_html.mjs
+2026-11-07T21:01:53.935Z	+ /app/server/main.server.mjs
+2026-11-07T21:01:53.935Z	+ /app/browser/assets/images/drunkwatch.jpg
+2026-11-07T21:01:53.935Z	+ /app/browser/assets/images/ash-avatar.jpg
+2026-11-07T21:01:53.937Z	+ /app/browser/chunk-Q7HGAXRE.js
+2026-11-07T21:01:53.937Z	+ /app/server/chunk-WHKADIOZ.mjs
+2026-11-07T21:01:53.937Z	+ /app/browser/chunk-ZECRYTLC.js
+2026-11-07T21:01:53.937Z	+ /app/server/chunk-DMZHN62I.mjs
+2026-11-07T21:01:53.937Z	+ /app/server/assets-chunks/index_csr_html.mjs
+2026-11-07T21:01:53.937Z	+ /app/browser/assets/images/zoeware.jpg
+2026-11-07T21:01:53.937Z	+ /app/browser/assets/images/ashbike.jpg
+2026-11-07T21:01:53.937Z	+ /app/browser/assets/images/gnseven-core.jpg
+2026-11-07T21:01:53.937Z	+ /app/server/assets-chunks/people_ash_index_html.mjs
+2026-11-07T21:01:53.937Z	+ /app/browser/believe/index.html
+2026-11-07T21:01:53.937Z	+ /app/server/assets-chunks/home_index_html.mjs
+2026-11-07T21:01:53.937Z	+ /app/browser/companies/index.html
+2026-11-07T21:01:53.939Z	+ /app/browser/assets/images/firefly-drone.jpg
+2026-11-07T21:01:53.939Z	+ /app/browser/assets/images/zoerobo.jpg
+2026-11-07T21:01:53.940Z	+ /app/server/chunk-TOCIJCF6.mjs
+2026-11-07T21:01:53.940Z	+ /app/server/index.server.html
+2026-11-07T21:01:53.940Z	+ /app/server/chunk-HWUZPZOL.mjs
+2026-11-07T21:01:53.940Z	+ /app/browser/assets/images/zoewear.jpg
+2026-11-07T21:01:53.940Z	+ /app/browser/chunk-PCKQRDQL.js
+2026-11-07T21:01:53.940Z	+ /app/browser/chunk-QBUEB7SC.js
+2026-11-07T21:01:53.940Z	+ /app/browser/assets/images/ash-portrait.jpg
+2026-11-07T21:01:53.940Z	+ /app/browser/main-Y26RXLPS.js
+2026-11-07T21:01:53.941Z	+ /app/browser/styles-F6MDRIXQ.css
+2026-11-07T21:01:53.941Z	+ /app/server/assets-chunks/believe_index_html.mjs
+2026-11-07T21:01:53.941Z	+ /app/browser/projects/index.html
+2026-11-07T21:01:53.941Z	+ /app/server/assets-chunks/companies_index_html.mjs
+2026-11-07T21:01:53.941Z	+ /app/browser/assets/images/hummingbird-fuel.jpg
+2026-11-07T21:01:53.941Z	+ /app/browser/assets/images/lego-car.jpg
+2026-11-07T21:01:55.648Z	Uploaded 14 of 43 assets
+2026-11-07T21:01:55.664Z	Uploaded 28 of 43 assets
+2026-11-07T21:01:56.305Z	Uploaded 43 of 43 assets
+2026-11-07T21:01:56.305Z	✨ Success! Uploaded 43 files (22 already uploaded) (2.37 sec)
+2026-11-07T21:01:56.305Z	
+2026-11-07T21:01:56.333Z	Total Upload: 0.33 KiB / gzip: 0.24 KiB
+2026-11-07T21:01:57.548Z	Uploaded zoewave (4.73 sec)
+2026-11-07T21:01:58.003Z	Deployed zoewave triggers (0.45 sec)
+2026-11-07T21:01:58.003Z	  https://zoewave.biologica.workers.dev
+2026-11-07T21:01:58.003Z	Current Version ID: 2058cbf5-afb4-417f-811e-9fc168fde73a
+2026-11-07T21:01:58.004Z	
+2026-11-07T21:01:58.005Z	Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2026-11-07T21:01:58.147Z	Success: Deploy command completed
+2026-11-07T21:01:58.151Z	Skipping build output cache as it's not supported for your project
+2026-11-07T21:01:58.154Z	Uploading to dependency cache
+2026-11-07T21:01:58.158Z	No package-lock.json, pnpm-lock.yaml, yarn.lock, bun.lock, or bun.lockb! Build caching not supported
+2026-11-07T21:01:58.162Z	Failed to upload dependencies to build cache. Skipping.
+2026-11-07T21:01:58.955Z	✨ Success! Build completed.
