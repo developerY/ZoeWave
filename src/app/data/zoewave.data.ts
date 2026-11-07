@@ -14,7 +14,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'rnd',
     icon: 'science',
     highlight: 'Foundational Research Vector',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCvjRMqryoD6An5189Tgytjv1YY0mbQvezy3sNcEAXo5NM1qvwARLmaDmoY8XgJlh6-Ul-u5JX3WweCaUTeUjm6tz7OoxVZ8xg4Uwit0H0zixt71uOHpUayWEujZ60P3my9WNUQLTdSJUbCriKrM7ttdda5tKDT2-RX3-FjdlN9LhRw-9UxgacRqohQp30R4GYH5OoAtXRXS0GLdqoTd5oXilWJ0iZdcJhJO8v7ozBn',
+    imageUrl: '/assets/images/ylabz-core.jpg',
     metrics: [
       { label: 'Patents Active', value: '24+' },
       { label: 'Model Precision', value: '99.8%' },
@@ -33,7 +33,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'rnd',
     icon: 'devices',
     highlight: 'Consumer Translation Engine',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAN3n6d_XXwKUXycbGQiZvQ6xxKf-KcNC0BeixxNZQXChpu08YQmf0wobgGgwF1fI2K3TD-MSiU1cx_S8ls7CNxyfSbG5cb9L5HelVbzPTfpLLcUh_aaXTScFEPuGT09d8YW-hnXmhaaIaKr6BHfChZB7tWeNLV38UVz-9av2kz_hn0zkJWR6K7Z0yP4J8FCym6gPXNSB6lqgvG5dzsXCcQHF9SITSRxfs1wX0m2Ego',
+    imageUrl: '/assets/images/gnseven-core.jpg',
     metrics: [
       { label: 'Active Apps', value: '14+' },
       { label: 'Prototypes', value: '50+' },
@@ -54,6 +54,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'health',
     icon: 'medication',
     highlight: 'Caffeine to ADHD Compounds',
+    imageUrl: '/assets/images/hummingbird-fuel.jpg',
     metrics: [
       { label: 'Target Half-Life', value: '4.2h' },
       { label: 'Platform', value: 'iOS / CoreML' },
@@ -90,6 +91,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'spatial',
     icon: 'view_in_ar',
     highlight: 'Spatial Health & 3D Meditation',
+    imageUrl: '/assets/images/zoeware.jpg',
     metrics: [
       { label: 'Engines', value: 'visionOS/XR' },
       { label: 'Sensors', value: 'Biometric 3D' },
@@ -127,6 +129,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'fashion',
     icon: 'checkroom',
     highlight: 'AI-Integrated Biosensor Apparel',
+    imageUrl: '/assets/images/zoewear.jpg',
     metrics: [
       { label: 'Form Factor', value: 'Activewear' },
       { label: 'Telemetry', value: 'ECG / HRV / Temp' }
@@ -144,7 +147,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'mobility',
     icon: 'two_wheeler',
     highlight: 'Motorcycle Chassis with Eco NFTs',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnMcpI1L0zLozdX2Zw4-oVVMjUtJO_ywLqemC724zlxJYkKguAwUyvWC75iUqGFsqnMmWpj3zh4W5xe_0GezR_VTnslXGL36Z-HOxXTSJamxqSoPURbyvqKfpR5x_pgRUx1wwqIPYR8fNIBzga7M9bk6YAyv7JGsKTukInney_l6TAhus0-NMV43xREPnyLtbZURs0sHveJ8UNLG83STJUSk0-jv20E_DkEChuofMi',
+    imageUrl: '/assets/images/ashbike.jpg',
     metrics: [
       { label: 'Chassis', value: 'Motorcycle Grade' },
       { label: 'Range', value: '80+ Miles' },
@@ -165,6 +168,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     category: 'robotics',
     icon: 'smart_toy',
     highlight: 'Edge Perception & Humanoid Motion',
+    imageUrl: '/assets/images/zoerobo.jpg',
     metrics: [
       { label: 'Latency', value: '< 2ms Edge' },
       { label: 'Safety Cert', value: 'SIL-3' }
@@ -265,6 +269,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     simulatedHalfLifeTarget: '4.2h Half-Life Target',
     statusBadge: 'Active Production Beta',
     highlightMetric: 'Batch micro-dosing precision',
+    imageUrl: '/assets/images/hummingbird-fuel.jpg',
     icon: 'medication'
   },
   {
@@ -278,6 +283,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     articleUrl: 'https://zoewave.medium.com/life-saving-watchos-ml-app-c9fde03e79cf',
     statusBadge: 'Patent Awarded',
     highlightMetric: '99.4% Gait Anomaly Detection',
+    imageUrl: '/assets/images/drunkwatch.jpg',
     icon: 'watch'
   },
   {
@@ -291,6 +297,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     articleUrl: 'https://zoewave.medium.com/autonomous-home-security-micro-drone-df989ea02075',
     statusBadge: 'Field Deployed',
     highlightMetric: 'Zero PII Retained',
+    imageUrl: '/assets/images/zoeware.jpg',
     icon: 'face'
   },
   {
@@ -304,6 +311,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     articleUrl: 'https://zoewave.medium.com/self-driving-lego-car-concept-c3a50e72cccc',
     statusBadge: 'Open Research',
     highlightMetric: '30 FPS On-Device Vision',
+    imageUrl: '/assets/images/lego-car.jpg',
     icon: 'toys'
   },
   {
@@ -317,6 +325,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     articleUrl: 'https://zoewave.medium.com/autonomous-home-security-micro-drone-df989ea02075',
     statusBadge: 'Prototype V3',
     highlightMetric: 'Sub-inch Indoor Positioning',
+    imageUrl: '/assets/images/firefly-drone.jpg',
     icon: 'flight'
   },
   {
@@ -330,6 +339,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     url: 'http://www.ashbike.com/',
     statusBadge: 'Fleet Tested',
     highlightMetric: '1,200+ kg CO2 Offset',
+    imageUrl: '/assets/images/ashbike.jpg',
     icon: 'two_wheeler'
   },
   {
@@ -445,7 +455,7 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'By combining the structural robustness of a motorcycle with intuitive AI-driven electric power-assist, AshBike reclaims metropolitan transit from combustion gridlock. Built-in biometrics incentivize active carbon reductions through tokenized sustainability rewards.',
     hypothesis: 'Decarbonization via Peak Thrill',
     status: 'Active Production Beta',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnMcpI1L0zLozdX2Zw4-oVVMjUtJO_ywLqemC724zlxJYkKguAwUyvWC75iUqGFsqnMmWpj3zh4W5xe_0GezR_VTnslXGL36Z-HOxXTSJamxqSoPURbyvqKfpR5x_pgRUx1wwqIPYR8fNIBzga7M9bk6YAyv7JGsKTukInney_l6TAhus0-NMV43xREPnyLtbZURs0sHveJ8UNLG83STJUSk0-jv20E_DkEChuofMi',
+    imageUrl: '/assets/images/ashbike.jpg',
     imageAlt: 'High-tech sleek electric urban motorcycle bicycle hybrid in radiant minimalist showroom with clean lighting, blue reflective accents, architectural minimalism.',
     specOverlay: { tag: 'Motorcycle Chassis • Cycling Freedom', title: 'AI-Adaptive Kinetic Regeneration & NFT Eco-Rewards' },
     badgeColorClass: 'bg-secondary-fixed text-on-secondary-fixed-variant'
@@ -461,7 +471,7 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'Every body metabolizes therapeutic compounds differently. RxDigita replaces one-size-fits-all dosing with adaptive algorithmic pharmacokinetics, optimizing the ADME-Tox curve for maximum curative efficacy without toxicity.',
     hypothesis: 'Pharmacokinetic Precision via Real-time Biometrics',
     status: 'Clinical Dataset Ingestion',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIo30AMPXMq-kFF3dm3Dg6HARRON1LngUnS0o2oVQDwIjg8oJ2mnaZGacELzBUuJOW3Fwu0yyRhFJ1cdGDfM8eOw5hNukvXHC61khZchowVS3PDaap5k-Q59M6HEcJNy3IbPoo8qLde9zuJ6vskT8Yosl-6FaV73t2bokS7fpaS1I50m9KYPAmRuCAkibvo3_cFexB2A1_tOOeFtcYh0VNAoozuyFDgw3hI2caOtxX',
+    imageUrl: '/assets/images/hummingbird-fuel.jpg',
     imageAlt: 'Photorealistic clean pharmaceutical biotechnology laboratory setting with holographic biochemical graphs, glowing cyan DNA helix, pristine glass counter surfaces, bright daylight.',
     specOverlay: { tag: 'Real-time Bio-Adaptive Dosing', title: 'ADME-Tox Computational Modulation' },
     badgeColorClass: 'bg-tertiary-fixed text-on-tertiary-fixed'
@@ -477,7 +487,7 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'Through fully immersive 3D environments responsive to Apple Watch biometric feedback, ZoeWare redefines how humans learn complex physical skills, experience sensory meditation, and maintain cardiovascular endurance without synthetic fatigue.',
     hypothesis: 'Spatial Computing for Human Transcendence',
     status: 'visionOS & Android XR Core',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAxoHOlX-QRM1KRjzBDMTU-1dMd5e9d9mCLtlDi7BsIR64x8UgU-35tWSTKBoWj3iSar-LVi122rZVvHpjrj7s9N-e2cFqy64GJIizeSWTgPws5xDAXJ95yi3GLAY-TXwgccfrtheZ-D6YOuTGSCduqzlS9UGlh4G8N4E5F7Gp7mUh3FTH8-dD2FvoaqyIP7vs10Bl2golMaC0DAgOb-otgFP_SH3g185Y2btCUYbs9',
+    imageUrl: '/assets/images/zoeware.jpg',
     imageAlt: 'Futuristic spatial computing laboratory with luminous curved glass walls, floating 3D volumetric biometric graphs, pristine light white floor, clean blue reflections.',
     specOverlay: { tag: 'Spatial Bio-Immersion', title: 'Sensory Calibration & Kinetic Learning' },
     badgeColorClass: 'bg-primary-fixed text-on-primary-fixed'
@@ -493,6 +503,9 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'Hardware is only effective if humans wear it with pride. ZoeWear seamlessly weaves medical-grade biosensors and micro-processing directly into premium textile silhouettes, eliminating awkward medical form factors.',
     hypothesis: 'Bio-Digital Symbiosis through Haute Couture',
     status: 'Material Science Testing',
+    imageUrl: '/assets/images/zoewear.jpg',
+    imageAlt: 'High luxury smart smartwatch strap with woven micro-conductive textiles, sleek titanium buckle, elegant design, displayed on minimalist porcelain plinth with soft studio daylight.',
+    specOverlay: { tag: 'Invisible Biosensors', title: 'Smart Conductive Textile Integration' },
     badgeColorClass: 'bg-surface-container-high text-on-surface'
   },
   {
@@ -506,6 +519,9 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'From assistive patient ambulation to quiet perimeter safety sentries, ZoeRobo engineers autonomous machines designed as empathetic, trusted real-world companions that free human beings for creative fulfillment.',
     hypothesis: 'Empathetic Autonomous Companions',
     status: 'Rust Robotics.rs Pipeline',
+    imageUrl: '/assets/images/zoerobo.jpg',
+    imageAlt: 'Advanced autonomous research robot in modern robotics laboratory with cleanroom diagnostic screens.',
+    specOverlay: { tag: 'Rust Robotics.rs', title: 'Deterministic Edge Perception & Manipulation' },
     badgeColorClass: 'bg-secondary-fixed text-on-secondary-fixed'
   },
   {
@@ -519,6 +535,8 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'Why spend six months on a single television commercial when generative diffusion swarms can formulate, render, test, and personalize hundred-variant campaigns in minutes? Advertising rebuilt from first algorithmic principles.',
     hypothesis: 'Generative Velocity: Ads in Prompts, Not Months',
     status: 'Commercial Production Service',
+    imageUrl: '/assets/images/zoeware.jpg',
+    imageAlt: 'Modern generative advertising design environment with multi-modal visual synthesis boards.',
     badgeColorClass: 'bg-primary-fixed text-on-primary-fixed'
   },
   {
@@ -532,6 +550,8 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'Without fundamental physics, deep dataset cleansing, and exploratory hardware prototyping, applied technology stagnates. YLabZ exists as the uncompromising intellectual engine for the entire ZoeWave enterprise.',
     hypothesis: 'Foundational Physical & Algorithmic R&D',
     status: 'Primary Technology Engine',
+    imageUrl: '/assets/images/ylabz-core.jpg',
+    imageAlt: 'Futuristic clean technology laboratory with holographic AI neural interfaces.',
     badgeColorClass: 'bg-tertiary-fixed text-on-tertiary-fixed'
   },
   {
@@ -545,6 +565,8 @@ export const BELIEFS_DATA: BeliefItem[] = [
     description: 'Deep tech fails when isolated from human emotion. G.N.Seven deploys data-driven ethnography and lightning-fast physical and digital prototyping to ensure breakthrough science lands as intuitive, delightful products.',
     hypothesis: 'Empathetic Ethnography & Lightning Prototyping',
     status: 'Active Design Studio',
+    imageUrl: '/assets/images/gnseven-core.jpg',
+    imageAlt: 'Modern precision industrial design studio with precision ergonomic clay and carbon-fiber prototypes.',
     badgeColorClass: 'bg-secondary-fixed text-on-secondary-fixed'
   }
 ];
@@ -553,7 +575,7 @@ export const ASH_LEADERSHIP_DATA = {
   name: 'Siamak Ashrafi',
   alias: 'Ash',
   title: 'Architect of Platforms • Developer of Innovation • Designer of Technology',
-  avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBEzPkGuofgCvfPywglALVWf3ceTiIqS5kp-N1NcQE2zDv-gEcJri3PYfITjKw9duz5Qy6Fk4b6kr-N8IkoMjNtPfohJTniFYKsK1n6W-lt93xwXIRqLBjUN3xQIrsK02iBdKniyeAIMou06pY1w9B2m9n1VwW5moDpmCJ3KdWT5GCS9L6BTVUwRsS-h9a4QyYTn93reI-87HQmROD1BgakQQI91hf9pkfs9FF46h44',
+  avatarUrl: '/assets/images/ash-portrait.jpg',
   speakerProfileUrl: 'https://sessionize.com/Ash/',
   mediumUrl: 'https://zoewave.medium.com/',
   googlePlayUrl: 'https://play.google.com/store/apps/developer?id=YLabZ',

@@ -351,6 +351,12 @@
                   </div>
                 </div>
 
+                @if (comp.imageUrl) {
+                  <div class="w-full h-40 rounded-xl overflow-hidden relative shadow-inner bg-[#eaedff]">
+                    <img [src]="comp.imageUrl" [alt]="comp.name" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" referrerpolicy="no-referrer" />
+                  </div>
+                }
+
                 <blockquote class="font-label-md text-primary font-semibold italic">
                   “{{ comp.tagline }}”
                 </blockquote>
@@ -493,6 +499,12 @@
                   </div>
                 </div>
 
+                @if (comp.imageUrl) {
+                  <div class="w-full h-40 rounded-xl overflow-hidden relative shadow-inner bg-[#eaedff]">
+                    <img [src]="comp.imageUrl" [alt]="comp.name" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" referrerpolicy="no-referrer" />
+                  </div>
+                }
+
                 <blockquote class="font-label-md text-primary font-semibold italic">
                   “{{ comp.tagline }}”
                 </blockquote>
@@ -573,6 +585,50 @@
               </div>
             </article>
           }
+        </div>
+      </div>
+    </section>
+
+    <!-- Find Your Balance: ZoeWave (Life / Water) vs AshWave (Death / Fire) from original www.zoewave.com -->
+    <section class="w-full py-16 bg-[#131b2e] text-[#faf8ff] border-t border-[#3f4753]/40">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-8">
+        <div class="text-center max-w-2xl mx-auto flex flex-col items-center gap-2">
+          <span class="font-label-sm text-[#0099ff] uppercase tracking-widest font-bold">Foundational Philosophy</span>
+          <h2 class="font-headline-lg text-white font-bold tracking-tight">Find Your Balance</h2>
+          <p class="font-body-md text-[#dae2fd]">
+            The elemental dualism powering the ZoeWave holding matrix: biological vitality paired with unyielding technological drive.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto w-full">
+          <!-- ZoeWave: Life / Water with original authentic watercolor banner -->
+          <div class="bg-[#283044] rounded-2xl p-6 border border-[#0099ff]/30 flex flex-col items-center text-center gap-4 shadow-lg">
+            <div class="h-24 w-full flex items-center justify-center p-2 bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <img src="/assets/images/zoewave-banner.png" alt="ZoeWave - Life / Water" class="max-h-20 max-w-full object-contain" referrerpolicy="no-referrer" />
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-headline-sm text-[#0099ff] font-bold">ZoeWave — Life / Water</span>
+              <p class="font-body-sm text-[#d2d9f4]">
+                Health ML, human biometrics, gentle cellular micro-dosing, fluid spatial design, and sustainable ambient intelligence.
+              </p>
+            </div>
+          </div>
+
+          <!-- AshWave: Death / Fire -->
+          <div class="bg-[#283044] rounded-2xl p-6 border border-amber-500/30 flex flex-col items-center text-center gap-4 shadow-lg">
+            <div class="h-24 w-full flex items-center justify-center p-2 bg-gradient-to-r from-amber-950/40 via-red-950/40 to-black/60 rounded-xl border border-amber-500/20">
+              <div class="flex items-center gap-2 text-amber-400 font-headline-sm font-bold tracking-widest">
+                <span class="material-symbols-outlined text-[32px]">local_fire_department</span>
+                <span>ASHWAVE</span>
+              </div>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="font-headline-sm text-amber-400 font-bold">AshWave — Death / Fire</span>
+              <p class="font-body-sm text-[#d2d9f4]">
+                Aggressive cryptographic throughput, high-voltage e-mobility frames, deterministic Rust systems, and relentless GenAI speed.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

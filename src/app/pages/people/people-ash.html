@@ -140,10 +140,19 @@
                   <div class="flex items-center justify-between">
                     <div>
                       <h3 class="font-headline-sm text-on-surface font-bold">{{ role.role }}</h3>
-                      <a [href]="role.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-primary hover:underline flex items-center gap-0.5 font-bold">
-                        &#64; {{ role.company }}
-                        <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-                      </a>
+                      <div class="flex items-center gap-2 mt-0.5">
+                        @if (role.company === 'ZoeWave') {
+                          <img src="/assets/images/zoewave-banner.png" alt="ZoeWave Logo" class="h-5 w-auto object-contain" referrerpolicy="no-referrer" />
+                        } @else if (role.company === 'YLabZ') {
+                          <img src="/assets/images/ylabz-core.jpg" alt="YLabZ" class="h-5 w-5 rounded object-cover" referrerpolicy="no-referrer" />
+                        } @else if (role.company === 'G.N.Seven') {
+                          <img src="/assets/images/gnseven-core.jpg" alt="G.N.Seven" class="h-5 w-5 rounded object-cover" referrerpolicy="no-referrer" />
+                        }
+                        <a [href]="role.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-primary hover:underline flex items-center gap-0.5 font-bold">
+                          &#64; {{ role.company }}
+                          <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                        </a>
+                      </div>
                     </div>
                     <span class="px-3 py-1 rounded-full font-label-sm bg-[#f2f3ff] text-on-surface-variant uppercase font-bold text-xs">
                       Active Lead

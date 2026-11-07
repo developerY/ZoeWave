@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
 import { COMPANIES_DATA } from '../../data/zoewave.data';
 import { CompanyItem, filterCompanies } from '../../data/zoewave-logic';
@@ -7,7 +6,6 @@ import { CompanyItem, filterCompanies } from '../../data/zoewave-logic';
 @Component({
   selector: 'app-companies',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink],
   templateUrl: './companies.html'
 })
 export class Companies {

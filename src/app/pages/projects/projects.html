@@ -143,6 +143,11 @@
                     {{ proj.title }}
                   </h3>
                   <span class="font-label-sm text-primary font-bold block mt-0.5">{{ proj.tagline }}</span>
+                  @if (proj.imageUrl) {
+                    <div class="h-44 w-full rounded-xl overflow-hidden my-3 bg-[#eaedff] relative shadow-inner">
+                      <img [src]="proj.imageUrl" [alt]="proj.title" class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" referrerpolicy="no-referrer" />
+                    </div>
+                  }
                   <p class="font-body-md text-on-surface-variant mt-2 leading-relaxed">
                     {{ proj.description }}
                   </p>

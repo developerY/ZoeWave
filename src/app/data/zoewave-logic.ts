@@ -27,6 +27,7 @@ export interface ProjectItem {
   simulatedHalfLifeTarget?: string;
   statusBadge?: string;
   highlightMetric?: string;
+  imageUrl?: string;
   icon: string;
 }
 
