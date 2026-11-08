@@ -2,5 +2,7 @@
   "name": "ZoeWave Enterprises",
   "description": "Redesigned digital headquarters for ZoeWave Enterprises, featuring its companies ecosystem, deep-tech projects, Believe manifesto, and executive leadership.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

@@ -1,14 +1,20 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#faf8ff]/85 backdrop-blur-xl border-b border-[#bfc7d5]/30 shadow-[0_1px_8px_rgba(0,153,255,0.06)]">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#fffafd]/90 backdrop-blur-xl border-b border-pink-200/50 shadow-[0_4px_20px_rgba(236,72,153,0.06)]">
+  <!-- Top Pastel Rainbow Spectrum Line -->
+  <div class="h-1 w-full bg-pastel-rainbow"></div>
+
   <div class="h-20 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
     <!-- Brand Logo -->
     <div class="flex items-center gap-4">
       <a routerLink="/home" (click)="closeMobileMenu()" class="flex items-center gap-3 group" aria-label="ZoeWave Enterprises Home">
-        <div class="h-10 px-2 rounded-xl bg-white flex items-center justify-center border border-[#0099ff]/20 shadow-[0_2px_12px_rgba(0,153,255,0.12)] transition-transform group-hover:scale-105 overflow-hidden">
+        <div class="h-10 px-2.5 rounded-xl bg-white flex items-center justify-center border border-pink-200 shadow-[0_2px_12px_rgba(236,72,153,0.12)] transition-transform group-hover:scale-105 overflow-hidden">
           <img src="/assets/images/zoewave-logo.png" alt="ZoeWave Logo" class="h-7 w-auto object-contain" referrerpolicy="no-referrer" />
         </div>
         <div class="flex flex-col">
-          <span class="font-headline-sm tracking-tight text-on-surface">ZoeWave</span>
-          <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Enterprises</span>
+          <div class="flex items-center gap-1.5">
+            <span class="font-headline-sm tracking-tight text-slate-900 font-bold">ZoeWave</span>
+            <span class="material-symbols-outlined text-[16px] text-pink-500">hub</span>
+          </div>
+          <span class="font-label-sm text-slate-500 uppercase tracking-widest font-semibold">Frontier Enterprise • Technology Ecosystem</span>
         </div>
       </a>
     </div>
@@ -16,29 +22,29 @@
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex items-center gap-1.5" aria-label="Main Navigation">
       <a routerLink="/home" 
-         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
+         routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
          [routerLinkActiveOptions]="{exact: true}"
-         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+         class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Home
       </a>
       <a routerLink="/companies" 
-         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
-         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+         routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
+         class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Companies
       </a>
       <a routerLink="/projects" 
-         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
-         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+         routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
+         class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Projects
       </a>
       <a routerLink="/believe" 
-         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
-         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+         routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
+         class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Believe
       </a>
       <a routerLink="/people/ash" 
-         routerLinkActive="text-primary font-bold bg-[#f2f3ff]" 
-         class="px-4 py-2 font-label-md text-on-surface-variant hover:text-on-surface hover:bg-[#f2f3ff] transition-colors rounded-lg">
+         routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
+         class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         People / Ash
       </a>
     </nav>
@@ -48,17 +54,17 @@
       <!-- Contact Button -->
       <button type="button" 
               (click)="openContact()"
-              class="hidden sm:inline-flex items-center justify-center px-5 py-2 font-label-md text-white bg-[#0099ff] hover:bg-[#0061a5] transition-all rounded-lg shadow-[0_0_20px_rgba(0,153,255,0.25)] hover:shadow-[0_0_24px_rgba(0,153,255,0.4)] cursor-pointer">
-        <span class="material-symbols-outlined text-[18px] mr-1.5">mail</span>
-        Contact
+              class="hidden sm:inline-flex items-center justify-center px-5 py-2 font-label-md text-white bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:from-pink-600 hover:to-purple-600 transition-all rounded-xl shadow-[0_4px_16px_rgba(236,72,153,0.3)] hover:shadow-[0_4px_24px_rgba(168,85,247,0.4)] cursor-pointer">
+        <span class="material-symbols-outlined text-[18px] mr-1.5 text-white">auto_awesome</span>
+        Connect
       </button>
 
       <!-- Ash Profile Avatar link -->
       <a routerLink="/people/ash" 
          title="Siamak (Ash) Ashrafi - Executive Dossier"
-         class="hidden md:flex items-center gap-1.5 pl-2 border-l border-[#bfc7d5]/40 hover:opacity-85 transition-opacity">
+         class="hidden md:flex items-center gap-1.5 pl-2 border-l border-pink-200 hover:opacity-85 transition-opacity">
         <img alt="Siamak Ashrafi" 
-             class="w-8 h-8 rounded-full object-cover border border-[#0099ff]/30 shadow-sm" 
+             class="w-8 h-8 rounded-full object-cover border-2 border-pink-300 shadow-sm" 
              src="/assets/images/ash-avatar.jpg"
              referrerpolicy="no-referrer" />
       </a>
@@ -121,8 +127,8 @@
       <div class="pt-2 border-t border-[#bfc7d5]/30">
         <button type="button" 
                 (click)="openContact()"
-                class="w-full py-3 rounded-xl bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-md flex items-center justify-center gap-2 shadow-md">
-          <span class="material-symbols-outlined text-[20px]">mail</span>
+                class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:opacity-95 text-white font-label-md flex items-center justify-center gap-2 shadow-md">
+          <span class="material-symbols-outlined text-[20px]">bolt</span>
           Initiate Contact / Joint Ventures
         </button>
       </div>

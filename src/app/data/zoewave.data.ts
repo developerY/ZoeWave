@@ -217,7 +217,7 @@ export const COMPANIES_DATA: CompanyItem[] = [
     tier: 'concepts',
     tierLabel: 'TIER 05 • Concepts',
     tagline: '7 C Monsters Swarm Architecture',
-    description: 'Autonomous multi-agent orchestration architecture modeling foundational psychological archetypes: Love, Serenity, Grace, Guidance, Cadence, Hope, and Faith.',
+    description: 'Autonomous multi-agent orchestration architecture modeling foundational cognitive archetypes: Empathy, Serenity, Grace, Guidance, Cadence, Hope, and Faith.',
     domain: 'Multi-Agent AI • Swarm Intelligence',
     category: 'ai',
     icon: 'psychology',

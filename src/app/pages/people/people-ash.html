@@ -7,20 +7,21 @@
     <!-- Main Container -->
     <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-12">
       <!-- Top Breadcrumb & Status Telemetry Bar -->
-      <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-[#bfc7d5]/30 mb-8">
+      <!-- Top Breadcrumb & Status Telemetry Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-pink-200/50 mb-8">
         <div class="flex items-center gap-2 font-label-md">
-          <span class="text-on-surface-variant">People</span>
-          <span class="text-[#bfc7d5]">/</span>
-          <span class="text-primary font-bold">Executive Office</span>
-          <span class="text-[#bfc7d5]">/</span>
-          <span class="text-on-surface font-bold">Siamak (Ash) Ashrafi</span>
+          <span class="text-slate-500 font-medium">People</span>
+          <span class="text-slate-400">/</span>
+          <span class="text-slate-700 font-semibold">Executive Office</span>
+          <span class="text-slate-400">/</span>
+          <span class="text-slate-900 font-bold">Siamak (Ash) Ashrafi</span>
         </div>
         <div class="flex items-center gap-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e2e7ff] shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span class="font-label-sm uppercase tracking-wider text-on-surface font-bold">Platform Architect &amp; Lead Researcher</span>
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 border border-slate-200 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-label-sm uppercase tracking-wider text-slate-800 font-semibold text-xs">Platform Architect &amp; Lead Researcher</span>
           </div>
-          <span class="hidden sm:inline-flex px-3 py-1 rounded-full bg-[#f2f3ff] font-label-sm text-secondary uppercase font-bold border border-[#bfc7d5]/30">52 Talks • 12 Yrs</span>
+          <span class="hidden sm:inline-flex px-3 py-1 rounded-full bg-slate-100 font-label-sm text-slate-700 uppercase font-semibold text-xs border border-slate-200">52 Talks • 12 Yrs</span>
         </div>
       </div>
 
@@ -28,32 +29,35 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <!-- Left Hero Portrait & Accolades Card (5 cols) -->
         <div class="lg:col-span-5 flex flex-col gap-6">
-          <div class="relative bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-[#0099ff]/15 overflow-hidden">
-            <!-- Iridescent Top Aura -->
-            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#0099ff] via-[#8589ff] to-[#8fa7fe]"></div>
+          <div class="relative bg-white/95 rounded-3xl p-6 sm:p-8 shadow-[0_10px_35px_rgba(236,72,153,0.09)] border border-pink-200/70 overflow-hidden">
+            <!-- Rainbow of Soft Pastels Top Aura -->
+            <div class="absolute top-0 left-0 right-0 h-2 bg-pastel-rainbow"></div>
 
-            <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#f2f3ff] mb-6 shadow-md">
+            <div class="relative w-full aspect-square sm:aspect-[4/5] rounded-2xl overflow-hidden bg-pink-50/50 mb-6 shadow-md border-2 border-white">
               <img [src]="ash.avatarUrl" 
                    [alt]="ash.name" 
-                   class="w-full h-full object-cover" 
+                   class="w-full h-full object-cover object-top" 
                    referrerpolicy="no-referrer" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                <span class="font-label-sm text-[#9fcaff] uppercase tracking-widest font-bold">{{ ash.name }}</span>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
+                <span class="font-label-sm text-pink-300 uppercase tracking-widest font-bold text-xs">{{ ash.name }}</span>
                 <span class="font-headline-sm text-white font-bold">"{{ ash.alias }}"</span>
-                <p class="font-body-sm text-[#eaedff]">Architect • Researcher • Public Speaker • Adventurer</p>
+                <p class="font-body-sm text-slate-200 text-xs">Architect • Researcher • Public Speaker • Systems Visionary</p>
               </div>
             </div>
 
             <!-- Credentials & Distinctions Badges -->
             <div class="flex flex-col gap-3">
-              <span class="font-label-sm text-primary uppercase font-bold tracking-wider">Distinctions &amp; Honors</span>
+              <span class="font-label-sm text-slate-800 uppercase font-bold tracking-wider flex items-center gap-1.5 text-xs">
+                <span class="material-symbols-outlined text-[16px] text-pink-500">auto_awesome</span>
+                <span>Distinctions &amp; Honors</span>
+              </span>
               <div class="grid grid-cols-2 gap-2">
                 @for (dist of ash.distinctions; track dist.title) {
-                  <div class="p-3 rounded-xl bg-[#f2f3ff] flex items-center gap-2.5 border border-[#bfc7d5]/20">
-                    <span class="material-symbols-outlined text-primary text-xl">{{ dist.icon }}</span>
+                  <div class="p-3 rounded-2xl bg-white/90 flex items-center gap-2.5 border border-pink-200/60 shadow-xs">
+                    <span class="material-symbols-outlined text-pink-600 text-xl">{{ dist.icon }}</span>
                     <div>
-                      <div class="font-label-md text-on-surface font-bold leading-tight">{{ dist.title }}</div>
-                      <div class="font-body-sm text-on-surface-variant text-xs">{{ dist.subtitle }}</div>
+                      <div class="font-label-md text-slate-900 font-bold leading-tight text-sm">{{ dist.title }}</div>
+                      <div class="font-body-sm text-slate-600 text-xs font-medium">{{ dist.subtitle }}</div>
                     </div>
                   </div>
                 }
@@ -61,12 +65,12 @@
             </div>
 
             <!-- Certified Operator Licenses Panel -->
-            <div class="mt-6 pt-4 border-t border-[#bfc7d5]/20 bg-[#faf8ff] rounded-xl p-4">
-              <span class="font-label-sm uppercase text-on-surface-variant tracking-wider font-bold block mb-2">Field Licenses &amp; Operative Certifications</span>
+            <div class="mt-6 pt-4 border-t border-slate-200/60 bg-slate-50/70 rounded-2xl p-4">
+              <span class="font-label-sm uppercase text-slate-600 tracking-wider font-semibold text-xs block mb-2">Field Licenses &amp; Operative Certifications</span>
               <div class="grid grid-cols-2 gap-2">
                 @for (lic of ash.licenses; track lic.type) {
-                  <span class="px-2.5 py-1 rounded-lg bg-white shadow-xs border border-[#bfc7d5]/30 font-label-sm text-on-surface flex items-center gap-1.5 font-semibold text-xs">
-                    <span class="material-symbols-outlined text-sm text-primary">{{ lic.icon }}</span>
+                  <span class="px-2.5 py-1.5 rounded-xl bg-white shadow-xs border border-slate-200 font-label-sm text-slate-800 flex items-center gap-1.5 font-semibold text-xs">
+                    <span class="material-symbols-outlined text-sm text-slate-700">{{ lic.icon }}</span>
                     <span>{{ lic.type }}</span>
                   </span>
                 }
@@ -76,7 +80,7 @@
             <!-- External Portals & Links -->
             <div class="mt-6 flex flex-col gap-2">
               <a [href]="ash.speakerProfileUrl" target="_blank" rel="noopener noreferrer" 
-                 class="w-full py-3 px-4 rounded-xl bg-[#0099ff] hover:bg-[#0061a5] text-white font-label-md flex items-center justify-between shadow-md transition-all group">
+                 class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:opacity-95 text-white font-label-md font-semibold flex items-center justify-between shadow-[0_4px_16px_rgba(236,72,153,0.3)] transition-all group">
                 <span class="flex items-center gap-2">
                   <span class="material-symbols-outlined text-lg">mic</span>
                   <span>Sessionize Speaker Profile (52 Talks)</span>
@@ -85,39 +89,39 @@
               </a>
               <div class="grid grid-cols-2 gap-2">
                 <a [href]="ash.mediumUrl" target="_blank" rel="noopener noreferrer" 
-                   class="py-2.5 px-3 rounded-xl bg-[#eaedff] text-on-surface hover:bg-[#dae2fd] font-label-md text-center transition-colors flex items-center justify-center gap-1">
+                   class="py-2.5 px-3 rounded-xl bg-white border border-slate-200 text-slate-800 hover:bg-slate-50 font-label-md font-semibold text-center transition-colors flex items-center justify-center gap-1 text-sm shadow-xs">
                   <span>Medium Essays</span>
-                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  <span class="material-symbols-outlined text-sm text-slate-400">open_in_new</span>
                 </a>
                 <a [href]="ash.googlePlayUrl" target="_blank" rel="noopener noreferrer" 
-                   class="py-2.5 px-3 rounded-xl bg-[#eaedff] text-on-surface hover:bg-[#dae2fd] font-label-md text-center transition-colors flex items-center justify-center gap-1">
+                   class="py-2.5 px-3 rounded-xl bg-white border border-slate-200 text-slate-800 hover:bg-slate-50 font-label-md font-semibold text-center transition-colors flex items-center justify-center gap-1 text-sm shadow-xs">
                   <span>Google Play Hub</span>
-                  <span class="material-symbols-outlined text-sm">open_in_new</span>
+                  <span class="material-symbols-outlined text-sm text-slate-400">open_in_new</span>
                 </a>
               </div>
             </div>
           </div>
 
           <!-- The Infamous 3 Phases of Water Quote Card -->
-          <div class="bg-gradient-to-br from-[#f2f3ff] via-white to-[#eaedff] p-6 sm:p-8 rounded-2xl shadow-md border border-[#0099ff]/20 relative overflow-hidden">
+          <div class="bg-gradient-to-br from-white via-slate-50 to-pink-50/30 p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200/80 relative overflow-hidden">
             <div class="flex items-start gap-2 mb-2">
-              <span class="material-symbols-outlined text-tertiary text-2xl">format_quote</span>
-              <span class="font-label-sm uppercase font-bold text-on-surface-variant tracking-wider">The Elemental Survival Paradox</span>
+              <span class="material-symbols-outlined text-slate-400 text-2xl">format_quote</span>
+              <span class="font-label-sm uppercase font-semibold text-slate-500 tracking-wider text-xs">The Elemental Survival Paradox</span>
             </div>
-            <p class="font-headline-sm text-on-surface tracking-tight leading-snug font-bold">
+            <p class="font-headline-sm text-slate-900 tracking-tight leading-snug font-bold">
               "From all accounts should have been killed ☠️ by all three phases of water 🌊."
             </p>
             <div class="mt-4 grid grid-cols-3 gap-2 text-center">
               @for (ph of ash.waterQuote.phases; track ph.phase) {
-                <div class="p-3 rounded-xl bg-white/90 shadow-xs border border-[#bfc7d5]/30">
+                <div class="p-3 rounded-xl bg-white shadow-xs border border-slate-200">
                   <span class="text-2xl block mb-1">{{ ph.emoji }}</span>
-                  <span class="font-label-sm text-primary font-bold uppercase block">{{ ph.phase }}</span>
-                  <span class="font-body-sm text-on-surface-variant text-[11px]">{{ ph.desc }}</span>
+                  <span class="font-label-sm text-slate-900 font-bold uppercase block text-xs">{{ ph.phase }}</span>
+                  <span class="font-body-sm text-slate-600 text-[11px] font-medium">{{ ph.desc }}</span>
                 </div>
               }
             </div>
             <div class="mt-4 text-right">
-              <span class="font-label-md text-primary font-bold">— {{ ash.waterQuote.conclusion }}</span>
+              <span class="font-label-md text-slate-700 font-semibold text-sm">— {{ ash.waterQuote.conclusion }}</span>
             </div>
           </div>
         </div>
@@ -127,19 +131,19 @@
           <!-- Triple Threat Leadership Roles -->
           <div class="flex flex-col gap-4">
             <div class="flex items-center gap-2">
-              <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Executive Triad</span>
-              <span class="h-px w-8 bg-primary/40 inline-block"></span>
+              <span class="font-label-sm text-slate-500 uppercase tracking-widest font-semibold text-xs">Executive Triad</span>
+              <span class="h-px w-8 bg-slate-300 inline-block"></span>
             </div>
-            <h2 class="font-headline-lg text-on-surface font-bold tracking-tight">
+            <h2 class="font-headline-lg text-slate-900 font-bold tracking-tight">
               Threefold Technological Mandate
             </h2>
 
             <div class="flex flex-col gap-4">
               @for (role of ash.roles; track role.company) {
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-[#bfc7d5]/30 flex flex-col gap-2">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col gap-2">
                   <div class="flex items-center justify-between">
                     <div>
-                      <h3 class="font-headline-sm text-on-surface font-bold">{{ role.role }}</h3>
+                      <h3 class="font-headline-sm text-slate-900 font-bold">{{ role.role }}</h3>
                       <div class="flex items-center gap-2 mt-0.5">
                         @if (role.company === 'ZoeWave') {
                           <img src="/assets/images/zoewave-banner.png" alt="ZoeWave Logo" class="h-5 w-auto object-contain" referrerpolicy="no-referrer" />
@@ -148,17 +152,17 @@
                         } @else if (role.company === 'G.N.Seven') {
                           <img src="/assets/images/gnseven-core.jpg" alt="G.N.Seven" class="h-5 w-5 rounded object-cover" referrerpolicy="no-referrer" />
                         }
-                        <a [href]="role.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-primary hover:underline flex items-center gap-0.5 font-bold">
+                        <a [href]="role.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-slate-700 hover:text-slate-900 hover:underline flex items-center gap-0.5 font-semibold text-xs">
                           &#64; {{ role.company }}
                           <span class="material-symbols-outlined text-[14px]">open_in_new</span>
                         </a>
                       </div>
                     </div>
-                    <span class="px-3 py-1 rounded-full font-label-sm bg-[#f2f3ff] text-on-surface-variant uppercase font-bold text-xs">
+                    <span class="px-3 py-1 rounded-full font-label-sm bg-slate-100 text-slate-700 uppercase font-semibold text-xs border border-slate-200">
                       Active Lead
                     </span>
                   </div>
-                  <p class="font-body-md text-on-surface-variant leading-relaxed mt-1">
+                  <p class="font-body-md text-slate-600 leading-relaxed mt-1">
                     {{ role.description }}
                   </p>
                 </div>
@@ -167,47 +171,47 @@
           </div>
 
           <!-- Interactive Tech Stacks Matrix with Tabs -->
-          <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-[#bfc7d5]/30 flex flex-col gap-4">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 flex flex-col gap-4">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <span class="font-label-sm text-primary uppercase tracking-widest font-bold">Hands-On Engineering</span>
-                <h3 class="font-headline-md text-on-surface font-bold">Production Tech Stacks</h3>
+                <span class="font-label-sm text-slate-500 uppercase tracking-widest font-semibold text-xs">Hands-On Engineering</span>
+                <h3 class="font-headline-md text-slate-900 font-bold">Production Tech Stacks</h3>
               </div>
-              <div class="flex items-center gap-1 overflow-x-auto pb-1" role="tablist" aria-label="Tech Stacks">
+              <div class="flex items-center gap-1.5 overflow-x-auto pb-1" role="tablist" aria-label="Tech Stacks">
                 <button type="button" 
                         (click)="setActiveTechTab('android')"
-                        [class.bg-primary]="activeTechTab() === 'android'"
+                        [class.bg-slate-900]="activeTechTab() === 'android'"
                         [class.text-white]="activeTechTab() === 'android'"
-                        [class.bg-[#f2f3ff]]="activeTechTab() !== 'android'"
-                        [class.text-on-surface]="activeTechTab() !== 'android'"
-                        class="px-3 py-1.5 rounded-lg font-label-sm font-bold transition-all cursor-pointer">
+                        [class.bg-slate-100]="activeTechTab() !== 'android'"
+                        [class.text-slate-700]="activeTechTab() !== 'android'"
+                        class="px-3.5 py-1.5 rounded-xl font-label-sm font-semibold transition-all cursor-pointer text-xs">
                   Android
                 </button>
                 <button type="button" 
                         (click)="setActiveTechTab('ios')"
-                        [class.bg-primary]="activeTechTab() === 'ios'"
+                        [class.bg-slate-900]="activeTechTab() === 'ios'"
                         [class.text-white]="activeTechTab() === 'ios'"
-                        [class.bg-[#f2f3ff]]="activeTechTab() !== 'ios'"
-                        [class.text-on-surface]="activeTechTab() !== 'ios'"
-                        class="px-3 py-1.5 rounded-lg font-label-sm font-bold transition-all cursor-pointer">
+                        [class.bg-slate-100]="activeTechTab() !== 'ios'"
+                        [class.text-slate-700]="activeTechTab() !== 'ios'"
+                        class="px-3.5 py-1.5 rounded-xl font-label-sm font-semibold transition-all cursor-pointer text-xs">
                   iOS / XR
                 </button>
                 <button type="button" 
                         (click)="setActiveTechTab('aiml')"
-                        [class.bg-primary]="activeTechTab() === 'aiml'"
+                        [class.bg-slate-900]="activeTechTab() === 'aiml'"
                         [class.text-white]="activeTechTab() === 'aiml'"
-                        [class.bg-[#f2f3ff]]="activeTechTab() !== 'aiml'"
-                        [class.text-on-surface]="activeTechTab() !== 'aiml'"
-                        class="px-3 py-1.5 rounded-lg font-label-sm font-bold transition-all cursor-pointer">
+                        [class.bg-slate-100]="activeTechTab() !== 'aiml'"
+                        [class.text-slate-700]="activeTechTab() !== 'aiml'"
+                        class="px-3.5 py-1.5 rounded-xl font-label-sm font-semibold transition-all cursor-pointer text-xs">
                   AI / ML
                 </button>
                 <button type="button" 
                         (click)="setActiveTechTab('rust')"
-                        [class.bg-primary]="activeTechTab() === 'rust'"
+                        [class.bg-slate-900]="activeTechTab() === 'rust'"
                         [class.text-white]="activeTechTab() === 'rust'"
-                        [class.bg-[#f2f3ff]]="activeTechTab() !== 'rust'"
-                        [class.text-on-surface]="activeTechTab() !== 'rust'"
-                        class="px-3 py-1.5 rounded-lg font-label-sm font-bold transition-all cursor-pointer">
+                        [class.bg-slate-100]="activeTechTab() !== 'rust'"
+                        [class.text-slate-700]="activeTechTab() !== 'rust'"
+                        class="px-3.5 py-1.5 rounded-xl font-label-sm font-semibold transition-all cursor-pointer text-xs">
                   Rust &amp; Cirq
                 </button>
               </div>
@@ -217,17 +221,17 @@
             @switch (activeTechTab()) {
               @case ('android') {
                 <div class="flex flex-col gap-3 pt-2">
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">Core Architecture</span>
-                    <p class="font-body-sm text-on-surface">{{ ash.techStacks.android.core }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">Core Architecture</span>
+                    <p class="font-body-sm text-slate-600">{{ ash.techStacks.android.core }}</p>
                   </div>
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">Frameworks &amp; Android XR</span>
-                    <p class="font-body-sm text-on-surface">{{ ash.techStacks.android.frameworks }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">Frameworks &amp; Android XR</span>
+                    <p class="font-body-sm text-slate-600">{{ ash.techStacks.android.frameworks }}</p>
                   </div>
                   <div class="flex flex-wrap items-center gap-3 pt-2">
                     @for (lnk of ash.techStacks.android.links; track lnk.label) {
-                      <a [href]="lnk.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-primary hover:underline flex items-center gap-1 font-bold">
+                      <a [href]="lnk.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-slate-700 hover:text-slate-900 hover:underline flex items-center gap-1 font-semibold text-xs">
                         <span>{{ lnk.label }}</span>
                         <span class="material-symbols-outlined text-xs">open_in_new</span>
                       </a>
@@ -237,17 +241,17 @@
               }
               @case ('ios') {
                 <div class="flex flex-col gap-3 pt-2">
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">Core Swift Architecture</span>
-                    <p class="font-body-sm text-on-surface">{{ ash.techStacks.ios.core }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">Core Swift Architecture</span>
+                    <p class="font-body-sm text-slate-600">{{ ash.techStacks.ios.core }}</p>
                   </div>
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">visionOS, RealityKit &amp; HealthKit</span>
-                    <p class="font-body-sm text-on-surface">{{ ash.techStacks.ios.frameworks }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">visionOS, RealityKit &amp; HealthKit</span>
+                    <p class="font-body-sm text-slate-600">{{ ash.techStacks.ios.frameworks }}</p>
                   </div>
                   <div class="flex flex-wrap items-center gap-3 pt-2">
                     @for (lnk of ash.techStacks.ios.links; track lnk.label) {
-                      <a [href]="lnk.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-primary hover:underline flex items-center gap-1 font-bold">
+                      <a [href]="lnk.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-slate-700 hover:text-slate-900 hover:underline flex items-center gap-1 font-semibold text-xs">
                         <span>{{ lnk.label }}</span>
                         <span class="material-symbols-outlined text-xs">open_in_new</span>
                       </a>
@@ -257,17 +261,17 @@
               }
               @case ('aiml') {
                 <div class="flex flex-col gap-3 pt-2">
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">Data Detective &amp; Janitor Stack</span>
-                    <p class="font-body-sm text-on-surface">{{ ash.techStacks.aiml.core }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">Data Detective &amp; Janitor Stack</span>
+                    <p class="font-body-sm text-slate-600">{{ ash.techStacks.aiml.core }}</p>
                   </div>
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">Explainability &amp; Deployment</span>
-                    <p class="font-body-sm text-on-surface">{{ ash.techStacks.aiml.explainability }} — {{ ash.techStacks.aiml.deployment }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">Explainability &amp; Deployment</span>
+                    <p class="font-body-sm text-slate-600">{{ ash.techStacks.aiml.explainability }} — {{ ash.techStacks.aiml.deployment }}</p>
                   </div>
                   <div class="flex flex-wrap items-center gap-3 pt-2">
                     @for (lnk of ash.techStacks.aiml.links; track lnk.label) {
-                      <a [href]="lnk.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-primary hover:underline flex items-center gap-1 font-bold">
+                      <a [href]="lnk.url" target="_blank" rel="noopener noreferrer" class="font-label-sm text-slate-700 hover:text-slate-900 hover:underline flex items-center gap-1 font-semibold text-xs">
                         <span>{{ lnk.label }}</span>
                         <span class="material-symbols-outlined text-xs">open_in_new</span>
                       </a>
@@ -277,9 +281,9 @@
               }
               @case ('rust') {
                 <div class="flex flex-col gap-3 pt-2">
-                  <div class="p-4 rounded-xl bg-[#f2f3ff] border border-[#bfc7d5]/20 flex flex-col gap-1">
-                    <span class="font-label-sm text-primary uppercase font-bold">Rust Ecosystem, Quantum &amp; Edge</span>
-                    <p class="font-body-sm text-on-surface leading-relaxed">{{ ash.techStacks.rust.details }}</p>
+                  <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col gap-1">
+                    <span class="font-label-sm text-slate-800 uppercase font-semibold text-xs tracking-wider">Rust Ecosystem, Quantum &amp; Edge</span>
+                    <p class="font-body-sm text-slate-600 leading-relaxed">{{ ash.techStacks.rust.details }}</p>
                   </div>
                 </div>
               }
