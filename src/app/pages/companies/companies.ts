@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
 import { COMPANIES_DATA } from '../../data/zoewave.data';
 import { CompanyItem, filterCompanies } from '../../data/zoewave-logic';
@@ -6,15 +7,26 @@ import { CompanyItem, filterCompanies } from '../../data/zoewave-logic';
 @Component({
   selector: 'app-companies',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterLink],
   templateUrl: './companies.html'
 })
 export class Companies {
   modalService = inject(ModalService);
+  private route = inject(ActivatedRoute);
 
   allCompanies = COMPANIES_DATA;
 
   selectedTier = signal<string>('all');
   searchQuery = signal<string>('');
+
+  constructor() {
+    this.route.queryParamMap.subscribe(params => {
+      const tier = params.get('tier');
+      if (tier && ['core', 'production', 'development', 'frontier', 'concepts', 'all'].includes(tier)) {
+        this.selectedTier.set(tier);
+      }
+    });
+  }
 
   filteredCompanies = computed(() => {
     return filterCompanies(this.allCompanies, this.selectedTier(), this.searchQuery());

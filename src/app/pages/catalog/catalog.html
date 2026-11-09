@@ -1,0 +1,659 @@
+<div class="relative w-full min-h-screen bg-gradient-to-b from-[#fffafd] via-[#fdf5f9] to-[#faf8ff] pb-24 overflow-hidden">
+  
+  <!-- Subtle pastel rainbow ambient glow orbs -->
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-pink-200/35 rounded-full blur-3xl pointer-events-none -z-0"></div>
+  <div class="absolute top-1/4 right-0 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl pointer-events-none -z-0"></div>
+  <div class="absolute top-2/3 left-10 w-80 h-80 bg-sky-200/30 rounded-full blur-3xl pointer-events-none -z-0"></div>
+
+  <!-- ============================================================ -->
+  <!-- HERO HEADER: ZOEWAVE VENTURE CATALOG                         -->
+  <!-- ============================================================ -->
+  <section class="relative z-10 pt-10 pb-8 sm:pt-14 sm:pb-10 border-b border-pink-200/50">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      <!-- Breadcrumb & Badge -->
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <a routerLink="/home" class="text-xs font-semibold text-slate-500 hover:text-pink-600 transition-colors">Home</a>
+        <span class="text-slate-300">/</span>
+        <span class="text-xs font-bold text-slate-800">Catalog</span>
+        <span class="ml-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-semibold uppercase tracking-wider border border-pink-200 shadow-xs">
+          <span class="material-symbols-outlined text-[15px] text-pink-500">grid_view</span>
+          <span>14 Companies • 5 Operational Tiers</span>
+        </span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div class="max-w-3xl">
+          <h1 class="font-headline-lg text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight mb-3">
+            ZoeWave Enterprise Catalog
+          </h1>
+          <p class="font-body-md text-sm sm:text-base text-slate-600 leading-relaxed">
+            The comprehensive catalog of all 14 proprietary ventures across physical computing, clinical micro-dosing pharmacology, spatial realityKit architectures, and autonomous robotics swarms.
+          </p>
+        </div>
+
+        <!-- Quick Jump Links -->
+        <div class="flex items-center gap-2 shrink-0">
+          <button type="button" 
+                  (click)="scrollToCarousel()"
+                  class="px-4 py-2.5 rounded-xl bg-white border border-pink-200 text-slate-800 hover:text-pink-600 hover:border-pink-300 text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
+            <span class="material-symbols-outlined text-[18px] text-pink-500">view_carousel</span>
+            <span>Company Flip Book</span>
+          </button>
+          <button type="button" 
+                  (click)="scrollToMatrix()"
+                  class="px-4 py-2.5 rounded-xl bg-white border border-pink-200 text-slate-800 hover:text-pink-600 hover:border-pink-300 text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
+            <span class="material-symbols-outlined text-[18px] text-purple-500">category</span>
+            <span>Category Matrix</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 1: THE COMPANY CAROUSEL (FLIP BOOK)                   -->
+  <!-- As requested: Placed directly on the new Catalog page         -->
+  <!-- ============================================================ -->
+  <section id="catalog-carousel" class="relative z-10 py-12 lg:py-16 border-b border-pink-200/50" aria-label="ZoeWave Companies Flip Book Carousel">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col gap-6">
+      
+      <!-- Flip Book Header & Controls Bar -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-pink-200/50 pb-5">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-semibold uppercase tracking-wider border border-pink-200/80 shadow-xs">
+              <span class="material-symbols-outlined text-[16px] text-pink-500">auto_awesome</span>
+              <span>Interactive Portfolio Flip Book</span>
+            </span>
+            <span class="text-xs text-slate-600 font-medium flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px] text-pink-500">touch_app</span>
+              <span>Click card to flip</span>
+            </span>
+          </div>
+          <h2 class="font-headline-md text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight flex items-center gap-3">
+            <span>Company Spotlight</span>
+            @if (currentCompany()) {
+              <span class="text-xs font-medium px-2.5 py-1 rounded-lg bg-white border border-pink-200 text-slate-700 hidden sm:inline-flex items-center gap-1 shadow-xs">
+                <span>Page {{ activeCarouselIndex() + 1 }} of {{ filteredCarouselCompanies().length }}</span>
+              </span>
+            }
+          </h2>
+        </div>
+
+        <!-- Search & Carousel Controls -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <!-- Search input -->
+          <div class="relative min-w-[220px]">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-pink-400 text-[18px]">search</span>
+            <input type="text"
+                   [value]="searchQuery()"
+                   (input)="onSearchInput($event)"
+                   placeholder="Find company (e.g. YLabZ, AshBike)..."
+                   class="w-full pl-9 pr-8 py-2 rounded-xl bg-white border border-pink-200 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-pink-400 focus:ring-1 focus:ring-pink-400 shadow-xs" />
+            @if (searchQuery()) {
+              <button type="button" 
+                      (click)="clearSearch()" 
+                      class="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-0.5 rounded cursor-pointer"
+                      title="Clear search">
+                <span class="material-symbols-outlined text-[16px]">close</span>
+              </button>
+            }
+          </div>
+
+          <!-- Carousel Controls: Autoplay, Prev, Next -->
+          <div class="flex items-center gap-2 self-end sm:self-auto">
+            <button type="button"
+                    (click)="toggleAutoplay()"
+                    [class.bg-gradient-to-r]="isPlaying()"
+                    [class.from-pink-500]="isPlaying()"
+                    [class.to-purple-500]="isPlaying()"
+                    [class.text-white]="isPlaying()"
+                    [class.bg-white]="!isPlaying()"
+                    [class.text-slate-800]="!isPlaying()"
+                    class="px-3.5 py-2 rounded-xl border border-pink-200 text-xs font-semibold flex items-center gap-1.5 shadow-xs hover:border-pink-300 transition-colors cursor-pointer"
+                    [title]="isPlaying() ? 'Pause automatic flipping' : 'Play automatic flipping (slides every 4.5s)'">
+              <span class="material-symbols-outlined text-[16px]">{{ isPlaying() ? 'pause' : 'play_arrow' }}</span>
+              <span class="hidden md:inline">{{ isPlaying() ? 'Pause' : 'Auto' }}</span>
+            </button>
+
+            <button type="button"
+                    (click)="prevCompany()" 
+                    [disabled]="filteredCarouselCompanies().length <= 1"
+                    aria-label="Previous Company"
+                    class="p-2 rounded-xl bg-white hover:bg-pink-50 text-slate-700 border border-pink-200 shadow-xs transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+            </button>
+
+            <button type="button"
+                    (click)="nextCompany()" 
+                    [disabled]="filteredCarouselCompanies().length <= 1"
+                    aria-label="Next Company"
+                    class="p-2 rounded-xl bg-white hover:bg-pink-50 text-slate-700 border border-pink-200 shadow-xs transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
+        <span class="text-slate-600 font-semibold pr-2 hidden sm:inline">Filter:</span>
+        <button type="button"
+                (click)="setCarouselCategory('all')"
+                [class.bg-gradient-to-r]="carouselCategory() === 'all'"
+                [class.from-pink-500]="carouselCategory() === 'all'"
+                [class.to-purple-500]="carouselCategory() === 'all'"
+                [class.text-white]="carouselCategory() === 'all'"
+                [class.shadow-xs]="carouselCategory() === 'all'"
+                [class.bg-white]="carouselCategory() !== 'all'"
+                [class.text-slate-700]="carouselCategory() !== 'all'"
+                class="px-3.5 py-1.5 rounded-xl border border-pink-200 font-semibold transition-all cursor-pointer whitespace-nowrap">
+          All ({{ allCompanies.length }})
+        </button>
+        <button type="button"
+                (click)="setCarouselCategory('core')"
+                [class.bg-gradient-to-r]="carouselCategory() === 'core'"
+                [class.from-pink-500]="carouselCategory() === 'core'"
+                [class.to-purple-500]="carouselCategory() === 'core'"
+                [class.text-white]="carouselCategory() === 'core'"
+                [class.shadow-xs]="carouselCategory() === 'core'"
+                [class.bg-white]="carouselCategory() !== 'core'"
+                [class.text-slate-700]="carouselCategory() !== 'core'"
+                class="px-3.5 py-1.5 rounded-xl border border-pink-200 font-semibold transition-all cursor-pointer whitespace-nowrap">
+          Tier 01 • Core R&amp;D (2)
+        </button>
+        <button type="button"
+                (click)="setCarouselCategory('production')"
+                [class.bg-gradient-to-r]="carouselCategory() === 'production'"
+                [class.from-pink-500]="carouselCategory() === 'production'"
+                [class.to-purple-500]="carouselCategory() === 'production'"
+                [class.text-white]="carouselCategory() === 'production'"
+                [class.shadow-xs]="carouselCategory() === 'production'"
+                [class.bg-white]="carouselCategory() !== 'production'"
+                [class.text-slate-700]="carouselCategory() !== 'production'"
+                class="px-3.5 py-1.5 rounded-xl border border-pink-200 font-semibold transition-all cursor-pointer whitespace-nowrap">
+          Tier 02 • Production (3)
+        </button>
+        <button type="button"
+                (click)="setCarouselCategory('development')"
+                [class.bg-gradient-to-r]="carouselCategory() === 'development'"
+                [class.from-pink-500]="carouselCategory() === 'development'"
+                [class.to-purple-500]="carouselCategory() === 'development'"
+                [class.text-white]="carouselCategory() === 'development'"
+                [class.shadow-xs]="carouselCategory() === 'development'"
+                [class.bg-white]="carouselCategory() !== 'development'"
+                [class.text-slate-700]="carouselCategory() !== 'development'"
+                class="px-3.5 py-1.5 rounded-xl border border-pink-200 font-semibold transition-all cursor-pointer whitespace-nowrap">
+          Tier 03 • Development (3)
+        </button>
+        <button type="button"
+                (click)="setCarouselCategory('frontier')"
+                [class.bg-gradient-to-r]="carouselCategory() === 'frontier'"
+                [class.from-pink-500]="carouselCategory() === 'frontier'"
+                [class.to-purple-500]="carouselCategory() === 'frontier'"
+                [class.text-white]="carouselCategory() === 'frontier'"
+                [class.shadow-xs]="carouselCategory() === 'frontier'"
+                [class.bg-white]="carouselCategory() !== 'frontier'"
+                [class.text-slate-700]="carouselCategory() !== 'frontier'"
+                class="px-3.5 py-1.5 rounded-xl border border-pink-200 font-semibold transition-all cursor-pointer whitespace-nowrap">
+          Tier 04 • Frontier (3)
+        </button>
+        <button type="button"
+                (click)="setCarouselCategory('concepts')"
+                [class.bg-gradient-to-r]="carouselCategory() === 'concepts'"
+                [class.from-pink-500]="carouselCategory() === 'concepts'"
+                [class.to-purple-500]="carouselCategory() === 'concepts'"
+                [class.text-white]="carouselCategory() === 'concepts'"
+                [class.shadow-xs]="carouselCategory() === 'concepts'"
+                [class.bg-white]="carouselCategory() !== 'concepts'"
+                [class.text-slate-700]="carouselCategory() !== 'concepts'"
+                class="px-3.5 py-1.5 rounded-xl border border-pink-200 font-semibold transition-all cursor-pointer whitespace-nowrap">
+          Tier 05 • Concepts (3)
+        </button>
+      </div>
+
+      <!-- MAIN FLIP BOOK CAROUSEL CONTAINER -->
+      @if (currentCompany(); as company) {
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- 3D Flip Card Container (8 cols) -->
+          <div class="lg:col-span-8 perspective-1000 min-h-[460px] sm:min-h-[500px]">
+            <div class="relative w-full h-full transition-transform duration-700 transform-style-3d"
+                 [class.rotate-y-180]="isCardFlipped()">
+              
+              <!-- ============================================== -->
+              <!-- FRONT OF FLIP BOOK CARD                        -->
+              <!-- ============================================== -->
+              <div class="w-full h-full backface-hidden bg-white/95 rounded-3xl p-6 sm:p-10 shadow-[0_12px_40px_rgba(236,72,153,0.12)] border border-pink-200/80 flex flex-col justify-between overflow-hidden relative">
+                <!-- Glowing Top Rainbow Accent Line -->
+                <div class="absolute top-0 left-0 right-0 h-1.5 bg-pastel-rainbow"></div>
+
+                <div>
+                  <!-- Tier Badge & Icon Row -->
+                  <div class="flex items-center justify-between gap-3 mb-5">
+                    <div class="flex items-center gap-3">
+                      <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-100 via-purple-100 to-sky-100 border border-pink-200/80 flex items-center justify-center text-pink-600 shadow-xs">
+                        <span class="material-symbols-outlined text-[28px]">{{ company.icon }}</span>
+                      </div>
+                      <div>
+                        <span class="font-label-sm uppercase tracking-widest text-slate-500 font-bold block text-xs">
+                          {{ company.tierLabel }}
+                        </span>
+                        <div class="text-xs text-slate-400 font-medium">{{ company.domain }}</div>
+                      </div>
+                    </div>
+
+                    <!-- Flip book badge -->
+                    <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 text-slate-600 border border-slate-200/80 text-xs font-semibold">
+                      <span class="material-symbols-outlined text-[16px] text-pink-500">flip</span>
+                      <span>Click to flip</span>
+                    </div>
+                  </div>
+
+                  <!-- Company Title & Tagline -->
+                  <div class="mb-4">
+                    <h3 class="font-headline-md text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+                      {{ company.name }}
+                    </h3>
+                    <p class="font-body-md text-sm sm:text-base font-semibold text-pink-600">
+                      {{ company.tagline }}
+                    </p>
+                  </div>
+
+                  <!-- Highlight badge if available -->
+                  @if (company.highlight) {
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-pink-50 border border-pink-200 text-slate-800 text-xs font-semibold mb-4">
+                      <span class="material-symbols-outlined text-[16px] text-pink-500">verified</span>
+                      <span>{{ company.highlight }}</span>
+                    </div>
+                  }
+
+                  <!-- Description -->
+                  <p class="font-body-md text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    {{ company.description }}
+                  </p>
+                </div>
+
+                <!-- Card Front Action Bar -->
+                <div class="pt-4 border-t border-pink-100 flex flex-wrap items-center justify-between gap-3 mt-4">
+                  <div class="flex items-center gap-2">
+                    <button type="button"
+                            (click)="inspectCompany(company)"
+                            class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:from-pink-600 hover:to-purple-600 text-white text-xs font-bold transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+                      <span>Full Technical Dossier</span>
+                      <span class="material-symbols-outlined text-[16px]">visibility</span>
+                    </button>
+                    @if (company.url && company.url !== '#') {
+                      <a [href]="company.url" 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         class="px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition-colors flex items-center gap-1.5 border border-slate-200">
+                        <span>Visit Site</span>
+                        <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                      </a>
+                    }
+                  </div>
+
+                  <button type="button"
+                          (click)="toggleCardFlip()" 
+                          class="text-xs text-slate-500 font-semibold flex items-center gap-1 hover:text-slate-900 cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px] text-pink-500">sync_alt</span>
+                    <span>Flip for Specs &amp; Telemetry</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- ============================================== -->
+              <!-- BACK OF FLIP BOOK CARD (Specs & Telemetry)     -->
+              <!-- ============================================== -->
+              <div class="w-full h-full backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-[#261533] via-[#211232] to-[#1a1532] text-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-pink-300/40 flex flex-col justify-between overflow-hidden">
+                <!-- Glowing Top Rainbow Aura -->
+                <div class="absolute top-0 left-0 right-0 h-2 bg-pastel-rainbow"></div>
+
+                <div class="flex flex-col gap-4">
+                  <!-- Back Header -->
+                  <div class="flex items-center justify-between gap-2 border-b border-white/15 pb-3">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-[20px]">{{ company.icon }}</span>
+                      </div>
+                      <div>
+                        <span class="text-xs text-white font-bold uppercase tracking-wider">{{ company.name }} — TECHNICAL DOSSIER</span>
+                        <div class="text-xs text-slate-300">{{ company.domain }}</div>
+                      </div>
+                    </div>
+                    <span class="text-xs text-pink-300 font-semibold px-2 py-0.5 rounded bg-white/10 border border-white/15">
+                      {{ company.tierLabel }}
+                    </span>
+                  </div>
+
+                  <!-- Operational Metrics Grid -->
+                  @if (company.metrics && company.metrics.length > 0) {
+                    <div>
+                      <div class="text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-2">Key Operational Metrics</div>
+                      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                        @for (m of company.metrics; track m.label) {
+                          <div class="p-3 rounded-xl bg-white/5 border border-white/10 flex flex-col">
+                            <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">{{ m.label }}</span>
+                            <span class="text-base sm:text-lg font-bold text-white tracking-tight mt-0.5">{{ m.value }}</span>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  }
+
+                  <!-- Architecture & Strategic Vector -->
+                  <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs flex flex-col gap-1.5">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-pink-300">Architecture Vector</span>
+                    <p class="text-slate-200 leading-relaxed text-xs">
+                      {{ company.description }}
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Back Action Bar -->
+                <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 mt-4">
+                  <div class="flex items-center gap-2">
+                    <button type="button"
+                            (click)="inspectCompany(company)"
+                            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:from-pink-600 hover:to-purple-600 text-white text-xs font-bold transition-all shadow-md flex items-center gap-1.5 cursor-pointer">
+                      <span>Full Technical Dossier</span>
+                      <span class="material-symbols-outlined text-[16px]">visibility</span>
+                    </button>
+                    @if (company.url && company.url !== '#') {
+                      <a [href]="company.url" 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 border border-white/15">
+                        <span>Visit Site</span>
+                        <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+                      </a>
+                    }
+                  </div>
+
+                  <button type="button"
+                          (click)="toggleCardFlip()" 
+                          class="text-xs text-slate-300 font-semibold flex items-center gap-1 hover:text-white cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px]">flip_to_front</span>
+                    <span>Flip to Summary</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Quick-Find Roster Strip (4 cols) -->
+          <div class="lg:col-span-4 bg-white/95 rounded-3xl p-5 shadow-[0_8px_30px_rgba(236,72,153,0.06)] border border-pink-200/70 flex flex-col justify-between max-h-[500px]">
+            <div>
+              <div class="flex items-center justify-between border-b border-pink-200/50 pb-3 mb-3">
+                <span class="font-label-sm text-slate-900 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-pink-500 text-[18px]">auto_awesome</span>
+                  <span>Quick Finder ({{ filteredCarouselCompanies().length }})</span>
+                </span>
+                <span class="text-xs text-slate-500 font-medium">Click to View</span>
+              </div>
+
+              <!-- Scrollable Companies list -->
+              <div class="flex flex-col gap-1.5 overflow-y-auto max-h-[350px] pr-1 no-scrollbar">
+                @for (c of filteredCarouselCompanies(); track c.id; let idx = $index) {
+                  <button type="button"
+                          (click)="selectCompany(idx)"
+                          [class.bg-gradient-to-r]="idx === activeCarouselIndex()"
+                          [class.from-pink-500]="idx === activeCarouselIndex()"
+                          [class.via-purple-500]="idx === activeCarouselIndex()"
+                          [class.to-sky-400]="idx === activeCarouselIndex()"
+                          [class.text-white]="idx === activeCarouselIndex()"
+                          [class.shadow-xs]="idx === activeCarouselIndex()"
+                          [class.shadow-pink-500/20]="idx === activeCarouselIndex()"
+                          [class.bg-slate-50/80]="idx !== activeCarouselIndex()"
+                          [class.text-slate-800]="idx !== activeCarouselIndex()"
+                          [class.hover:bg-slate-100]="idx !== activeCarouselIndex()"
+                          class="w-full text-left p-2.5 rounded-xl border border-transparent transition-all flex items-center justify-between gap-2.5 cursor-pointer group">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                      <div class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                           [class.bg-white/20]="idx === activeCarouselIndex()"
+                           [class.text-white]="idx === activeCarouselIndex()"
+                           [class.bg-white]="idx !== activeCarouselIndex()"
+                           [class.text-pink-600]="idx !== activeCarouselIndex()">
+                        <span class="material-symbols-outlined text-[18px]">{{ c.icon }}</span>
+                      </div>
+                      <div class="min-w-0">
+                        <span class="text-xs font-bold block truncate">{{ c.name }}</span>
+                        <span class="text-[10px] block truncate"
+                              [class.text-white/80]="idx === activeCarouselIndex()"
+                              [class.text-slate-500]="idx !== activeCarouselIndex()">
+                          {{ c.tagline }}
+                        </span>
+                      </div>
+                    </div>
+                    <span class="material-symbols-outlined text-[16px] shrink-0"
+                          [class.text-white]="idx === activeCarouselIndex()"
+                          [class.text-slate-400]="idx !== activeCarouselIndex()">
+                      arrow_forward
+                    </span>
+                  </button>
+                }
+              </div>
+            </div>
+
+            <!-- Keyboard shortcut hint -->
+            <div class="pt-3 border-t border-pink-200/50 text-[11px] text-slate-500 flex items-center justify-between">
+              <span>Use &larr; / &rarr; keys to flip</span>
+              <span class="font-medium text-slate-600 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[12px] text-pink-500">flip</span>
+                <span>Press Space or F to flip</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      } @else {
+        <!-- No matching companies empty state -->
+        <div class="w-full p-8 rounded-3xl bg-white border border-pink-200 text-center flex flex-col items-center gap-3">
+          <span class="material-symbols-outlined text-4xl text-pink-400">search_off</span>
+          <p class="font-headline-sm font-bold text-slate-900">No ZoeWave companies found matching "{{ searchQuery() }}"</p>
+          <button type="button" 
+                  (click)="clearSearch()" 
+                  class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-bold cursor-pointer shadow-md">
+            Reset Filters &amp; Search
+          </button>
+        </div>
+      }
+
+      <!-- Pagination Scrubber Dots -->
+      @if (filteredCarouselCompanies().length > 1) {
+        <div class="flex items-center justify-center gap-2 pt-2">
+          @for (item of filteredCarouselCompanies(); track item.id; let dotIdx = $index) {
+            <button type="button"
+                    (click)="selectCompany(dotIdx)"
+                    [attr.aria-label]="'Go to company ' + item.name"
+                    [class.w-7]="dotIdx === activeCarouselIndex()"
+                    [class.bg-gradient-to-r]="dotIdx === activeCarouselIndex()"
+                    [class.from-pink-500]="dotIdx === activeCarouselIndex()"
+                    [class.to-purple-500]="dotIdx === activeCarouselIndex()"
+                    [class.w-2]="dotIdx !== activeCarouselIndex()"
+                    [class.bg-pink-300/60]="dotIdx !== activeCarouselIndex()"
+                    class="h-2 rounded-full transition-all duration-300 hover:bg-pink-400 cursor-pointer">
+            </button>
+          }
+        </div>
+      }
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SECTION 2: APPLE / MAC STYLE CATEGORIZED COMPANIES MATRIX    -->
+  <!-- As requested: Moved the categorized menu here into Catalog   -->
+  <!-- ============================================================ -->
+  <section id="catalog-matrix" class="relative z-10 py-16" aria-label="ZoeWave Companies Categorized Matrix">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+      
+      <!-- Section Header -->
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-pink-200/50 pb-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-slate-800 text-xs font-semibold uppercase tracking-wider border border-pink-200 shadow-xs">
+              <span class="material-symbols-outlined text-[15px] text-purple-500">category</span>
+              <span>All 14 Companies by Category</span>
+            </span>
+          </div>
+          <h2 class="font-headline-md text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Venture Architecture Matrix
+          </h2>
+          <p class="font-body-md text-xs sm:text-sm text-slate-500 mt-1 max-w-2xl">
+            Clean category grouping in the style of Apple and MAC Cosmetics. Select any venture to view in the spotlight carousel or inspect its technical dossier.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a routerLink="/companies" 
+             class="px-4 py-2 rounded-xl bg-white border border-pink-200 text-slate-800 hover:text-pink-600 hover:border-pink-300 text-xs font-bold transition-all shadow-xs flex items-center gap-1.5">
+            <span>Companies Directory Ledger</span>
+            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Layout: Apple Style Left Column + MAC Style Right Columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        
+        <!-- Apple AirPods Style Left Section -->
+        <div class="lg:col-span-3 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-pink-200/60 pb-8 lg:pb-0 lg:pr-8">
+          <div class="flex flex-col gap-5">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+              Explore Portfolio
+            </span>
+
+            <div class="flex flex-col gap-3">
+              <!-- Large bold primary action link (Apple style) -->
+              <a routerLink="/companies" 
+                 class="font-headline-sm text-2xl font-bold tracking-tight text-slate-900 hover:text-pink-600 transition-colors flex items-center justify-between group">
+                <span>Explore All 14 Companies</span>
+                <span class="material-symbols-outlined text-[20px] text-pink-500 transition-transform group-hover:translate-x-1">arrow_forward</span>
+              </a>
+
+              <button type="button" 
+                      (click)="scrollToCarousel()"
+                      class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 pt-2 cursor-pointer group text-left">
+                <span class="material-symbols-outlined text-[18px] text-pink-500">view_carousel</span>
+                <span>Interactive Flip Book</span>
+                <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+              </button>
+
+              <a routerLink="/projects" 
+                 class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 cursor-pointer group">
+                <span class="material-symbols-outlined text-[18px] text-purple-500">hub</span>
+                <span>Active Projects &amp; Hardware</span>
+                <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+              </a>
+
+              <a routerLink="/people/ash" 
+                 class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 cursor-pointer group">
+                <span class="material-symbols-outlined text-[18px] text-sky-500">badge</span>
+                <span>Siamak (Ash) Ashrafi Dossier</span>
+                <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick stat card -->
+          <div class="mt-8 p-5 rounded-2xl bg-white border border-pink-200/80 shadow-xs flex flex-col gap-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span class="text-xs font-bold text-slate-800">5 Operational Tiers</span>
+            </div>
+            <p class="text-[11px] text-slate-500 leading-relaxed">
+              Proprietary physical intelligence, clinical pharmacokinetics, AR spatial realityKit, and autonomous robotics swarms.
+            </p>
+            <button type="button" 
+                    (click)="openContact()"
+                    class="text-xs font-bold text-pink-600 hover:text-pink-700 transition-colors flex items-center gap-1 self-start pt-1 cursor-pointer">
+              <span>Initiate Joint Venture</span>
+              <span class="material-symbols-outlined text-[14px]">bolt</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- MAC Cosmetics Style Right Multi-Column Matrix (5 Categories) -->
+        <div class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-5">
+          @for (cat of categories; track cat.id) {
+            <div class="flex flex-col gap-3 p-4 rounded-2xl bg-white/70 border border-pink-200/50 shadow-xs hover:shadow-md transition-shadow">
+              
+              <!-- Category Header (MAC style: uppercase, tracking-wider) -->
+              <div class="pb-2.5 border-b border-slate-200 flex items-center justify-between">
+                <div>
+                  <span class="text-[11px] font-black tracking-widest text-slate-900 uppercase block">
+                    {{ cat.title }}
+                  </span>
+                  <span class="text-[10px] text-slate-400 leading-tight block">{{ cat.badge }}</span>
+                </div>
+                <span class="text-[10px] font-bold text-slate-500 px-1.5 py-0.5 rounded bg-slate-100">
+                  {{ cat.number }}
+                </span>
+              </div>
+
+              <!-- Quick Filter Action in Carousel -->
+              <button type="button" 
+                      (click)="setCarouselCategory(cat.tier === 'core' ? 'core' : cat.tier === 'production' ? 'production' : cat.tier === 'development' ? 'development' : cat.tier === 'frontier' ? 'frontier' : 'concepts'); scrollToCarousel()"
+                      class="text-[11px] font-bold text-pink-600 hover:text-pink-700 transition-colors flex items-center gap-1 text-left py-0.5 cursor-pointer group">
+                <span>View in Carousel</span>
+                <span class="material-symbols-outlined text-[13px] group-hover:translate-x-0.5 transition-transform">arrow_upward</span>
+              </button>
+
+              <!-- List of Companies in this Category -->
+              <div class="flex flex-col gap-1.5 pt-1">
+                @for (company of cat.companies; track company.id) {
+                  <button type="button"
+                          class="group relative flex flex-col text-left w-full p-2 -mx-1 rounded-xl hover:bg-pink-50/80 transition-all cursor-pointer border border-transparent hover:border-pink-200"
+                          (click)="selectCompanyById(company.id)">
+                    <div class="flex items-center justify-between gap-1 w-full">
+                      <span class="text-xs font-bold text-slate-800 group-hover:text-pink-600 transition-colors">
+                        {{ company.name }}
+                      </span>
+                      <span class="material-symbols-outlined text-[14px] text-slate-300 group-hover:text-pink-500 transition-colors shrink-0">
+                        visibility
+                      </span>
+                    </div>
+                    <span class="text-[11px] text-slate-500 group-hover:text-slate-700 transition-colors leading-tight line-clamp-1 mt-0.5">
+                      {{ company.tagline }}
+                    </span>
+                    <span class="text-[10px] text-slate-400 group-hover:text-pink-600 transition-colors mt-0.5">
+                      {{ company.domain }}
+                    </span>
+                  </button>
+                }
+              </div>
+            </div>
+          }
+        </div>
+
+      </div>
+
+      <!-- Bottom Joint Venture Banner -->
+      <div class="mt-14 p-8 rounded-3xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-white/80 block mb-1">
+            Enterprise Collaboration &amp; Spin-Outs
+          </span>
+          <h3 class="font-headline-sm text-2xl font-black tracking-tight">
+            Ready to integrate ZoeWave proprietary intelligence?
+          </h3>
+          <p class="text-xs sm:text-sm text-white/90 max-w-xl mt-1">
+            Reach out to discuss commercial deployment, clinical licensing, research sponsorships, or custom algorithmic integrations.
+          </p>
+        </div>
+
+        <button type="button" 
+                (click)="openContact()"
+                class="px-6 py-3 rounded-xl bg-white text-slate-900 hover:bg-pink-50 text-xs font-bold transition-all shadow-md shrink-0 flex items-center gap-2 cursor-pointer">
+          <span class="material-symbols-outlined text-[18px] text-pink-500">auto_awesome</span>
+          <span>Connect with ZoeWave</span>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+</div>

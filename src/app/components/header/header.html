@@ -1,11 +1,11 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#fffafd]/90 backdrop-blur-xl border-b border-pink-200/50 shadow-[0_4px_20px_rgba(236,72,153,0.06)]">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#fffafd]/95 backdrop-blur-xl border-b border-pink-200/50 shadow-[0_4px_20px_rgba(236,72,153,0.06)]">
   <!-- Top Pastel Rainbow Spectrum Line -->
   <div class="h-1 w-full bg-pastel-rainbow"></div>
 
   <div class="h-20 max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 flex items-center justify-between gap-4">
     <!-- Brand Logo -->
     <div class="flex items-center gap-4">
-      <a routerLink="/home" (click)="closeMobileMenu()" class="flex items-center gap-3 group" aria-label="ZoeWave Enterprises Home">
+      <a routerLink="/home" (click)="closeCatalogMenu(); closeMobileMenu()" class="flex items-center gap-3 group" aria-label="ZoeWave Enterprises Home">
         <div class="h-10 px-2.5 rounded-xl bg-white flex items-center justify-center border border-pink-200 shadow-[0_2px_12px_rgba(236,72,153,0.12)] transition-transform group-hover:scale-105 overflow-hidden">
           <img src="/assets/images/zoewave-logo.png" alt="ZoeWave Logo" class="h-7 w-auto object-contain" referrerpolicy="no-referrer" />
         </div>
@@ -22,27 +22,59 @@
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex items-center gap-1.5" aria-label="Main Navigation">
       <a routerLink="/home" 
+         (click)="closeCatalogMenu()"
          routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
          [routerLinkActiveOptions]="{exact: true}"
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Home
       </a>
+
+      <!-- Catalog Dropdown Tab (Apple / MAC Mega-Menu Trigger) -->
+      <div class="relative">
+        <button type="button" 
+                (click)="toggleCatalogMenu($event)"
+                [class.text-slate-900]="isCatalogMenuOpen()"
+                [class.font-semibold]="isCatalogMenuOpen()"
+                [class.bg-white]="isCatalogMenuOpen()"
+                [class.shadow-xs]="isCatalogMenuOpen()"
+                [class.border-pink-200]="isCatalogMenuOpen()"
+                routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60"
+                class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-all rounded-xl font-medium inline-flex items-center gap-1.5 border border-transparent cursor-pointer group"
+                aria-haspopup="true"
+                [attr.aria-expanded]="isCatalogMenuOpen()">
+          <span>Catalog</span>
+          <span class="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white leading-none">
+            14
+          </span>
+          <span class="material-symbols-outlined text-[16px] transition-transform duration-200 text-slate-400 group-hover:text-slate-700"
+                [class.rotate-180]="isCatalogMenuOpen()">
+            expand_more
+          </span>
+        </button>
+      </div>
+
+      <!-- Restored Original Companies Tab -->
       <a routerLink="/companies" 
+         (click)="closeCatalogMenu()"
          routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Companies
       </a>
+
       <a routerLink="/projects" 
+         (click)="closeCatalogMenu()"
          routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Projects
       </a>
       <a routerLink="/believe" 
+         (click)="closeCatalogMenu()"
          routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Believe
       </a>
       <a routerLink="/people/ash" 
+         (click)="closeCatalogMenu()"
          routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         People / Ash
@@ -61,6 +93,7 @@
 
       <!-- Ash Profile Avatar link -->
       <a routerLink="/people/ash" 
+         (click)="closeCatalogMenu()"
          title="Siamak (Ash) Ashrafi - Executive Dossier"
          class="hidden md:flex items-center gap-1.5 pl-2 border-l border-pink-200 hover:opacity-85 transition-opacity">
         <img alt="Siamak Ashrafi" 
@@ -72,7 +105,7 @@
       <!-- Mobile Hamburger Button -->
       <button type="button"
               (click)="toggleMobileMenu()"
-              class="lg:hidden p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-[#eaedff] transition-colors cursor-pointer"
+              class="lg:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-pink-50 transition-colors cursor-pointer"
               aria-label="Toggle Navigation Menu">
         <span class="material-symbols-outlined text-[26px]">
           @if (mobileMenuOpen()) {
@@ -85,49 +118,268 @@
     </div>
   </div>
 
+  <!-- ============================================================ -->
+  <!-- APPLE / MAC STYLE MEGA-MENU DROPDOWN FOR CATALOG             -->
+  <!-- Anchored directly beneath header with multi-column tiers     -->
+  <!-- ============================================================ -->
+  @if (isCatalogMenuOpen()) {
+    <!-- Soft backdrop -->
+    <div class="fixed inset-0 top-20 bg-slate-900/10 backdrop-blur-[2px] z-40 transition-opacity" 
+         (click)="closeCatalogMenu()" 
+         aria-hidden="true"></div>
+
+    <div class="absolute top-full left-0 right-0 z-50 bg-[#fffafd]/98 backdrop-blur-2xl border-b border-pink-200/80 shadow-[0_30px_60px_-15px_rgba(236,72,153,0.12),0_20px_35px_-5px_rgba(15,23,42,0.08)] overflow-hidden animate-fadeIn"
+         role="region"
+         aria-label="ZoeWave Catalog Directory Mega Menu">
+      <!-- Signature soft rainbow top border -->
+      <div class="h-0.5 w-full bg-pastel-rainbow opacity-80"></div>
+
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 lg:py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+          
+          <!-- LEFT SECTION (Apple AirPods Style Display Navigation) -->
+          <div class="lg:col-span-3 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-pink-200/60 pb-6 lg:pb-0 lg:pr-8">
+            <div class="flex flex-col gap-4">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+                Explore ZoeWave Catalog
+              </span>
+
+              <div class="flex flex-col gap-2">
+                <!-- Large bold primary action link (Apple style) -->
+                <button type="button" 
+                        (click)="navigateToAllCatalog($event)"
+                        class="text-left font-headline-sm text-2xl font-bold tracking-tight text-slate-900 hover:text-pink-600 transition-colors flex items-center justify-between group cursor-pointer">
+                  <span>Explore Full Catalog</span>
+                  <span class="material-symbols-outlined text-[20px] text-pink-500 transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </button>
+
+                <!-- Sub-feature links -->
+                <a routerLink="/catalog" 
+                   fragment="catalog-carousel" 
+                   (click)="closeCatalogMenu()"
+                   class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 pt-2 cursor-pointer group">
+                  <span class="material-symbols-outlined text-[18px] text-pink-500">view_carousel</span>
+                  <span>Portfolio Flip Book</span>
+                  <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+                </a>
+
+                <a routerLink="/catalog" 
+                   fragment="catalog-matrix" 
+                   (click)="closeCatalogMenu()"
+                   class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 cursor-pointer group">
+                  <span class="material-symbols-outlined text-[18px] text-purple-500">category</span>
+                  <span>Category Architecture Matrix</span>
+                  <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+                </a>
+
+                <a routerLink="/companies" 
+                   (click)="closeCatalogMenu()"
+                   class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 cursor-pointer group">
+                  <span class="material-symbols-outlined text-[18px] text-emerald-500">grid_view</span>
+                  <span>Companies Directory Ledger</span>
+                  <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+                </a>
+
+                <a routerLink="/people/ash" 
+                   (click)="closeCatalogMenu()"
+                   class="text-sm font-semibold text-slate-700 hover:text-pink-600 transition-colors flex items-center gap-2 cursor-pointer group">
+                  <span class="material-symbols-outlined text-[18px] text-sky-500">badge</span>
+                  <span>Siamak (Ash) Ashrafi Dossier</span>
+                  <span class="material-symbols-outlined text-[14px] text-slate-400 group-hover:text-pink-500 transition-colors">chevron_right</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Ecosystem summary badge -->
+            <div class="mt-6 p-4 rounded-2xl bg-white border border-pink-200/80 shadow-xs flex flex-col gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-bold text-slate-800">5 Operational Tiers Active</span>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-relaxed">
+                Spanning foundational physical computing, clinical micro-dosing, spatial realityKit, and autonomous robotics swarms.
+              </p>
+              <button type="button" 
+                      (click)="navigateToAllCatalog($event)"
+                      class="text-xs font-bold text-pink-600 hover:text-pink-700 transition-colors flex items-center gap-1 self-start pt-1 cursor-pointer">
+                <span>Open Catalog Showcase</span>
+                <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT SECTION (MAC Cosmetics Style Multi-Column Categories) -->
+          <div class="lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-5">
+            @for (cat of categories; track cat.id) {
+              <div class="flex flex-col gap-2.5">
+                <!-- MAC Style Category Header -->
+                <div class="pb-2 border-b border-slate-200 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[11px] font-black tracking-widest text-slate-900 uppercase">
+                      {{ cat.title }}
+                    </span>
+                  </div>
+                  <span class="text-[10px] font-bold text-slate-400 px-1.5 py-0.5 rounded bg-slate-100">
+                    {{ cat.number }}
+                  </span>
+                </div>
+
+                <!-- MAC Style "Explore Tier" link -->
+                <button type="button" 
+                        (click)="navigateToCatalogTier(cat.tier, $event)"
+                        class="text-[11px] font-bold text-pink-600 hover:text-pink-700 transition-colors flex items-center gap-0.5 text-left py-0.5 cursor-pointer group">
+                  <span>Explore All {{ cat.companies.length }}</span>
+                  <span class="material-symbols-outlined text-[13px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+                </button>
+
+                <!-- List of Companies in this Category -->
+                <div class="flex flex-col gap-1 pt-1">
+                  @for (company of cat.companies; track company.id) {
+                    <button type="button"
+                            class="group relative flex flex-col text-left w-full p-1.5 -mx-1.5 rounded-lg hover:bg-pink-50/70 transition-all cursor-pointer"
+                            (click)="inspectCompany(company, $event)">
+                      <div class="flex items-center justify-between gap-1 w-full">
+                        <span class="text-xs font-semibold text-slate-800 group-hover:text-pink-600 transition-colors">
+                          {{ company.name }}
+                        </span>
+                        <span class="material-symbols-outlined text-[13px] text-slate-300 group-hover:text-pink-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+                          info
+                        </span>
+                      </div>
+                      <span class="text-[11px] text-slate-500 group-hover:text-slate-700 transition-colors leading-tight truncate">
+                        {{ company.tagline }}
+                      </span>
+                    </button>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+
+        </div>
+
+        <!-- Mega-Menu Bottom Utility Strip -->
+        <div class="mt-8 pt-6 border-t border-pink-200/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[16px] text-pink-500">lock_open</span>
+            <span>All 14 ZoeWave enterprise intellectual properties, hardware blueprints, and clinical algorithms.</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a routerLink="/companies" 
+               (click)="closeCatalogMenu()"
+               class="px-4 py-1.5 rounded-lg bg-white border border-pink-200 text-slate-800 hover:text-pink-600 hover:border-pink-300 font-semibold transition-colors cursor-pointer">
+              Companies Ledger
+            </a>
+            <button type="button"
+                    (click)="openContact()"
+                    class="px-4 py-1.5 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold shadow-xs transition-all cursor-pointer">
+              Initiate Joint Venture
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  }
+
   <!-- Mobile Drawer Menu -->
   @if (mobileMenuOpen()) {
-    <div class="lg:hidden bg-[#faf8ff] border-b border-[#bfc7d5]/40 px-6 py-6 flex flex-col gap-3 shadow-xl animate-fadeIn">
+    <div class="lg:hidden bg-[#fffafd] border-b border-pink-200/70 px-6 py-6 flex flex-col gap-3 shadow-xl max-h-[calc(100vh-80px)] overflow-y-auto animate-fadeIn">
       <a routerLink="/home" 
          (click)="closeMobileMenu()"
-         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
+         routerLinkActive="text-pink-600 font-bold bg-pink-50/80" 
          [routerLinkActiveOptions]="{exact: true}"
-         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+         class="px-4 py-3 rounded-xl font-label-md text-slate-800 hover:bg-pink-50 transition-colors flex items-center justify-between">
         <span>Home</span>
-        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
       </a>
+
+      <!-- Mobile Catalog Accordion (Apple / MAC style category view) -->
+      <div class="rounded-xl border border-pink-200/80 overflow-hidden bg-white/80">
+        <button type="button" 
+                class="w-full flex items-center justify-between px-4 py-3 bg-white cursor-pointer text-left"
+                (click)="toggleMobileCatalog()">
+          <span class="font-label-md font-bold text-slate-900 flex items-center gap-2">
+            <span>Venture Catalog</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-pink-100 text-pink-700 font-semibold">14</span>
+          </span>
+          <span class="material-symbols-outlined text-slate-500 transition-transform duration-200"
+                [class.rotate-180]="mobileCatalogOpen()">
+            expand_more
+          </span>
+        </button>
+
+        @if (mobileCatalogOpen()) {
+          <div class="px-4 py-3 flex flex-col gap-4 bg-slate-50/50 border-t border-pink-200/50">
+            <button type="button"
+                    (click)="navigateToAllCatalog()"
+                    class="w-full py-2.5 px-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs">
+              <span>View Full Catalog</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+
+            @for (cat of categories; track cat.id) {
+              <div class="flex flex-col gap-1.5 pt-1 border-t border-pink-200/40 first:border-t-0 first:pt-0">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-black text-slate-900 uppercase tracking-wider">
+                    {{ cat.title }}
+                  </span>
+                  <button type="button" 
+                          (click)="navigateToCatalogTier(cat.tier)"
+                          class="text-[10px] font-bold text-pink-600 hover:text-pink-700">
+                    See All ({{ cat.companies.length }})
+                  </button>
+                </div>
+                <div class="flex flex-col gap-1 pl-1">
+                  @for (company of cat.companies; track company.id) {
+                    <button type="button" 
+                            (click)="inspectCompany(company)"
+                            class="text-left py-1 text-xs text-slate-700 hover:text-pink-600 flex items-center justify-between">
+                      <span class="font-medium">{{ company.name }}</span>
+                      <span class="text-[10px] text-slate-400">{{ company.domain }}</span>
+                    </button>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <!-- Restored Companies Clean Link in Mobile Menu -->
       <a routerLink="/companies" 
          (click)="closeMobileMenu()"
-         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
-         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+         routerLinkActive="text-pink-600 font-bold bg-pink-50/80" 
+         class="px-4 py-3 rounded-xl font-label-md text-slate-800 hover:bg-pink-50 transition-colors flex items-center justify-between">
         <span>Companies</span>
-        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
       </a>
+
       <a routerLink="/projects" 
          (click)="closeMobileMenu()"
-         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
-         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+         routerLinkActive="text-pink-600 font-bold bg-pink-50/80" 
+         class="px-4 py-3 rounded-xl font-label-md text-slate-800 hover:bg-pink-50 transition-colors flex items-center justify-between">
         <span>Projects</span>
-        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
       </a>
       <a routerLink="/believe" 
          (click)="closeMobileMenu()"
-         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
-         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+         routerLinkActive="text-pink-600 font-bold bg-pink-50/80" 
+         class="px-4 py-3 rounded-xl font-label-md text-slate-800 hover:bg-pink-50 transition-colors flex items-center justify-between">
         <span>Believe (Manifesto)</span>
-        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
       </a>
       <a routerLink="/people/ash" 
          (click)="closeMobileMenu()"
-         routerLinkActive="text-primary font-bold bg-[#eaedff]" 
-         class="px-4 py-3 rounded-xl font-label-md text-on-surface hover:bg-[#eaedff] transition-colors flex items-center justify-between">
+         routerLinkActive="text-pink-600 font-bold bg-pink-50/80" 
+         class="px-4 py-3 rounded-xl font-label-md text-slate-800 hover:bg-pink-50 transition-colors flex items-center justify-between">
         <span>People / Ash</span>
-        <span class="material-symbols-outlined text-sm text-on-surface-variant">arrow_forward</span>
+        <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
       </a>
-      <div class="pt-2 border-t border-[#bfc7d5]/30">
+      <div class="pt-2 border-t border-pink-200/50">
         <button type="button" 
                 (click)="openContact()"
-                class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:opacity-95 text-white font-label-md flex items-center justify-center gap-2 shadow-md">
+                class="w-full py-3 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:opacity-95 text-white font-label-md flex items-center justify-center gap-2 shadow-md cursor-pointer">
           <span class="material-symbols-outlined text-[20px]">bolt</span>
           Initiate Contact / Joint Ventures
         </button>

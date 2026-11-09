@@ -50,15 +50,15 @@
             ZoeWave is the visionary parent holding company overseeing strategic innovation across artificial intelligence, robotics, mobile/wearable ML, and physical sciences. Driven by rapid prototyping, empirical rigor, and technological audacity, we turn bold hypotheses into transformative platforms that elevate human life.
           </p>
           <div class="flex flex-wrap items-center gap-4 mt-8">
-            <a routerLink="/companies" 
+            <a routerLink="/catalog" 
                class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:from-pink-600 hover:to-purple-600 text-white font-label-md font-semibold transition-all shadow-[0_4px_20px_rgba(236,72,153,0.3)] hover:shadow-[0_4px_26px_rgba(168,85,247,0.4)] flex items-center gap-2 cursor-pointer">
-              <span>Explore 12 Companies</span>
-              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <span>Explore Venture Catalog</span>
+              <span class="material-symbols-outlined text-[18px]">view_carousel</span>
             </a>
-            <a routerLink="/projects" 
+            <a routerLink="/companies" 
                class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 font-label-md font-medium transition-colors flex items-center gap-2 cursor-pointer shadow-xs">
-              <span>View 14 R&amp;D Projects</span>
-              <span class="material-symbols-outlined text-[18px] text-pink-500">science</span>
+              <span>All 14 Companies</span>
+              <span class="material-symbols-outlined text-[18px] text-pink-500">grid_view</span>
             </a>
             <a routerLink="/believe" 
                class="px-6 py-3.5 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-pink-100/60 font-label-md font-medium transition-colors flex items-center gap-2">
@@ -165,7 +165,7 @@
   <!-- CAROUSEL (FLIP BOOK): ALL ZOEWAVE COMPANIES                   -->
   <!-- Positioned immediately before Companies Ecosystem             -->
   <!-- ============================================================ -->
-  <section class="relative w-full bg-gradient-to-b from-[#fffafd] via-[#fdf5f9] to-[#fbf4ff] border-b border-pink-200/50 py-12 lg:py-16 overflow-hidden" aria-label="ZoeWave Companies Flip Book">
+  <section id="companies-carousel" class="relative w-full bg-gradient-to-b from-[#fffafd] via-[#fdf5f9] to-[#fbf4ff] border-b border-pink-200/50 py-12 lg:py-16 overflow-hidden" aria-label="ZoeWave Companies Flip Book">
     <!-- Ambient subtle pastel rainbow glow orbs -->
     <div class="absolute -top-24 right-1/4 w-96 h-96 bg-pink-300/25 rounded-full blur-3xl pointer-events-none -z-0"></div>
     <div class="absolute -bottom-24 left-1/4 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl pointer-events-none -z-0"></div>
@@ -186,6 +186,10 @@
               <span class="material-symbols-outlined text-[14px] text-pink-500">grid_view</span>
               <span>All 14 ZoeWave Ventures</span>
             </span>
+            <a routerLink="/catalog" class="text-xs text-pink-600 hover:text-pink-700 font-bold flex items-center gap-0.5 ml-2">
+              <span>View Full Catalog</span>
+              <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+            </a>
           </div>
           <h2 class="font-headline-md text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight flex items-center gap-3">
             <span>ZoeWave Companies Directory</span>
@@ -610,7 +614,7 @@
   </section>
 
   <!-- Featured Companies Ecosystem Preview -->
-  <section class="w-full py-16 bg-gradient-to-b from-[#fdf5f9] to-[#fffafd]">
+  <section id="companies-ecosystem" class="w-full py-16 bg-gradient-to-b from-[#fdf5f9] to-[#fffafd]">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
