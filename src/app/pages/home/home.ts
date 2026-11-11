@@ -26,6 +26,13 @@ export class Home implements OnDestroy {
   // Existing horizon filter (for the lower grid)
   activeFilter = signal<'all' | 'health' | 'robotics' | 'ai'>('all');
 
+  // Leadership card collapse/expand state (hidden under icon by default)
+  isLeadershipOpen = signal<boolean>(false);
+
+  toggleLeadership(): void {
+    this.isLeadershipOpen.update(v => !v);
+  }
+
   // Carousel (Flip Book) State
   activeCarouselIndex = signal<number>(0);
   isCardFlipped = signal<boolean>(false);

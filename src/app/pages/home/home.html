@@ -732,58 +732,98 @@
     </div>
   </section>
 
-  <!-- Leadership Teaser: Siamak (Ash) Ashrafi -->
-  <section class="w-full py-16 bg-gradient-to-b from-[#fdf2f8] to-[#faf5ff] border-t border-pink-200/50">
+  <!-- Leadership Teaser: Hidden under an icon by default -->
+  <section class="w-full py-8 bg-gradient-to-b from-[#fdf2f8]/60 to-[#faf5ff] border-t border-pink-200/50 transition-all duration-300">
     <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
-      <div class="bg-white/95 rounded-3xl p-6 sm:p-10 shadow-[0_10px_40px_rgba(236,72,153,0.08)] border border-pink-200/70">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-4 flex justify-center">
-            <div class="relative w-64 h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
-              <img [src]="ash.avatarUrl" 
-                   [alt]="ash.name" 
-                   class="w-full h-full object-cover object-top"
-                   referrerpolicy="no-referrer" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
-                <span class="font-label-sm text-white/90 uppercase font-semibold">{{ ash.name }}</span>
-                <span class="font-headline-sm font-bold text-white">"Ash"</span>
-                <span class="text-xs text-slate-200">Architect • Researcher • Speaker</span>
+      <!-- Icon Trigger Button -->
+      <div class="flex flex-col items-center justify-center">
+        <button type="button"
+                (click)="toggleLeadership()"
+                [attr.aria-expanded]="isLeadershipOpen()"
+                title="Toggle Executive Leadership Profile"
+                class="group inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/95 hover:bg-white border border-pink-200/90 hover:border-pink-300 shadow-sm hover:shadow-md transition-all cursor-pointer backdrop-blur-xs">
+          <div class="relative w-9 h-9 rounded-full overflow-hidden border-2 border-pink-500 shadow-xs">
+            <img [src]="ash.avatarUrl" 
+                 [alt]="ash.name" 
+                 class="w-full h-full object-cover object-top"
+                 referrerpolicy="no-referrer" />
+            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+          </div>
+          <div class="flex items-center gap-2 text-left">
+            <span class="font-label-md font-bold text-slate-800 group-hover:text-pink-600 transition-colors">Executive Leadership</span>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-gradient-to-r from-pink-50 to-purple-50 text-pink-600 border border-pink-200/60 uppercase tracking-wider">Ash</span>
+          </div>
+          <span class="material-symbols-outlined text-[20px] text-slate-400 group-hover:text-pink-500 transition-transform duration-200"
+                [class.rotate-180]="isLeadershipOpen()">
+            {{ isLeadershipOpen() ? 'expand_less' : 'expand_more' }}
+          </span>
+        </button>
+        @if (!isLeadershipOpen()) {
+          <span class="text-xs text-slate-600 mt-1.5 font-medium">Click icon to view executive dossier</span>
+        }
+      </div>
+
+      <!-- Expanded Executive Card -->
+      @if (isLeadershipOpen()) {
+        <div class="mt-8 bg-white/95 rounded-3xl p-6 sm:p-10 shadow-[0_10px_40px_rgba(236,72,153,0.08)] border border-pink-200/70 relative transition-all duration-300">
+          <!-- Close button inside card -->
+          <button type="button"
+                  (click)="toggleLeadership()"
+                  aria-label="Hide executive dossier"
+                  title="Hide"
+                  class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-pink-50 text-slate-500 hover:text-pink-600 flex items-center justify-center transition-colors cursor-pointer border border-slate-200/60 shadow-xs">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-4 flex justify-center">
+              <div class="relative w-64 h-80 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
+                <img [src]="ash.avatarUrl" 
+                     [alt]="ash.name" 
+                     class="w-full h-full object-cover object-top"
+                     referrerpolicy="no-referrer" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+                  <span class="font-label-sm text-white/90 uppercase font-semibold">{{ ash.name }}</span>
+                  <span class="font-headline-sm font-bold text-white">"Ash"</span>
+                  <span class="text-xs text-slate-200">Architect • Researcher • Speaker</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-8 flex flex-col gap-4">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full font-label-sm bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold uppercase shadow-xs">Executive Leadership</span>
+                <span class="font-label-sm text-slate-600 font-semibold uppercase tracking-wider">52 Talks • 12 Years</span>
+              </div>
+              <h2 class="font-headline-lg text-slate-900 font-bold leading-tight">
+                Siamak "Ash" Ashrafi
+              </h2>
+              <p class="font-body-lg text-slate-600 leading-relaxed">
+                Architect of Platforms at ZoeWave, Developer of Innovation at YLabZ, and Designer of Technology at G.N.Seven. Recognized as a JavaOne Rock Star Speaker, 3-time Amazon Code Ninja, patent holder, and deep-tech researcher dedicated to empowering lives through compassionate engineering.
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
+                @for (dist of ash.distinctions; track dist.title) {
+                  <div class="p-3.5 rounded-2xl bg-white border border-pink-200/60 shadow-xs flex flex-col">
+                    <span class="font-label-sm text-slate-900 font-bold">{{ dist.title }}</span>
+                    <span class="font-body-sm text-slate-600">{{ dist.subtitle }}</span>
+                  </div>
+                }
+              </div>
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a routerLink="/people/ash" class="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:from-pink-600 hover:to-purple-600 text-white font-label-md font-semibold transition-all shadow-[0_4px_16px_rgba(236,72,153,0.3)] flex items-center gap-1.5 cursor-pointer">
+                  <span>Explore Executive Dossier</span>
+                  <span class="material-symbols-outlined text-[18px]">person</span>
+                </a>
+                <button type="button" 
+                        (click)="openContact()"
+                        class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-label-md font-medium border border-slate-200 transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs">
+                  <span class="material-symbols-outlined text-[18px] text-pink-500">send</span>
+                  <span>Connect with Ash</span>
+                </button>
               </div>
             </div>
           </div>
-          <div class="lg:col-span-8 flex flex-col gap-4">
-            <div class="flex items-center gap-2">
-              <span class="px-3 py-1 rounded-full font-label-sm bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold uppercase shadow-xs">Executive Leadership</span>
-              <span class="font-label-sm text-slate-600 font-semibold uppercase tracking-wider">52 Talks • 12 Years</span>
-            </div>
-            <h2 class="font-headline-lg text-slate-900 font-bold leading-tight">
-              Siamak "Ash" Ashrafi
-            </h2>
-            <p class="font-body-lg text-slate-600 leading-relaxed">
-              Architect of Platforms at ZoeWave, Developer of Innovation at YLabZ, and Designer of Technology at G.N.Seven. Recognized as a JavaOne Rock Star Speaker, 3-time Amazon Code Ninja, patent holder, and deep-tech researcher dedicated to empowering lives through compassionate engineering.
-            </p>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2">
-              @for (dist of ash.distinctions; track dist.title) {
-                <div class="p-3.5 rounded-2xl bg-white border border-pink-200/60 shadow-xs flex flex-col">
-                  <span class="font-label-sm text-slate-900 font-bold">{{ dist.title }}</span>
-                  <span class="font-body-sm text-slate-600">{{ dist.subtitle }}</span>
-                </div>
-              }
-            </div>
-            <div class="flex flex-wrap items-center gap-4 pt-2">
-              <a routerLink="/people/ash" class="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:from-pink-600 hover:to-purple-600 text-white font-label-md font-semibold transition-all shadow-[0_4px_16px_rgba(236,72,153,0.3)] flex items-center gap-1.5 cursor-pointer">
-                <span>Explore Executive Dossier</span>
-                <span class="material-symbols-outlined text-[18px]">person</span>
-              </a>
-              <button type="button" 
-                      (click)="openContact()"
-                      class="px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-label-md font-medium border border-slate-200 transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs">
-                <span class="material-symbols-outlined text-[18px] text-pink-500">send</span>
-                <span>Connect with Ash</span>
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
+      }
     </div>
   </section>
 </div>
