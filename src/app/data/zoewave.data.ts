@@ -660,3 +660,46 @@ export const ASH_LEADERSHIP_DATA = {
     }
   }
 };
+
+export const NOUSHIN_LEADERSHIP_DATA = {
+  name: 'Dr. Noushin Ashrafi',
+  alias: 'Noushin',
+  title: 'VP of Product • Professor of Management Information Systems',
+  role: 'VP of Product',
+  avatarUrl: '/assets/images/noushin-avatar.jpg',
+  linkedInUrl: 'https://www.linkedin.com/in/noushin-ashrafi-99349993/',
+  bio: 'Accomplished product executive, academic scholar, and textbook author specializing in Object-Oriented Systems Analysis & Design, Business Intelligence, Big Data, and Healthcare IT. Leading product lifecycle strategy and user-centric systems execution across ZoeWave portfolio ventures.',
+  distinctions: [
+    { title: 'Executive', subtitle: 'VP of Product', icon: 'verified' },
+    { title: 'Academic', subtitle: 'Professor of MIS', icon: 'school' },
+    { title: 'Author', subtitle: 'Systems Analysis & Design', icon: 'menu_book' },
+    { title: 'Research', subtitle: 'Big Data & Healthcare', icon: 'biotech' }
+  ],
+  pillars: [
+    {
+      title: 'Product Strategy & Vision',
+      description: 'Translating cutting-edge deep tech and experimental research from YLabZ and ZoeWave into coherent, scalable products tailored for enterprise and consumer domains.',
+      icon: 'lightbulb'
+    },
+    {
+      title: 'Object-Oriented Systems',
+      description: 'Pioneering rigorous architectural frameworks and modular product engineering, building on foundational publications in systems design and modeling.',
+      icon: 'schema'
+    },
+    {
+      title: 'Data-Driven Healthcare IT',
+      description: 'Guiding predictive intelligence, clinical modeling integrity, and privacy-first architectures for digital health, wearable biosensors, and therapeutic platforms.',
+      icon: 'health_and_safety'
+    },
+    {
+      title: 'Ecosystem Alignment',
+      description: 'Orchestrating cross-functional synergy among the 14 ZoeWave ventures, aligning R&D roadmaps with market viability and user empathy.',
+      icon: 'hub'
+    }
+  ],
+  quote: {
+    headline: 'Bridging rigorous academic research with empathetic product engineering.',
+    subtext: 'Every technological breakthrough must serve a measurable human purpose with elegance, privacy, and clarity.'
+  }
+};
+

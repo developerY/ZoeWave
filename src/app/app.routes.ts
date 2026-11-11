@@ -36,6 +36,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/people/people-ash').then(m => m.PeopleAsh)
   },
   {
+    path: 'people/noushin',
+    loadComponent: () => import('./pages/people/people-noushin').then(m => m.PeopleNoushin)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

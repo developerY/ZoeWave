@@ -96,33 +96,56 @@
 
         <!-- Anchored Dropdown Under People -->
         @if (isPeopleMenuOpen()) {
-          <div class="absolute top-full right-0 mt-2.5 w-72 rounded-2xl bg-white/98 backdrop-blur-2xl shadow-[0_20px_50px_rgba(236,72,153,0.18),0_10px_25px_rgba(15,23,42,0.08)] border border-pink-200/80 p-2.5 z-50 animate-fadeIn"
+          <div class="absolute top-full right-0 mt-2.5 w-80 rounded-2xl bg-white/98 backdrop-blur-2xl shadow-[0_20px_50px_rgba(236,72,153,0.18),0_10px_25px_rgba(15,23,42,0.08)] border border-pink-200/80 p-2.5 z-50 animate-fadeIn"
                role="menu"
                aria-label="People Directory">
             <span class="text-[10px] font-bold text-slate-600 uppercase tracking-wider px-2 pt-1 pb-1.5 block">
               Leadership & Architecture
             </span>
 
-            <!-- Ash under People -->
-            <a routerLink="/people/ash"
-               (click)="closePeopleMenu()"
-               class="flex items-center gap-3 p-2.5 rounded-xl bg-pink-50/50 hover:bg-pink-100/70 border border-pink-200/60 transition-all group/ash cursor-pointer">
-              <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-pink-400 shadow-xs shrink-0">
-                <img src="/assets/images/ash-avatar.jpg"
-                     alt="Siamak (Ash) Ashrafi"
-                     class="w-full h-full object-cover object-top"
-                     referrerpolicy="no-referrer" />
-                <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
-              </div>
-              <div class="flex flex-col min-w-0">
-                <div class="flex items-center gap-1.5">
-                  <span class="text-sm font-bold text-slate-900 group-hover/ash:text-pink-600 transition-colors">Ash</span>
-                  <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white">Founder</span>
+            <div class="flex flex-col gap-1.5">
+              <!-- Ash under People -->
+              <a routerLink="/people/ash"
+                 (click)="closePeopleMenu()"
+                 class="flex items-center gap-3 p-2.5 rounded-xl bg-pink-50/50 hover:bg-pink-100/70 border border-pink-200/60 transition-all group/ash cursor-pointer">
+                <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-pink-400 shadow-xs shrink-0">
+                  <img src="/assets/images/ash-avatar.jpg"
+                       alt="Siamak (Ash) Ashrafi"
+                       class="w-full h-full object-cover object-top"
+                       referrerpolicy="no-referrer" />
+                  <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
                 </div>
-                <span class="text-xs text-slate-600 truncate">Siamak Ashrafi &bull; Dossier</span>
-              </div>
-              <span class="material-symbols-outlined text-[18px] text-pink-500 ml-auto group-hover/ash:translate-x-0.5 transition-transform">arrow_forward</span>
-            </a>
+                <div class="flex flex-col min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-bold text-slate-900 group-hover/ash:text-pink-600 transition-colors">Ash</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white">Founder</span>
+                  </div>
+                  <span class="text-xs text-slate-600 truncate">Siamak Ashrafi &bull; Dossier</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-pink-500 ml-auto group-hover/ash:translate-x-0.5 transition-transform">arrow_forward</span>
+              </a>
+
+              <!-- Noushin under Ash -->
+              <a routerLink="/people/noushin"
+                 (click)="closePeopleMenu()"
+                 class="flex items-center gap-3 p-2.5 rounded-xl bg-purple-50/50 hover:bg-purple-100/70 border border-purple-200/60 transition-all group/noushin cursor-pointer">
+                <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-purple-400 shadow-xs shrink-0">
+                  <img src="/assets/images/noushin-avatar.jpg"
+                       alt="Dr. Noushin Ashrafi"
+                       class="w-full h-full object-cover object-top"
+                       referrerpolicy="no-referrer" />
+                  <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+                </div>
+                <div class="flex flex-col min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-bold text-slate-900 group-hover/noushin:text-purple-600 transition-colors">Noushin</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white">VP of Product</span>
+                  </div>
+                  <span class="text-xs text-slate-600 truncate">Dr. Noushin Ashrafi &bull; Dossier</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-purple-500 ml-auto group-hover/noushin:translate-x-0.5 transition-transform">arrow_forward</span>
+              </a>
+            </div>
           </div>
         }
       </div>
@@ -435,7 +458,8 @@
         </button>
 
         @if (mobilePeopleOpen()) {
-          <div class="p-3 border-t border-pink-100 bg-white">
+          <div class="p-3 border-t border-pink-100 bg-white flex flex-col gap-2">
+            <!-- Ash -->
             <a routerLink="/people/ash"
                (click)="closeMobileMenu()"
                class="flex items-center gap-3 p-2.5 rounded-xl bg-pink-50/50 hover:bg-pink-100/60 transition-colors">
@@ -443,7 +467,7 @@
                    alt="Siamak (Ash) Ashrafi" 
                    class="w-9 h-9 rounded-full object-cover border border-pink-300 shrink-0"
                    referrerpolicy="no-referrer" />
-              <div class="flex flex-col min-w-0">
+              <div class="flex flex-col min-w-0 flex-1">
                 <div class="flex items-center gap-1.5">
                   <span class="text-xs font-bold text-slate-900">Ash</span>
                   <span class="text-[9px] font-semibold px-1 py-0.2 rounded bg-pink-100 text-pink-700">Founder</span>
@@ -451,6 +475,24 @@
                 <span class="text-[10px] text-slate-600 truncate">Siamak Ashrafi &bull; Dossier</span>
               </div>
               <span class="material-symbols-outlined text-[16px] text-slate-400 ml-auto">arrow_forward</span>
+            </a>
+
+            <!-- Noushin -->
+            <a routerLink="/people/noushin"
+               (click)="closeMobileMenu()"
+               class="flex items-center gap-3 p-2.5 rounded-xl bg-purple-50/50 hover:bg-purple-100/60 transition-colors">
+              <img src="/assets/images/noushin-avatar.jpg" 
+                   alt="Dr. Noushin Ashrafi" 
+                   class="w-9 h-9 rounded-full object-cover border border-purple-300 shrink-0"
+                   referrerpolicy="no-referrer" />
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-bold text-slate-900">Noushin</span>
+                  <span class="text-[9px] font-semibold px-1 py-0.2 rounded bg-purple-100 text-purple-700">VP of Product</span>
+                </div>
+                <span class="text-[10px] text-slate-600 truncate">Dr. Noushin Ashrafi &bull; Dossier</span>
+              </div>
+              <span class="material-symbols-outlined text-[16px] text-purple-400 ml-auto">arrow_forward</span>
             </a>
           </div>
         }

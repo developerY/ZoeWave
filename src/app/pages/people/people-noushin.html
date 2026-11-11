@@ -1,0 +1,183 @@
+<div class="flex flex-col w-full">
+  <!-- Decorative ambient glow backdrops -->
+  <div class="relative w-full overflow-hidden bg-[#faf8ff] pb-16">
+    <div class="absolute -top-40 right-10 w-96 h-96 rounded-full bg-[#fce7f3]/40 blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute top-96 -left-32 w-[32rem] h-[32rem] rounded-full bg-[#ede9fe]/50 blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Main Container -->
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-12">
+      <!-- Top Breadcrumb & Status Telemetry Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-pink-200/50 mb-8">
+        <div class="flex items-center gap-2 font-label-md">
+          <a routerLink="/home" class="text-slate-500 hover:text-pink-600 transition-colors font-medium">Home</a>
+          <span class="text-slate-400">/</span>
+          <span class="text-slate-500 font-medium">People</span>
+          <span class="text-slate-400">/</span>
+          <span class="text-slate-700 font-semibold">Executive Office</span>
+          <span class="text-slate-400">/</span>
+          <span class="text-slate-900 font-bold">Dr. Noushin Ashrafi</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 border border-slate-200 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="font-label-sm uppercase tracking-wider text-slate-800 font-semibold text-xs">VP of Product</span>
+          </div>
+          <a routerLink="/people/ash" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 text-pink-700 hover:bg-pink-100 font-label-sm font-semibold text-xs border border-pink-200 transition-colors">
+            <span>View Ash (Founder)</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Executive Profile Bento Header Block -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left Hero Portrait & Accolades Card (5 cols) -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="relative bg-white/95 rounded-3xl p-6 sm:p-8 shadow-[0_10px_35px_rgba(236,72,153,0.09)] border border-pink-200/70 overflow-hidden">
+            <!-- Signature Rainbow Top Aura -->
+            <div class="absolute top-0 left-0 right-0 h-2 bg-pastel-rainbow"></div>
+
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-pink-50/50 mb-6 shadow-md border-2 border-white">
+              <img [src]="noushin.avatarUrl" 
+                   [alt]="noushin.name" 
+                   class="w-full h-full object-cover object-top" 
+                   referrerpolicy="no-referrer" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
+                <span class="font-label-sm text-pink-300 uppercase tracking-widest font-bold text-xs">{{ noushin.name }}</span>
+                <span class="font-headline-sm text-white font-bold">"{{ noushin.alias }}"</span>
+                <p class="font-body-sm text-slate-200 text-xs">{{ noushin.title }}</p>
+              </div>
+            </div>
+
+            <!-- Credentials & Distinctions Badges -->
+            <div class="flex flex-col gap-3">
+              <span class="font-label-sm text-slate-800 uppercase font-bold tracking-wider flex items-center gap-1.5 text-xs">
+                <span class="material-symbols-outlined text-[16px] text-pink-500">auto_awesome</span>
+                <span>Leadership Credentials &amp; Honors</span>
+              </span>
+              <div class="grid grid-cols-2 gap-2">
+                @for (dist of noushin.distinctions; track dist.title) {
+                  <div class="p-3 rounded-2xl bg-white/90 flex items-center gap-2.5 border border-pink-200/60 shadow-xs">
+                    <span class="material-symbols-outlined text-purple-600 text-xl">{{ dist.icon }}</span>
+                    <div>
+                      <div class="font-label-md text-slate-900 font-bold leading-tight text-sm">{{ dist.title }}</div>
+                      <div class="font-body-sm text-slate-600 text-xs font-medium">{{ dist.subtitle }}</div>
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+
+            <!-- LinkedIn & Contact Buttons -->
+            <div class="mt-6 pt-4 border-t border-slate-200/60 flex flex-col gap-2.5">
+              <a [href]="noushin.linkedInUrl" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="w-full py-3 px-4 rounded-xl bg-[#0077b5] hover:bg-[#006097] text-white font-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+                <span class="font-bold text-sm">in</span>
+                <span>Connect on LinkedIn</span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </a>
+
+              <button type="button" 
+                      (click)="openContact()"
+                      class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 hover:opacity-95 text-white font-label-md font-semibold transition-all shadow-[0_4px_16px_rgba(236,72,153,0.3)] flex items-center justify-center gap-2 cursor-pointer">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span>Direct Executive Inquiry</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content & Strategic Dossier Block (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          <!-- Overview Card -->
+          <div class="bg-white/95 rounded-3xl p-6 sm:p-8 shadow-[0_10px_35px_rgba(236,72,153,0.06)] border border-pink-200/70">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-purple-500 to-indigo-500 text-white uppercase tracking-wider">
+                VP of Product
+              </span>
+              <span class="text-xs text-slate-500 font-semibold uppercase tracking-wider">ZoeWave Ecosystem</span>
+            </div>
+            
+            <h1 class="font-headline-lg text-slate-900 font-bold text-3xl sm:text-4xl mb-4 leading-tight">
+              Dr. Noushin Ashrafi
+            </h1>
+
+            <p class="font-body-lg text-slate-700 leading-relaxed text-base sm:text-lg mb-6">
+              {{ noushin.bio }}
+            </p>
+
+            <!-- Academic & Industry Synergy Quote -->
+            <div class="p-5 rounded-2xl bg-gradient-to-br from-pink-50/70 via-purple-50/50 to-white border border-pink-200/70 relative">
+              <span class="material-symbols-outlined text-pink-400 text-3xl absolute top-3 right-4 opacity-40">format_quote</span>
+              <p class="text-slate-800 font-medium italic text-sm sm:text-base pr-8 mb-2">
+                "{{ noushin.quote.headline }}"
+              </p>
+              <p class="text-xs text-slate-600 font-medium">
+                {{ noushin.quote.subtext }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Product Leadership Pillars -->
+          <div class="bg-white/95 rounded-3xl p-6 sm:p-8 shadow-[0_10px_35px_rgba(236,72,153,0.06)] border border-pink-200/70 flex flex-col gap-5">
+            <div class="flex items-center justify-between border-b border-pink-200/50 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-pink-500 text-2xl">interests</span>
+                <h2 class="font-headline-sm text-slate-900 font-bold text-xl">Core Product Pillars</h2>
+              </div>
+              <span class="text-xs text-slate-500 font-semibold">14 Portfolio Ventures</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              @for (pillar of noushin.pillars; track pillar.title) {
+                <div class="p-4 rounded-2xl bg-[#faf5ff]/60 border border-purple-200/60 flex flex-col gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-[18px]">{{ pillar.icon }}</span>
+                    </span>
+                    <h3 class="font-label-md text-slate-900 font-bold text-sm">{{ pillar.title }}</h3>
+                  </div>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    {{ pillar.description }}
+                  </p>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- Cross Navigation to Portfolio & Ash -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a routerLink="/catalog" class="p-5 rounded-2xl bg-white/95 border border-pink-200/70 shadow-sm hover:shadow-md transition-all flex items-center justify-between group cursor-pointer">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[22px]">view_carousel</span>
+                </span>
+                <div>
+                  <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Explore Products</span>
+                  <span class="font-headline-sm text-slate-900 font-bold text-base group-hover:text-pink-600 transition-colors">14 Portfolio Catalog</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-pink-500 transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </a>
+
+            <a routerLink="/people/ash" class="p-5 rounded-2xl bg-white/95 border border-pink-200/70 shadow-sm hover:shadow-md transition-all flex items-center justify-between group cursor-pointer">
+              <div class="flex items-center gap-3">
+                <img src="/assets/images/ash-avatar.jpg" 
+                     alt="Ash" 
+                     class="w-10 h-10 rounded-full object-cover border-2 border-pink-400 group-hover:scale-105 transition-transform" 
+                     referrerpolicy="no-referrer" />
+                <div>
+                  <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block">Founding Architect</span>
+                  <span class="font-headline-sm text-slate-900 font-bold text-base group-hover:text-pink-600 transition-colors">Siamak "Ash" Ashrafi</span>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-pink-500 transition-transform group-hover:translate-x-1">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
