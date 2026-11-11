@@ -73,8 +73,8 @@
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Believe
       </a>
-      <!-- People Dropdown Tab -->
-      <div class="relative" (mouseenter)="openPeopleMenu()" (mouseleave)="closePeopleMenu()">
+      <!-- People Dropdown Tab (Same exact style and interaction as Catalog with chevron) -->
+      <div class="relative">
         <button type="button" 
                 (click)="togglePeopleMenu($event)"
                 [class.text-slate-900]="isPeopleMenuOpen()"
@@ -92,47 +92,6 @@
             expand_more
           </span>
         </button>
-
-        @if (isPeopleMenuOpen()) {
-          <div class="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-[#fffafd]/98 backdrop-blur-2xl border border-pink-200/80 shadow-[0_16px_40px_rgba(236,72,153,0.14),0_8px_20px_rgba(15,23,42,0.08)] p-2 z-50 animate-fadeIn"
-               role="menu"
-               aria-label="People Directory">
-            <!-- Subtle Top Rainbow Line -->
-            <div class="h-0.5 w-full bg-pastel-rainbow rounded-t-xl mb-1.5 opacity-80"></div>
-            
-            <div class="px-3 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-pink-100/70 mb-1">
-              Leadership &amp; Architecture
-            </div>
-
-            <a routerLink="/people/ash"
-               (click)="closePeopleMenu(); closeCatalogMenu()"
-               class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-pink-50/80 transition-all group/item cursor-pointer">
-              <img src="/assets/images/ash-avatar.jpg" 
-                   alt="Siamak (Ash) Ashrafi" 
-                   class="w-10 h-10 rounded-full object-cover border-2 border-pink-300 shadow-xs shrink-0 group-hover/item:border-pink-500 transition-colors"
-                   referrerpolicy="no-referrer" />
-              <div class="flex flex-col min-w-0">
-                <div class="flex items-center gap-1.5">
-                  <span class="text-sm font-bold text-slate-900 group-hover/item:text-pink-600 transition-colors">
-                    Ash
-                  </span>
-                  <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-pink-100 text-pink-700">
-                    Lead
-                  </span>
-                </div>
-                <span class="text-xs text-slate-600 truncate font-medium">
-                  Siamak "Ash" Ashrafi
-                </span>
-                <span class="text-[10px] text-slate-400 truncate">
-                  Executive Dossier &amp; Architecture
-                </span>
-              </div>
-              <span class="material-symbols-outlined text-[16px] text-slate-300 group-hover/item:text-pink-500 ml-auto transition-colors">
-                arrow_forward
-              </span>
-            </a>
-          </div>
-        }
       </div>
     </nav>
 
@@ -324,6 +283,175 @@
                (click)="closeCatalogMenu()"
                class="px-4 py-1.5 rounded-lg bg-white border border-pink-200 text-slate-800 hover:text-pink-600 hover:border-pink-300 font-semibold transition-colors cursor-pointer">
               Companies Ledger
+            </a>
+            <button type="button"
+                    (click)="openContact()"
+                    class="px-4 py-1.5 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold shadow-xs transition-all cursor-pointer">
+              Initiate Joint Venture
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  }
+
+  <!-- ============================================================ -->
+  <!-- APPLE / MAC STYLE MEGA-MENU DROPDOWN FOR PEOPLE              -->
+  <!-- Anchored directly beneath header with backdrop overlay       -->
+  <!-- ============================================================ -->
+  @if (isPeopleMenuOpen()) {
+    <!-- Soft backdrop -->
+    <div class="fixed inset-0 top-20 bg-slate-900/10 backdrop-blur-[2px] z-40 transition-opacity" 
+         (click)="closePeopleMenu()" 
+         aria-hidden="true"></div>
+
+    <div class="absolute top-full left-0 right-0 z-50 bg-[#fffafd]/98 backdrop-blur-2xl border-b border-pink-200/80 shadow-[0_30px_60px_-15px_rgba(236,72,153,0.12),0_20px_35px_-5px_rgba(15,23,42,0.08)] overflow-hidden animate-fadeIn"
+         role="region"
+         aria-label="People Directory Menu">
+      <!-- Signature soft rainbow top border -->
+      <div class="h-0.5 w-full bg-pastel-rainbow opacity-80"></div>
+
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 py-8 lg:py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+          
+          <!-- LEFT SECTION (Apple AirPods Style Display Navigation) -->
+          <div class="lg:col-span-4 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-pink-200/60 pb-6 lg:pb-0 lg:pr-8">
+            <div class="flex flex-col gap-4">
+              <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+                Executive Leadership &amp; Engineering
+              </span>
+
+              <div class="flex flex-col gap-2">
+                <!-- Large bold primary action link (Apple style) -->
+                <a routerLink="/people/ash" 
+                   (click)="closePeopleMenu()"
+                   class="text-left font-headline-sm text-2xl font-bold tracking-tight text-slate-900 hover:text-pink-600 transition-colors flex items-center justify-between group cursor-pointer">
+                  <span>Siamak (Ash) Ashrafi</span>
+                  <span class="material-symbols-outlined text-[20px] text-pink-500 transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </a>
+
+                <p class="text-xs text-slate-600 leading-relaxed pt-1">
+                  Executive Chairman, Founder &amp; System Architect across ZoeWave's 14 enterprises in physical computing, clinical AI, robotics, and spatial realityKit.
+                </p>
+
+                <div class="flex items-center gap-2 pt-2">
+                  <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-pink-50 text-pink-700 border border-pink-200">
+                    Lead Architect
+                  </span>
+                  <span class="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 border border-purple-200">
+                    24+ Patents Active
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Action Card -->
+            <div class="mt-6 p-4 rounded-2xl bg-white border border-pink-200/80 shadow-xs flex flex-col gap-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-bold text-slate-800">Direct Office Access</span>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-relaxed">
+                Connect directly for venture partnerships, technology licensing, keynotes, or executive advisory.
+              </p>
+              <button type="button" 
+                      (click)="openContact()"
+                      class="text-xs font-bold text-pink-600 hover:text-pink-700 transition-colors flex items-center gap-1 self-start pt-1 cursor-pointer">
+                <span>Contact Executive Office</span>
+                <span class="material-symbols-outlined text-[14px]">bolt</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT SECTION: Featured Profile & Links (8 cols) -->
+          <div class="lg:col-span-8 flex flex-col gap-6">
+            <!-- Featured Ash Dossier Card -->
+            <a routerLink="/people/ash" 
+               (click)="closePeopleMenu()"
+               class="p-5 sm:p-6 rounded-2xl bg-white border border-pink-200/80 shadow-xs hover:shadow-md hover:border-pink-300 transition-all flex flex-col sm:flex-row items-center sm:items-start gap-5 group cursor-pointer">
+              <img src="/assets/images/ash-avatar.jpg" 
+                   alt="Siamak (Ash) Ashrafi" 
+                   class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-2 border-pink-300 shadow-sm shrink-0 group-hover:scale-105 transition-transform"
+                   referrerpolicy="no-referrer" />
+              <div class="flex flex-col gap-2 min-w-0 text-center sm:text-left flex-1">
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                  <h3 class="font-headline-sm text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-pink-600 transition-colors">
+                    Ash (Siamak Ashrafi)
+                  </h3>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-xs">
+                    Founder
+                  </span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Pioneering autonomous physical AI, pharmacometrics micro-dosing, and high-velocity venture engineering. Click to explore his complete executive dossier, patented hardware platforms, keynotes, and published works.
+                </p>
+                <div class="flex items-center justify-center sm:justify-start gap-1.5 text-xs font-bold text-pink-600 pt-1">
+                  <span>Open Full Executive Dossier</span>
+                  <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Quick Links Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <a href="https://sessionize.com/Ash/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 (click)="closePeopleMenu()"
+                 class="p-3.5 rounded-xl bg-white border border-pink-200/60 shadow-xs hover:bg-pink-50/50 hover:border-pink-300 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-lg bg-pink-100 flex items-center justify-center text-pink-600 shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">record_voice_over</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="text-xs font-bold text-slate-800 group-hover:text-pink-600 transition-colors truncate">Sessionize Keynotes</span>
+                  <span class="text-[10px] text-slate-500 truncate">Public Talks &amp; Seminars</span>
+                </div>
+              </a>
+
+              <a href="https://zoewave.medium.com/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 (click)="closePeopleMenu()"
+                 class="p-3.5 rounded-xl bg-white border border-pink-200/60 shadow-xs hover:bg-pink-50/50 hover:border-pink-300 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">edit_note</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="text-xs font-bold text-slate-800 group-hover:text-purple-600 transition-colors truncate">Medium Essays</span>
+                  <span class="text-[10px] text-slate-500 truncate">Architectural Writing</span>
+                </div>
+              </a>
+
+              <a href="https://shorturl.at/ejyAJ" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 (click)="closePeopleMenu()"
+                 class="p-3.5 rounded-xl bg-white border border-pink-200/60 shadow-xs hover:bg-pink-50/50 hover:border-pink-300 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-lg bg-sky-100 flex items-center justify-center text-sky-600 shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">description</span>
+                </div>
+                <div class="flex flex-col min-w-0">
+                  <span class="text-xs font-bold text-slate-800 group-hover:text-sky-600 transition-colors truncate">Executive Resume</span>
+                  <span class="text-[10px] text-slate-500 truncate">Career Leadership Ledger</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Utility Strip -->
+        <div class="mt-8 pt-6 border-t border-pink-200/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[16px] text-pink-500">verified</span>
+            <span>Executive leadership overseeing ZoeWave Enterprises, YLabZ, and G.N.Seven.</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a routerLink="/believe" 
+               (click)="closePeopleMenu()"
+               class="px-4 py-1.5 rounded-lg bg-white border border-pink-200 text-slate-800 hover:text-pink-600 hover:border-pink-300 font-semibold transition-colors cursor-pointer">
+              Read 8 Convictions
             </a>
             <button type="button"
                     (click)="openContact()"
