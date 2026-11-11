@@ -33,6 +33,8 @@ export class Header {
   mobileMenuOpen = signal(false);
   isCatalogMenuOpen = signal(false);
   mobileCatalogOpen = signal(false);
+  isPeopleMenuOpen = signal(false);
+  mobilePeopleOpen = signal(false);
 
   allCompanies = COMPANIES_DATA;
 
@@ -94,14 +96,37 @@ export class Header {
       event.stopPropagation();
     }
     this.isCatalogMenuOpen.update(v => !v);
+    if (this.isCatalogMenuOpen()) {
+      this.isPeopleMenuOpen.set(false);
+    }
   }
 
   openCatalogMenu(): void {
     this.isCatalogMenuOpen.set(true);
+    this.isPeopleMenuOpen.set(false);
   }
 
   closeCatalogMenu(): void {
     this.isCatalogMenuOpen.set(false);
+  }
+
+  togglePeopleMenu(event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
+    this.isPeopleMenuOpen.update(v => !v);
+    if (this.isPeopleMenuOpen()) {
+      this.isCatalogMenuOpen.set(false);
+    }
+  }
+
+  openPeopleMenu(): void {
+    this.isPeopleMenuOpen.set(true);
+    this.isCatalogMenuOpen.set(false);
+  }
+
+  closePeopleMenu(): void {
+    this.isPeopleMenuOpen.set(false);
   }
 
   toggleMobileMenu(): void {
@@ -111,15 +136,21 @@ export class Header {
   closeMobileMenu(): void {
     this.mobileMenuOpen.set(false);
     this.mobileCatalogOpen.set(false);
+    this.mobilePeopleOpen.set(false);
   }
 
   toggleMobileCatalog(): void {
     this.mobileCatalogOpen.update(v => !v);
   }
 
+  toggleMobilePeople(): void {
+    this.mobilePeopleOpen.update(v => !v);
+  }
+
   openContact(): void {
     this.closeMobileMenu();
     this.closeCatalogMenu();
+    this.closePeopleMenu();
     this.modalService.openContactModal();
   }
 
@@ -128,6 +159,7 @@ export class Header {
       event.stopPropagation();
     }
     this.closeCatalogMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
     this.modalService.openCompanyModal(company);
   }
@@ -137,6 +169,7 @@ export class Header {
       event.stopPropagation();
     }
     this.closeCatalogMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
     this.router.navigate(['/catalog'], { queryParams: { tier } });
   }
@@ -146,21 +179,24 @@ export class Header {
       event.stopPropagation();
     }
     this.closeCatalogMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
     this.router.navigate(['/catalog']);
   }
 
   onDocumentClick(event: MouseEvent): void {
-    if (this.isCatalogMenuOpen()) {
+    if (this.isCatalogMenuOpen() || this.isPeopleMenuOpen()) {
       const clickedInside = this.elementRef.nativeElement.contains(event.target as Node);
       if (!clickedInside) {
         this.closeCatalogMenu();
+        this.closePeopleMenu();
       }
     }
   }
 
   onEscape(): void {
     this.closeCatalogMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
   }
 }
