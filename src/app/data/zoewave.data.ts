@@ -666,7 +666,7 @@ export const NOUSHIN_LEADERSHIP_DATA = {
   alias: 'Noushin',
   title: 'VP of Product • Professor of Management Information Systems',
   role: 'VP of Product',
-  avatarUrl: '/assets/images/noushin-avatar.jpg',
+  avatarUrl: '/assets/aistudio/image_e8ddc20b.png',
   linkedInUrl: 'https://www.linkedin.com/in/noushin-ashrafi-99349993/',
   bio: 'Accomplished product executive, academic scholar, and textbook author specializing in Object-Oriented Systems Analysis & Design, Business Intelligence, Big Data, and Healthcare IT. Leading product lifecycle strategy and user-centric systems execution across ZoeWave portfolio ventures.',
   distinctions: [
