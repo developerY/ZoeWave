@@ -34,11 +34,9 @@ export class Header {
   isCatalogMenuOpen = signal(false);
   mobileCatalogOpen = signal(false);
 
-  // Info menu state (houses Contact, Believe, and People -> Ash)
-  isInfoMenuOpen = signal(false);
-  isPeopleSubmenuOpen = signal(true);
-  mobileInfoOpen = signal(false);
-  mobilePeopleOpen = signal(true);
+  // People menu state (houses Ash)
+  isPeopleMenuOpen = signal(false);
+  mobilePeopleOpen = signal(false);
 
   allCompanies = COMPANIES_DATA;
 
@@ -101,43 +99,36 @@ export class Header {
     }
     this.isCatalogMenuOpen.update(v => !v);
     if (this.isCatalogMenuOpen()) {
-      this.isInfoMenuOpen.set(false);
+      this.isPeopleMenuOpen.set(false);
     }
   }
 
   openCatalogMenu(): void {
     this.isCatalogMenuOpen.set(true);
-    this.isInfoMenuOpen.set(false);
+    this.isPeopleMenuOpen.set(false);
   }
 
   closeCatalogMenu(): void {
     this.isCatalogMenuOpen.set(false);
   }
 
-  toggleInfoMenu(event?: Event): void {
+  togglePeopleMenu(event?: Event): void {
     if (event) {
       event.stopPropagation();
     }
-    this.isInfoMenuOpen.update(v => !v);
-    if (this.isInfoMenuOpen()) {
+    this.isPeopleMenuOpen.update(v => !v);
+    if (this.isPeopleMenuOpen()) {
       this.isCatalogMenuOpen.set(false);
     }
   }
 
-  openInfoMenu(): void {
-    this.isInfoMenuOpen.set(true);
+  openPeopleMenu(): void {
+    this.isPeopleMenuOpen.set(true);
     this.isCatalogMenuOpen.set(false);
   }
 
-  closeInfoMenu(): void {
-    this.isInfoMenuOpen.set(false);
-  }
-
-  togglePeopleSubmenu(event?: Event): void {
-    if (event) {
-      event.stopPropagation();
-    }
-    this.isPeopleSubmenuOpen.update(v => !v);
+  closePeopleMenu(): void {
+    this.isPeopleMenuOpen.set(false);
   }
 
   toggleMobileMenu(): void {
@@ -147,15 +138,11 @@ export class Header {
   closeMobileMenu(): void {
     this.mobileMenuOpen.set(false);
     this.mobileCatalogOpen.set(false);
-    this.mobileInfoOpen.set(false);
+    this.mobilePeopleOpen.set(false);
   }
 
   toggleMobileCatalog(): void {
     this.mobileCatalogOpen.update(v => !v);
-  }
-
-  toggleMobileInfo(): void {
-    this.mobileInfoOpen.update(v => !v);
   }
 
   toggleMobilePeople(): void {
@@ -165,7 +152,7 @@ export class Header {
   openContact(): void {
     this.closeMobileMenu();
     this.closeCatalogMenu();
-    this.closeInfoMenu();
+    this.closePeopleMenu();
     this.modalService.openContactModal();
   }
 
@@ -174,7 +161,7 @@ export class Header {
       event.stopPropagation();
     }
     this.closeCatalogMenu();
-    this.closeInfoMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
     this.modalService.openCompanyModal(company);
   }
@@ -184,7 +171,7 @@ export class Header {
       event.stopPropagation();
     }
     this.closeCatalogMenu();
-    this.closeInfoMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
     this.router.navigate(['/catalog'], { queryParams: { tier } });
   }
@@ -194,24 +181,24 @@ export class Header {
       event.stopPropagation();
     }
     this.closeCatalogMenu();
-    this.closeInfoMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
     this.router.navigate(['/catalog']);
   }
 
   onDocumentClick(event: MouseEvent): void {
-    if (this.isCatalogMenuOpen() || this.isInfoMenuOpen()) {
+    if (this.isCatalogMenuOpen() || this.isPeopleMenuOpen()) {
       const clickedInside = this.elementRef.nativeElement.contains(event.target as Node);
       if (!clickedInside) {
         this.closeCatalogMenu();
-        this.closeInfoMenu();
+        this.closePeopleMenu();
       }
     }
   }
 
   onEscape(): void {
     this.closeCatalogMenu();
-    this.closeInfoMenu();
+    this.closePeopleMenu();
     this.closeMobileMenu();
   }
 }

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, OnDestroy, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ModalService } from '../../services/modal.service';
-import { COMPANIES_DATA, PROJECTS_DATA, BELIEFS_DATA, ASH_LEADERSHIP_DATA } from '../../data/zoewave.data';
+import { COMPANIES_DATA, PROJECTS_DATA, BELIEFS_DATA } from '../../data/zoewave.data';
 import { CompanyItem } from '../../data/zoewave-logic';
 
 export type CarouselCategory = 'all' | 'core' | 'production' | 'development' | 'frontier' | 'concepts';
@@ -21,17 +21,9 @@ export class Home implements OnDestroy {
   companies = COMPANIES_DATA;
   featuredProjects = PROJECTS_DATA.slice(0, 4);
   beliefs = BELIEFS_DATA;
-  ash = ASH_LEADERSHIP_DATA;
 
   // Existing horizon filter (for the lower grid)
   activeFilter = signal<'all' | 'health' | 'robotics' | 'ai'>('all');
-
-  // Leadership card collapse/expand state (hidden under icon by default)
-  isLeadershipOpen = signal<boolean>(false);
-
-  toggleLeadership(): void {
-    this.isLeadershipOpen.update(v => !v);
-  }
 
   // Carousel (Flip Book) State
   activeCarouselIndex = signal<number>(0);

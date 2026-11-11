@@ -67,86 +67,62 @@
          class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
         Projects
       </a>
-      <!-- Info Dropdown Tab (Houses Contact, Believe, and People -> Ash) -->
+      <!-- Believe Tab -->
+      <a routerLink="/believe" 
+         (click)="closeCatalogMenu(); closePeopleMenu()"
+         routerLinkActive="text-slate-900 font-semibold bg-white/90 shadow-xs border border-pink-200/60" 
+         class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-colors rounded-xl font-medium">
+        Believe
+      </a>
+
+      <!-- People Dropdown Tab with chevron (exact match to user requested design) -->
       <div class="relative">
         <button type="button" 
-                (click)="toggleInfoMenu($event)"
-                [class.text-slate-900]="isInfoMenuOpen()"
-                [class.font-semibold]="isInfoMenuOpen()"
-                [class.bg-white]="isInfoMenuOpen()"
-                [class.shadow-xs]="isInfoMenuOpen()"
-                [class.border-pink-200]="isInfoMenuOpen()"
+                (click)="togglePeopleMenu($event)"
+                [class.text-slate-900]="isPeopleMenuOpen()"
+                [class.font-semibold]="isPeopleMenuOpen()"
+                [class.bg-white]="isPeopleMenuOpen()"
+                [class.shadow-xs]="isPeopleMenuOpen()"
+                [class.border-pink-200]="isPeopleMenuOpen()"
                 class="px-4 py-2 font-label-md text-slate-600 hover:text-slate-900 hover:bg-white/60 transition-all rounded-xl font-medium inline-flex items-center gap-1.5 border border-transparent cursor-pointer group"
                 aria-haspopup="true"
-                [attr.aria-expanded]="isInfoMenuOpen()">
-          <span>Info</span>
+                [attr.aria-expanded]="isPeopleMenuOpen()">
+          <span>People</span>
           <span class="material-symbols-outlined text-[16px] transition-transform duration-200 text-slate-400 group-hover:text-slate-700"
-                [class.rotate-180]="isInfoMenuOpen()">
+                [class.rotate-180]="isPeopleMenuOpen()">
             expand_more
           </span>
         </button>
 
-        <!-- Anchored Dropdown Card Under Info (Matches image_53d2a567.png) -->
-        @if (isInfoMenuOpen()) {
-          <div class="absolute top-full right-0 mt-2.5 w-64 rounded-2xl bg-[#1c1c1e]/98 backdrop-blur-2xl text-white shadow-[0_20px_50px_rgba(0,0,0,0.45)] border border-white/10 p-2 z-50 animate-fadeIn"
+        <!-- Anchored Dropdown Under People -->
+        @if (isPeopleMenuOpen()) {
+          <div class="absolute top-full right-0 mt-2.5 w-72 rounded-2xl bg-white/98 backdrop-blur-2xl shadow-[0_20px_50px_rgba(236,72,153,0.18),0_10px_25px_rgba(15,23,42,0.08)] border border-pink-200/80 p-2.5 z-50 animate-fadeIn"
                role="menu"
-               aria-label="Info Dropdown Menu">
-            <!-- Contact Option -->
-            <button type="button"
-                    (click)="openContact()"
-                    class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between text-sm font-medium text-slate-200 hover:text-white cursor-pointer group">
-              <span class="text-sm font-medium">Contact</span>
-              <span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-white transition-colors">arrow_forward</span>
-            </button>
+               aria-label="People Directory">
+            <span class="text-[10px] font-bold text-slate-600 uppercase tracking-wider px-2 pt-1 pb-1.5 block">
+              Leadership & Architecture
+            </span>
 
-            <!-- Believe Option -->
-            <a routerLink="/believe"
-               (click)="closeInfoMenu()"
-               class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between text-sm font-medium text-slate-200 hover:text-white cursor-pointer group">
-              <span class="text-sm font-medium">Believe</span>
-              <span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-white transition-colors">arrow_forward</span>
+            <!-- Ash under People -->
+            <a routerLink="/people/ash"
+               (click)="closePeopleMenu()"
+               class="flex items-center gap-3 p-2.5 rounded-xl bg-pink-50/50 hover:bg-pink-100/70 border border-pink-200/60 transition-all group/ash cursor-pointer">
+              <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-pink-400 shadow-xs shrink-0">
+                <img src="/assets/images/ash-avatar.jpg"
+                     alt="Siamak (Ash) Ashrafi"
+                     class="w-full h-full object-cover object-top"
+                     referrerpolicy="no-referrer" />
+                <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-sm font-bold text-slate-900 group-hover/ash:text-pink-600 transition-colors">Ash</span>
+                  <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white">Founder</span>
+                </div>
+                <span class="text-xs text-slate-600 truncate">Siamak Ashrafi &bull; Dossier</span>
+              </div>
+              <span class="material-symbols-outlined text-[18px] text-pink-500 ml-auto group-hover/ash:translate-x-0.5 transition-transform">arrow_forward</span>
             </a>
-
-            <!-- People Expandable Sub-Item (Styled like [v] People in image_53d2a567.png) -->
-            <div class="border-t border-white/10 mt-1 pt-1">
-              <button type="button"
-                      (click)="togglePeopleSubmenu($event)"
-                      class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-white/10 transition-colors flex items-center justify-between text-sm font-medium text-slate-200 hover:text-white cursor-pointer group">
-                <div class="flex items-center gap-2">
-                  <!-- Square chevron icon matching mock screenshot image_53d2a567.png -->
-                  <span class="w-5 h-5 rounded border border-white/30 flex items-center justify-center bg-white/5 group-hover:border-white/60">
-                    <span class="material-symbols-outlined text-[14px] text-white transition-transform duration-200"
-                          [class.rotate-180]="isPeopleSubmenuOpen()">
-                      keyboard_arrow_down
-                    </span>
-                  </span>
-                  <span class="text-sm font-medium">People</span>
-                </div>
-                <span class="text-[10px] text-slate-400">1</span>
-              </button>
-
-              <!-- Ash under People -->
-              @if (isPeopleSubmenuOpen()) {
-                <div class="pl-2 pr-1 py-1 flex flex-col gap-1">
-                  <a routerLink="/people/ash"
-                     (click)="closeInfoMenu()"
-                     class="flex items-center gap-2.5 p-2 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 transition-all group/ash">
-                    <img src="/assets/images/ash-avatar.jpg"
-                         alt="Siamak (Ash) Ashrafi"
-                         class="w-7 h-7 rounded-full object-cover border border-pink-400/60 shadow-xs shrink-0"
-                         referrerpolicy="no-referrer" />
-                    <div class="flex flex-col min-w-0">
-                      <div class="flex items-center gap-1.5">
-                        <span class="text-xs font-bold text-white group-hover/ash:text-pink-300 transition-colors">Ash</span>
-                        <span class="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-pink-500/20 text-pink-300 border border-pink-500/30">Founder</span>
-                      </div>
-                      <span class="text-[10px] text-slate-400 truncate">Siamak Ashrafi &bull; Dossier</span>
-                    </div>
-                    <span class="material-symbols-outlined text-[14px] text-slate-400 ml-auto group-hover/ash:translate-x-0.5 transition-transform text-pink-400">chevron_right</span>
-                  </a>
-                </div>
-              }
-            </div>
           </div>
         }
       </div>
@@ -161,17 +137,6 @@
         <span class="material-symbols-outlined text-[18px] mr-1.5 text-white">auto_awesome</span>
         Connect
       </button>
-
-      <!-- Ash Profile Avatar link -->
-      <a routerLink="/people/ash" 
-         (click)="closeCatalogMenu()"
-         title="Siamak (Ash) Ashrafi - Executive Dossier"
-         class="hidden md:flex items-center gap-1.5 pl-2 border-l border-pink-200 hover:opacity-85 transition-opacity">
-        <img alt="Siamak Ashrafi" 
-             class="w-8 h-8 rounded-full object-cover border-2 border-pink-300 shadow-sm" 
-             src="/assets/images/ash-avatar.jpg"
-             referrerpolicy="no-referrer" />
-      </a>
 
       <!-- Mobile Hamburger Button -->
       <button type="button"
@@ -188,6 +153,13 @@
       </button>
     </div>
   </div>
+
+  <!-- Soft backdrop for People dropdown -->
+  @if (isPeopleMenuOpen()) {
+    <div class="fixed inset-0 top-20 bg-slate-900/10 backdrop-blur-[2px] z-40 transition-opacity" 
+         (click)="closePeopleMenu()" 
+         aria-hidden="true"></div>
+  }
 
   <!-- ============================================================ -->
   <!-- APPLE / MAC STYLE MEGA-MENU DROPDOWN FOR CATALOG             -->
@@ -435,77 +407,51 @@
         <span>Projects</span>
         <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
       </a>
-      <!-- Mobile Info Accordion (Contact, Believe, and People -> Ash) -->
+      <!-- Believe (Mobile) -->
+      <a routerLink="/believe" 
+         (click)="closeMobileMenu()"
+         routerLinkActive="text-pink-600 font-bold bg-pink-50/80" 
+         class="px-4 py-3 rounded-xl font-label-md text-slate-800 hover:bg-pink-50 transition-colors flex items-center justify-between">
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-purple-500">psychology</span>
+          <span>Believe</span>
+        </span>
+        <span class="material-symbols-outlined text-sm text-slate-400">arrow_forward</span>
+      </a>
+
+      <!-- Mobile People Accordion -->
       <div class="rounded-xl border border-pink-200/80 overflow-hidden bg-white/80">
         <button type="button" 
                 class="w-full flex items-center justify-between px-4 py-3 bg-white cursor-pointer text-left"
-                (click)="toggleMobileInfo()">
+                (click)="toggleMobilePeople()">
           <span class="font-label-md font-bold text-slate-900 flex items-center gap-2">
-            <span class="material-symbols-outlined text-[18px] text-pink-500">info</span>
-            <span>Info</span>
+            <span class="material-symbols-outlined text-[18px] text-pink-500">group</span>
+            <span>People</span>
           </span>
           <span class="material-symbols-outlined text-slate-500 transition-transform duration-200"
-                [class.rotate-180]="mobileInfoOpen()">
+                [class.rotate-180]="mobilePeopleOpen()">
             expand_more
           </span>
         </button>
 
-        @if (mobileInfoOpen()) {
-          <div class="px-4 py-3 flex flex-col gap-2.5 bg-slate-50/50 border-t border-pink-200/50">
-            <!-- Contact -->
-            <button type="button"
-                    (click)="openContact()"
-                    class="w-full flex items-center justify-between p-2.5 rounded-xl bg-white border border-pink-200/60 shadow-xs hover:bg-pink-50 transition-colors text-left cursor-pointer">
-              <span class="text-xs font-bold text-slate-800">Contact</span>
-              <span class="material-symbols-outlined text-[16px] text-pink-500">mail</span>
-            </button>
-
-            <!-- Believe -->
-            <a routerLink="/believe"
+        @if (mobilePeopleOpen()) {
+          <div class="p-3 border-t border-pink-100 bg-white">
+            <a routerLink="/people/ash"
                (click)="closeMobileMenu()"
-               class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-pink-200/60 shadow-xs hover:bg-pink-50 transition-colors">
-              <span class="text-xs font-bold text-slate-800">Believe (Manifesto)</span>
-              <span class="material-symbols-outlined text-[16px] text-purple-500">psychology</span>
+               class="flex items-center gap-3 p-2.5 rounded-xl bg-pink-50/50 hover:bg-pink-100/60 transition-colors">
+              <img src="/assets/images/ash-avatar.jpg" 
+                   alt="Siamak (Ash) Ashrafi" 
+                   class="w-9 h-9 rounded-full object-cover border border-pink-300 shrink-0"
+                   referrerpolicy="no-referrer" />
+              <div class="flex flex-col min-w-0">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-bold text-slate-900">Ash</span>
+                  <span class="text-[9px] font-semibold px-1 py-0.2 rounded bg-pink-100 text-pink-700">Founder</span>
+                </div>
+                <span class="text-[10px] text-slate-600 truncate">Siamak Ashrafi &bull; Dossier</span>
+              </div>
+              <span class="material-symbols-outlined text-[16px] text-slate-400 ml-auto">arrow_forward</span>
             </a>
-
-            <!-- People Sub-section -->
-            <div class="rounded-xl border border-pink-200/60 overflow-hidden bg-white">
-              <button type="button" 
-                      class="w-full flex items-center justify-between px-3 py-2 bg-pink-50/40 cursor-pointer text-left"
-                      (click)="toggleMobilePeople()">
-                <div class="flex items-center gap-2">
-                  <span class="w-4 h-4 rounded border border-slate-300 flex items-center justify-center bg-white">
-                    <span class="material-symbols-outlined text-[12px] text-slate-600 transition-transform duration-200"
-                          [class.rotate-180]="mobilePeopleOpen()">
-                      keyboard_arrow_down
-                    </span>
-                  </span>
-                  <span class="text-xs font-bold text-slate-800">People</span>
-                </div>
-                <span class="text-[10px] text-slate-500 font-medium">1</span>
-              </button>
-
-              @if (mobilePeopleOpen()) {
-                <div class="p-2 border-t border-pink-100 bg-white">
-                  <a routerLink="/people/ash"
-                     (click)="closeMobileMenu()"
-                     class="flex items-center gap-3 p-2 rounded-lg bg-pink-50/50 hover:bg-pink-100/60 transition-colors">
-                    <img src="/assets/images/ash-avatar.jpg" 
-                         alt="Siamak (Ash) Ashrafi" 
-                         class="w-8 h-8 rounded-full object-cover border border-pink-300 shrink-0"
-                         referrerpolicy="no-referrer" />
-                    <div class="flex flex-col min-w-0">
-                      <div class="flex items-center gap-1.5">
-                        <span class="text-xs font-bold text-slate-900">Ash</span>
-                        <span class="text-[9px] font-semibold px-1 py-0.2 rounded bg-pink-100 text-pink-700">Founder</span>
-                      </div>
-                      <span class="text-[10px] text-slate-500 truncate">Siamak Ashrafi &bull; Dossier</span>
-                    </div>
-                    <span class="material-symbols-outlined text-[16px] text-slate-400 ml-auto">arrow_forward</span>
-                  </a>
-                </div>
-              }
-            </div>
           </div>
         }
       </div>
