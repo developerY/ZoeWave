@@ -703,3 +703,49 @@ export const NOUSHIN_LEADERSHIP_DATA = {
   }
 };
 
+export const AI_LEADERSHIP_DATA = {
+  name: 'ZoeWave AI',
+  alias: 'AI',
+  title: 'Autonomous Systems • Hardware • Formulations • Copy & Legal',
+  role: 'Engineering & Copy',
+  avatarUrl: '/assets/images/ai-avatar.jpg',
+  bio: 'The foundational generative and analytical intelligence powering the ZoeWave ecosystem. Collaborating directly with human leadership, AI executes all software engineering, hardware prototyping specifications, and biochemical formulations alongside complete promotion, technical documentation, and legal copy across all 14 portfolio ventures.',
+  distinctions: [
+    { title: 'Software', subtitle: 'Full-Stack & ML Systems', icon: 'code' },
+    { title: 'Hardware', subtitle: 'Robotics & Biosensors', icon: 'memory' },
+    { title: 'Formulations', subtitle: 'Bio-Data & Pharmacology', icon: 'science' },
+    { title: 'All Copy', subtitle: 'Promo • Docs • Legal', icon: 'description' }
+  ],
+  capabilities: [
+    {
+      title: 'Software Architecture',
+      badge: 'Core Build',
+      description: 'End-to-end engineering across Android, iOS, visionOS, Rust microservices, distributed ledgers, spatial XR, and predictive machine learning pipelines.',
+      icon: 'terminal'
+    },
+    {
+      title: 'Hardware & Physical Compute',
+      badge: 'Silicon & Edge',
+      description: 'Schematic synthesis, embedded firmware, wearable biosensor telemetry, autonomous robotic kinematics, and human-hardware ergonomic prototyping.',
+      icon: 'developer_board'
+    },
+    {
+      title: 'Scientific Formulations',
+      badge: 'Bio & Pharma',
+      description: 'Precision micro-dosing matrices, pharmacokinetic curve modeling, computational compound analysis, and physiological simulation datasets.',
+      icon: 'biotech'
+    },
+    {
+      title: 'Promotion, Docs & Legal Copy',
+      badge: 'Communications',
+      description: 'Unified brand storytelling, venture launch messaging, comprehensive technical specifications, patent-ready documentation, and legal compliance copy.',
+      icon: 'gavel'
+    }
+  ],
+  quote: {
+    headline: 'Co-building software, hardware, formulations, and the narrative that brings them to life.',
+    subtext: 'Directed by human vision to accelerate execution from initial hypothesis to production copy and code.'
+  }
+};
+
+

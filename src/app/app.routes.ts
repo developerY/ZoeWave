@@ -40,6 +40,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/people/people-noushin').then(m => m.PeopleNoushin)
   },
   {
+    path: 'people/ai',
+    loadComponent: () => import('./pages/people/people-ai').then(m => m.PeopleAi)
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }

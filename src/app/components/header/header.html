@@ -145,6 +145,27 @@
                 </div>
                 <span class="material-symbols-outlined text-[18px] text-purple-500 ml-auto group-hover/noushin:translate-x-0.5 transition-transform">arrow_forward</span>
               </a>
+
+              <!-- AI under Noushin -->
+              <a routerLink="/people/ai"
+                 (click)="closePeopleMenu()"
+                 class="flex items-center gap-3 p-2.5 rounded-xl bg-sky-50/50 hover:bg-sky-100/70 border border-sky-200/60 transition-all group/ai cursor-pointer">
+                <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-sky-400 shadow-xs shrink-0">
+                  <img src="/assets/images/ai-avatar.jpg"
+                       alt="ZoeWave AI"
+                       class="w-full h-full object-cover object-center"
+                       referrerpolicy="no-referrer" />
+                  <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-white"></span>
+                </div>
+                <div class="flex flex-col min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-sm font-bold text-slate-900 group-hover/ai:text-sky-600 transition-colors">AI</span>
+                    <span class="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-gradient-to-r from-sky-500 to-cyan-500 text-white">Engineering &amp; Copy</span>
+                  </div>
+                  <span class="text-xs text-slate-600 truncate">Software, Hardware, Formulations &bull; Copy</span>
+                </div>
+                <span class="material-symbols-outlined text-[18px] text-sky-500 ml-auto group-hover/ai:translate-x-0.5 transition-transform">arrow_forward</span>
+              </a>
             </div>
           </div>
         }
@@ -493,6 +514,24 @@
                 <span class="text-[10px] text-slate-600 truncate">Dr. Noushin Ashrafi &bull; Dossier</span>
               </div>
               <span class="material-symbols-outlined text-[16px] text-purple-400 ml-auto">arrow_forward</span>
+            </a>
+
+            <!-- AI -->
+            <a routerLink="/people/ai"
+               (click)="closeMobileMenu()"
+               class="flex items-center gap-3 p-2.5 rounded-xl bg-sky-50/50 hover:bg-sky-100/60 transition-colors">
+              <img src="/assets/images/ai-avatar.jpg" 
+                   alt="ZoeWave AI" 
+                   class="w-9 h-9 rounded-full object-cover border border-sky-300 shrink-0"
+                   referrerpolicy="no-referrer" />
+              <div class="flex flex-col min-w-0 flex-1">
+                <div class="flex items-center gap-1.5">
+                  <span class="text-xs font-bold text-slate-900">AI</span>
+                  <span class="text-[9px] font-semibold px-1 py-0.2 rounded bg-sky-100 text-sky-700">Engineering &amp; Copy</span>
+                </div>
+                <span class="text-[10px] text-slate-600 truncate">Software, Hardware, Formulations &bull; Legal &amp; Docs</span>
+              </div>
+              <span class="material-symbols-outlined text-[16px] text-sky-400 ml-auto">arrow_forward</span>
             </a>
           </div>
         }
